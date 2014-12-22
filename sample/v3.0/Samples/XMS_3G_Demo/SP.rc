@@ -1,0 +1,553 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SP.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SP.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_MIXER DIALOG DISCARDABLE  0, 0, 209, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mixer"
+FONT 10, "System"
+BEGIN
+    LTEXT           "SRC1 Ctrl",IDC_STATIC,16,39,32,8
+    CONTROL         "Audio",IDC_CHK_AUDIO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,18,34,10
+    CONTROL         "Video",IDC_CHK_VIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,67,18,34,10
+    COMBOBOX        IDC_CMB_SRCCTRL,53,36,48,74,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "SRC1 ID",IDC_STATIC,16,62,28,8
+    EDITTEXT        IDC_EDIT_SRCID,53,60,37,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,131,84,31,12
+    PUSHBUTTON      "Cancel",IDCANCEL,44,84,35,12
+    LTEXT           "SRC2 Ctrl",IDC_STATIC,110,39,32,8
+    LTEXT           "SRC2 ID",IDC_STATIC,111,62,28,8
+    EDITTEXT        IDC_EDIT_SRC2ID,146,60,40,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_SRC2CTRL,146,37,48,59,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_PARAMTYPE DIALOG DISCARDABLE  0, 0, 190, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameter Type"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,111,62,43,13
+    PUSHBUTTON      "Cancel",IDCANCEL,32,62,44,13
+    LTEXT           "Parameter Type:",IDC_STATIC,34,23,55,8
+    COMBOBOX        IDC_COB_PARAMTYPE,100,22,48,87,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_IODATA_UII DIALOGEX 0, 0, 187, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Send UII"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,122,92,40,14,0,WS_EX_STATICEDGE
+    CONTROL         "Signal",IDC_RADIO_SIGNAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,47,18,37,10
+    CONTROL         "Alphanumeric:",IDC_RADIO_ALPHANUMERIC,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,100,18,62,10
+    EDITTEXT        IDC_EDIT_SIGNAL,76,41,24,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ALPHANUMERIC,76,68,87,14,ES_AUTOHSCROLL
+    LTEXT           "Signal:",IDC_STATIC,21,43,24,8
+    LTEXT           "Alphanumeric:",IDC_STATIC,21,71,47,8
+    PUSHBUTTON      "Cancel",IDCANCEL,29,92,40,14,0,WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_RTPX DIALOGEX 0, 0, 197, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rtpx"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,115,98,39,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,42,98,37,14,0,WS_EX_STATICEDGE
+    CONTROL         "Enable",IDC_CHK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,74,17,39,10
+    LTEXT           "Media Type:",IDC_STATIC,41,40,41,8
+    LTEXT           "Payload:",IDC_STATIC,42,60,30,8
+    COMBOBOX        IDC_CMB_DATATYPE,105,38,48,58,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PAYLOAD,105,58,40,12,ES_AUTOHSCROLL
+    CONTROL         "Transcode",IDC_CHK_TRANSCODE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,74,78,50,10
+END
+
+IDD_DLG_LINKDEV DIALOG DISCARDABLE  0, 0, 196, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Link Device"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,120,106,39,12
+    PUSHBUTTON      "Cancel",IDCANCEL,31,106,41,12
+    COMBOBOX        IDC_CMB_DESTTYPE,95,30,48,61,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DESTID,95,63,40,14,ES_AUTOHSCROLL
+    LTEXT           "Dest Device",IDC_STATIC,60,13,41,8
+    LTEXT           "Dev Type:",IDC_STATIC,36,31,34,8
+    LTEXT           "Channel ID:",IDC_STATIC,36,67,39,8
+    LTEXT           "Unit ID:",IDC_STATIC,36,49,25,8
+    EDITTEXT        IDC_EDIT_UNIT,95,45,40,14,ES_AUTOHSCROLL
+    LTEXT           "Overlay:",IDC_STATIC,13,84,29,8
+    EDITTEXT        IDC_EDIT_OVERLAYFILE,43,83,126,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_OPENFILE,171,83,10,11
+END
+
+IDD_DLG_ADDR DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Remote Address"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,113,73,41,14
+    PUSHBUTTON      "Cancel",IDCANCEL,33,73,41,14
+    CONTROL         "IPAddress1",IDC_IPADDRESS1,"SysIPAddress32",WS_TABSTOP,
+                    76,24,94,11
+    EDITTEXT        IDC_EDIT_PORT,76,45,40,12,ES_AUTOHSCROLL
+    LTEXT           "IP:",IDC_STATIC,33,26,10,8
+    LTEXT           "Port:",IDC_STATIC,33,43,16,8
+END
+
+IDD_DLG_SIP_CALLOUT DIALOG DISCARDABLE  0, 0, 224, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SIP Call"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,143,128,40,12
+    PUSHBUTTON      "Cancel",IDCANCEL,39,128,42,12
+    EDITTEXT        IDC_EDIT_CALLER_NAME,75,80,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLER_ID,75,103,40,12,ES_AUTOHSCROLL
+    LTEXT           "Display name:",IDC_STATIC,18,82,52,8
+    LTEXT           "User name:",IDC_STATIC,18,104,39,8
+    EDITTEXT        IDC_EDIT_CALLEE_NAME,144,80,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLEE_ID,144,103,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLER_PORT,75,59,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLER_ADDR,75,37,55,12,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,19,61,16,8
+    LTEXT           "Address:",IDC_STATIC,19,38,30,8
+    EDITTEXT        IDC_EDIT_CALLEE_ADDR,144,37,59,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLEE_PORT,144,58,40,12,ES_AUTOHSCROLL
+    LTEXT           "Caller",IDC_STATIC,76,19,20,8
+    LTEXT           "Callee",IDC_STATIC,144,19,22,8
+END
+
+IDD_DLG_PLAY DIALOG DISCARDABLE  0, 0, 231, 161
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Play"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,138,142,40,12
+    PUSHBUTTON      "Cancel",IDCANCEL,34,142,42,12
+    COMBOBOX        IDC_CMB_TYPE,67,18,66,49,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Play Type:",IDC_STATIC,27,20,36,8
+    LTEXT           "X:",IDC_STATIC,29,95,8,8
+    EDITTEXT        IDC_EDIT_X,67,94,32,12,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,123,97,8,8
+    EDITTEXT        IDC_EDIT_Y,151,95,31,12,ES_AUTOHSCROLL
+    LTEXT           "FPS:",IDC_STATIC,29,117,16,8
+    LTEXT           "Kbps:",IDC_STATIC,123,116,20,8
+    EDITTEXT        IDC_EDIT_FPS,67,114,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BR,151,113,31,12,ES_AUTOHSCROLL
+    LTEXT           "Time:",IDC_STATIC,27,75,19,8
+    EDITTEXT        IDC_EDIT_TIME,67,73,32,12,ES_AUTOHSCROLL
+    LTEXT           "File:",IDC_STATIC,27,41,15,8
+    EDITTEXT        IDC_EDIT_FILE,46,39,153,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FILE,202,39,9,11
+    LTEXT           "Overlag:",IDC_STATIC,27,57,29,8
+    EDITTEXT        IDC_EDIT_FILEOVERLAY,60,56,139,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FILEOVERLAY,203,56,9,11
+    CONTROL         "Loop",IDC_CHK_LOOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,123,75,32,10
+END
+
+IDD_DLG_RECORD DIALOG DISCARDABLE  0, 0, 229, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Record"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,162,108,38,12
+    PUSHBUTTON      "Cancel",IDCANCEL,50,108,39,12
+    LTEXT           "X:",IDC_STATIC,29,70,8,8
+    EDITTEXT        IDC_EDIT_X,67,69,32,12,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,123,72,8,8
+    EDITTEXT        IDC_EDIT_Y,151,70,31,12,ES_AUTOHSCROLL
+    LTEXT           "FPS:",IDC_STATIC,29,92,16,8
+    LTEXT           "Kbps:",IDC_STATIC,123,91,20,8
+    EDITTEXT        IDC_EDIT_FPS,67,89,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BR,151,88,31,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_TYPE,67,18,66,49,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Play Type:",IDC_STATIC,27,20,36,8
+    LTEXT           "File:",IDC_STATIC,27,41,15,8
+    EDITTEXT        IDC_EDIT_FILE,46,39,153,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FILE,202,39,9,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_MIXER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DLG_PARAMTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_DLG_IODATA_UII, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_DIALOG_RTPX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DLG_LINKDEV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_DLG_ADDR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_SIP_CALLOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+
+    IDD_DLG_PLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_DLG_RECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU DISCARDABLE 
+BEGIN
+    POPUP "MENUMAIN"
+    BEGIN
+        MENUITEM "join",                        IDR_MENU_MAIN_JOIN
+        MENUITEM "leave",                       IDR_MENU_MAIN_LEAVE
+        MENUITEM "play",                        IDR_MENU_MAIN_PLAY
+        MENUITEM "record",                      IDR_MENU_MAIN_RECORD
+        MENUITEM "clear",                       IDR_MENU_MAIN_CLEAR
+        MENUITEM "restart",                     IDR_MENU_MAIN_RESTART
+        MENUITEM "getlayout",                   IDR_MENU_MAIN_GETLAYOUT
+        MENUITEM "setlayout",                   IDR_MENU_MAIN_SETLAYOUT
+        MENUITEM "getvisiblelist",              IDR_MENU_MAIN_GETVISIBLELIST
+        MENUITEM "setvisiblelist",              IDR_MENU_MAIN_SETVISIBLELIST
+        MENUITEM "starttimer",                  IDR_MENU_MAIN_STARTTIMER
+        MENUITEM "stoptimer",                   IDR_MENU_MAIN_STOPTIMER
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About XMS_3G_Demo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "XMS_3G_Demo Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SP_DIALOG DIALOGEX 0, 0, 414, 441
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DonJin Keygoe 3G Demo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,306,420,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,108,420,50,14
+    LISTBOX         IDC_LIST_MSG,240,23,167,171,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    CONTROL         "List2",IDC_LIST_DEV_INFO,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,140,167,275
+    LTEXT           "Device Type",IDC_STATIC,9,8,45,8
+    CONTROL         "List6",IDC_LIST_DEV_TYPE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,18,166,101
+    LTEXT           "Device Info",IDC_STATIC_DEVINFO,7,128,108,8
+    PUSHBUTTON      "Open All",IDC_BUTTON_OPENALL,187,63,40,16,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Close All",IDC_BUTTON_CLOSEALL,187,89,40,15,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Set param",IDC_BUTTON_SETPARAM,186,209,41,16,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Clear Call",IDC_BUTTON_CLEARCALL,186,282,41,16,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "IO Data",IDC_BUTTON_IODATA,186,233,41,16,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Call",IDC_BUTTON_CALL,186,259,41,15,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Play",IDC_BUTTON_PLAY,187,312,41,16,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Record",IDC_BUTTON_RECORD,187,356,42,16,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Stop",IDC_BUTTON_STOP,187,333,42,17,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Link",IDC_BUTTON_LINK,186,164,40,15,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Unlink",IDC_BUTTON_UNLINK,186,185,40,15,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Reset",IDC_BUTTON_RESET,186,144,40,15,0,
+                    WS_EX_STATICEDGE
+    CONTROL         "List1",IDC_LIST_HOTCONF,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,243,215,164,89
+    CONTROL         "List2",IDC_LIST_MEMBER,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,243,321,164,95
+    LTEXT           "Member",IDC_STATIC_MEMBER,243,311,101,8
+    LTEXT           "Hot Conference",IDC_STATIC,243,205,57,8
+    PUSHBUTTON      "Init",IDC_BUTTON_INIT,188,30,39,15,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Stop",IDC_BUTTON_STOPREC,187,377,42,17,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "FileInfo",IDC_BUTTON_GETFILEINFO,187,399,41,16,0,
+                    WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 434
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SP MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SP\0"
+            VALUE "LegalCopyright", "Copyright (C) 2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SP.EXE\0"
+            VALUE "ProductName", "SP Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About XMS_3G_Demo..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SP.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

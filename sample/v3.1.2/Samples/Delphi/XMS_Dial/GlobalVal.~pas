@@ -1,0 +1,681 @@
+unit GlobalVal;
+
+interface
+uses
+  SysUtils;
+Type
+  CallID_t = record
+  m_s32FlowType:Integer;
+  m_s32FlowChannel:Integer;
+end;
+Type
+  DeviceID_t = record
+  m_s16DeviceMain:Smallint;
+  m_s16DeviceSub:Smallint;
+  m_s8ModuleID:Shortint;
+  m_s8MachineID:Shortint;
+  m_s16ChannelID:Smallint;
+  m_s16DeviceGroup:Smallint;
+  m_Rfu2:Array[0..1] of char;
+  m_CallID:CallID_t;
+end;
+Type
+  ShortArr = array[0..31] of char;
+  ServerID_t = record
+  m_s8ServerIp : ShortArr;
+  m_u32ServerPort: Cardinal;
+  m_s8UserName : ShortArr;
+  m_s8UserPwd : ShortArr;
+end;
+
+Type
+   PrivateData_t = record
+   m_u32DataSize : Cardinal;
+end;
+Type
+  CAS_CalledTableDesc_t=record
+  m_u8NumHeadLen:Byte;
+  m_u8NumHead:Array[0..13] of Byte;
+  m_u8NumLen:Byte;
+end;
+Type
+  CmdParamData_CAS_t = record
+  m_VocDevID:DeviceID_t;
+  m_u8CalledTableCount:Byte;
+  m_Rfu1:Array[0..2] of Byte;
+  m_CalledTable:Array[0..15] of CAS_CalledTableDesc_t;
+  m_u8CalledLen:Byte;
+  m_u8CalledTimeOut:Byte;
+  m_u8NeedCaller:Byte;
+  m_u8AreaCodeLen:Byte;
+  m_u8KA:Byte;
+  m_u8KD:Byte;
+  m_u8ControlMode:Byte;
+  m_u8CountryCode:Byte;
+  m_u8CallType:Byte;
+  m_u8AppendCallee:Byte;
+  m_u8Rfu:Array[0..5] of Byte;
+end;
+
+Type TRUNK_STATE=
+    (
+    TRK_WAITOPEN = 0,
+    TRK_FREE = 1,
+    TRK_NOTHANDLE = 2,
+    TRK_CALLOUT = 3,
+    TRK_SIM_CALLOUT = 4,
+    TRK_SIM_LINK = 5,
+    TRK_SIM_ANALOG_OFFHOOK = 6,
+    TRK_SIM_ANALOG_DIALING = 7,
+    TRK_LINK = 8,
+    TRK_PLAYDTMF = 9,
+    TRK_HANGUP = 10,
+    TRK_FAIL = 11,
+    TRK_WAIT_REMOVE = 12
+    );
+
+Type USER_STATE =
+(
+	USER_WAITOPEN=0,
+	USER_FREE=1,
+	USER_OFFHOOK=2,
+	USER_CALLOUT=3,
+	USER_LINK=4,
+	USER_WAITHANGUP=5,
+	USER_WAIT_REMOVE=6,
+	USER_RING=7
+);
+
+Type XMS_ANALOGTRUNK_PARAM_TYPE=
+(
+	ANALOGTRUNK_PARAM_UNIPARAM = 0,
+	ANALOGTRUNK_PARAM_SETFLASH = 1,
+	ANALOGTRUNK_PARAM_UNSETUNIPARAM = 2 ,//added by jerry for UnSet UniParam(id = 0 )....
+	ANALOGTRUNK_PARAM_UNBINDVOC     = 3 ,//Added by jerry For UnBind Voc From AnalogTrunk
+  ANALOGTRUNK_PARAM_READSN        = 4 ,//get TRUNK's SN
+	ANALOGTRUNK_PARAM_GET_VOLTAGE   = 5 //get TRUNK's voltage
+);
+
+Type XMS_ANALOGUSER_PARAM_TYPE=
+(
+	ANALOGUSER_PARAM_UNIPARAM      = 0,	
+	ANALOGUSER_PARAM_UNBINDVOC     = 3 ,//Added by jerry For UnBind Voc From AnalogUser
+  ANALOGUSER_PARAM_READSN        = 4, //get AnalogUser's SN
+	ANALOGUSER_PARAM_GET_VOLTAGE   = 5 //Get AnalogUser's voltage
+);
+
+Type
+    CmdParamData_AnalogTrunk_t=record
+    m_u16CallInRingCount:Word;
+    m_u16CallInRingTimeOut:Word;
+end;
+
+Type
+    CmdParamData_AnalogUser_t=record
+    m_u8CallerIdOption:Byte;
+    m_u8RingCadenceType:Byte;
+    m_u8CallOutRingTimeOut:Byte;
+    m_u8Rfu1:Byte;
+    m_u8Rfu2:Array[0..11] of Byte;
+end;
+
+Type
+    TRUNK_STRUCT=record
+    deviceID:DeviceID_t;
+    iSeqID:Integer;
+    iModSeqID:Integer;
+    iLineState:Integer;
+    VocDevID:DeviceID_t;
+    LinkDevID:DeviceID_t;
+    State:TRUNK_STATE;
+    UserState:USER_STATE;
+    iUserSeqID:Integer;
+    DtmfCount:Integer;
+    DtmfBuf:Array[0..31] of char;
+    CallerCode:Array[0..19] of char;
+    CalleeCode:Array[0..19] of char;
+end;
+Type
+    PCM_STRUCT=record
+    deviceID:DeviceID_t;
+    iSeqID:Integer;
+    bOpenFlag:Bytebool;
+    u8E1Type:Byte;
+    s32AlarmVal:Integer;
+end;
+Type
+    VOICE_STATE=(VOC_WAITOPEN,VOC_FREE,VOC_USED,VOC_WAIT_REMOVE);
+Type
+    VOICE_STRUCT=record
+    deviceID:DeviceID_t;
+    iSeqID:Integer;
+    UsedDevID:DeviceID_t;
+    State:VOICE_STATE;
+end;
+Type
+  REMOVE_STATE=(DSP_REMOVE_STATE_NONE,DSP_REMOVE_STATE_START,DSP_REMOVE_STATE_READY);
+Type
+  TYPE_XMS_DSP_DEVICE_RES_DEMO=record
+  lFlag:Integer;
+  deviceID:DeviceID_t;
+  iSeqID:Integer;
+  bOpenFlag:Bytebool;
+  bErrFlag:Bytebool;
+  RemoveState:REMOVE_STATE;
+  lVocNum:Integer;
+  lVocOpened:Integer;
+  lVocFreeNum:Integer;
+  pVoice:^VOICE_STRUCT;
+  lPcmNum:Integer;
+  lPcmOpened:Integer;
+  pPcm:^PCM_STRUCT;
+  lTrunkNum:Integer;
+  lTrunkOpened:Integer;
+  pTrunk:^TRUNK_STRUCT;
+end;
+
+Type
+  TYPE_CHANNEL_MAP_TABLE=record
+  m_s8ModuleID:Byte;
+  m_s16ChannelID:Smallint;
+end;
+
+Type
+  Acs_Evt_t=record
+  m_s32AcsHandle:Integer;
+  m_DeviceID:DeviceID_t;
+  m_s32EvtSize:Integer;
+  m_s32EventType:Integer;
+  m_u32EsrParam:Integer;
+end;
+
+Type
+  Acs_Dev_List_Head_t=record
+  m_s32DeviceMain:Integer;
+  m_s32ModuleID:Integer;
+  m_s32DeviceNum:Integer;
+end;
+
+Type
+  Acs_UniFailure_Data=record
+  m_s32AcsEvtState:Integer;
+  m_s32AcsEvtErrCode:Integer;
+end;
+
+Type XMS_EVT_TYPE=
+(
+XMS_EVT_OPEN_STREAM                     = ((1 SHL 16)+ 01),
+	XMS_EVT_QUERY_DEVICE                    = ((1 SHL 16)+ 02),
+	XMS_EVT_QUERY_DEVICE_END                = ((1 SHL 16)+ 03),
+	XMS_EVT_OPEN_DEVICE                     = ((1 SHL 16)+ 04),
+	XMS_EVT_CLOSE_DEVICE                    = ((1 SHL 16)+ 05),
+	XMS_EVT_RESET_DEVICE                    = ((1 SHL 16)+ 06),
+	XMS_EVT_DEVICESTATE                     = ((1 SHL 16)+ 07),
+	XMS_EVT_SETDEV_GROUP                    = ((1 SHL 16)+ 08),
+	XMS_EVT_SETPARAM                        = ((1 SHL 16)+ 09),
+	XMS_EVT_GETPARAM                        = ((1 SHL 16)+ 10),
+	XMS_EVT_QUERY_ONE_DSP_START             = ((1 SHL 16)+ 11),
+	XMS_EVT_QUERY_ONE_DSP_END               = ((1 SHL 16)+ 12),
+	XMS_EVT_QUERY_REMOVE_ONE_DSP_START      = ((1 SHL 16)+ 13),
+	XMS_EVT_QUERY_REMOVE_ONE_DSP_END        = ((1 SHL 16)+ 14),
+	XMS_EVT_OPEN_STREAM_EXT                 = ((1 SHL 16)+ 15),
+	XMS_EVT_LICENSE_QUERY                   = ((1 SHL 16)+ 16),
+	XMS_EVT_CLOSE_STREAM_EXT                = ((1 SHL 16)+ 17),
+	XMS_EVT_MASTER_STATE                    = ((1 SHL 16)+ 19),
+	XMS_EVT_SLAVE_WORK_STATE			    = ((1 SHL 16)+ 20),
+    XMS_EVT_E1STATE                         = ((1 SHL 16)+ 32),
+    XMS_EVT_CTBUS_CLK_REF_SRC_STATE         = ((1 SHL 16)+ 48),
+	XMS_EVT_USER_DEF                        = ((1 SHL 16)+ 224),
+	XMS_EVT_BAKSYS_STOP                     = ((1 SHL 16)+ 240),
+	XMS_EVT_ACS_TIMER                       = ((1 SHL 16)+ 255),
+			
+	XMS_EVT_CALLOUT							= ((2 SHL 16)+ 01),
+	XMS_EVT_CALLIN							= ((2 SHL 16)+ 02),
+	XMS_EVT_ALERTCALL		                = ((2 SHL 16)+ 03),
+	XMS_EVT_ANSWERCALL		                = ((2 SHL 16)+ 04),
+	XMS_EVT_LINKDEVICE				        = ((2 SHL 16)+ 05),
+	XMS_EVT_UNLINKDEVICE					= ((2 SHL 16)+ 06),
+	XMS_EVT_CLEARCALL						= ((2 SHL 16)+ 07),
+	XMS_EVT_ANALOG_INTERFACE                = ((2 SHL 16)+ 08),
+	XMS_EVT_CAS_MFC_START					= ((2 SHL 16)+ 09),
+	XMS_EVT_CAS_MFC_END						= ((2 SHL 16)+ 10),
+	XMS_EVT_SENDSIGMSG						= ((2 SHL 16)+ 11),
+	XMS_EVT_SIGMON       					= ((2 SHL 16)+ 12),
+	XMS_EVT_3G324M       					= ((2 SHL 16)+ 13),
+	XMS_EVT_CTX_REG                         = ((2 SHL 16)+ 14),
+	XMS_EVT_CTX_LINK                        = ((2 SHL 16)+ 15),
+	XMS_EVT_CTX_APPDATA                     = ((2 SHL 16)+ 16),
+	XMS_EVT_DRS_CALL_NUMS                   = ((2 SHL 16)+ 17),
+	
+	
+	XMS_EVT_SS7RawFrame						= ((2 SHL 16)+ 32),
+	XMS_EVT_SS7SendRawFrame					= ((2 SHL 16)+ 33),
+
+	XMS_EVT_JOINTOCONF					    = ((3 SHL 16)+ 01),
+	XMS_EVT_LEAVEFROMCONF					= ((3 SHL 16)+ 02),
+	XMS_EVT_CLEARCONF					    = ((3 SHL 16)+ 03),
+		
+	XMS_EVT_SET_PAYLOAD				        = ((4 SHL 16)+ 01),
+	XMS_EVT_SET_RTPADDR				        = ((4 SHL 16)+ 02),
+	XMS_EVT_SET_RTCPADDR				    = ((4 SHL 16)+ 03),
+	XMS_EVT_SET_RTPCODEC				    = ((4 SHL 16)+ 04),
+	XMS_EVT_SET_MEDIAINFO				    = ((4 SHL 16)+ 05),
+	XMS_EVT_REFER_RESULT				    = ((4 SHL 16)+ 06),
+	XMS_EVT_REGIST				    	    = ((4 SHL 16)+ 07),
+	XMS_EVT_REGIST_RESP				        = ((4 SHL 16)+ 08),
+
+	XMS_EVT_PLAY			                = ((5 SHL 16)+ 01),
+	XMS_EVT_INITINDEX				        = ((5 SHL 16)+ 02),
+	XMS_EVT_BUILDINDEX						= ((5 SHL 16)+ 03),
+	XMS_EVT_CONTROLPLAY				        = ((5 SHL 16)+ 04),
+	XMS_EVT_RECORD							= ((5 SHL 16)+ 05),
+	XMS_EVT_CONTROLRECORD				    = ((5 SHL 16)+ 06),
+	XMS_EVT_RECORDCSP   				    = ((5 SHL 16)+ 07),
+	XMS_EVT_CONTROLRECORDCSP    		    = ((5 SHL 16)+ 08),
+    XMS_EVT_3GPP_PLAY			            = ((5 SHL 16)+ 09),
+	XMS_EVT_3GPP_CONTROLPLAY		        = ((5 SHL 16)+ 10),
+	XMS_EVT_3GPP_RECORD	    				= ((5 SHL 16)+ 11),
+	XMS_EVT_3GPP_CONTROLRECORD    		    = ((5 SHL 16)+ 12),
+	XMS_EVT_PLAYCSPREQ 				        = ((5 SHL 16)+ 13),
+	XMS_EVT_3GPP_INIT_INDEX                 = ((5 SHL 16)+ 14),
+	XMS_EVT_3GPP_BUILD_INDEX                = ((5 SHL 16)+ 15),
+
+	XMS_EVT_3GVCONF_JOIN				= ((5 SHL 16)+ 16),
+	XMS_EVT_3GVCONF_LEAVE				= ((5 SHL 16)+ 17),
+	XMS_EVT_3GVCONF_CLEAR				= ((5 SHL 16)+ 18),
+	XMS_EVT_3GVCONF_GETLAYOUT			= ((5 SHL 16)+ 19),
+	XMS_EVT_3GVCONF_SETLAYOUT			= ((5 SHL 16)+ 20),
+	XMS_EVT_3GVCONF_GETVISIBLELIST			= ((5 SHL 16)+ 21),
+	XMS_EVT_3GVCONF_SETVISIBLELIST			= ((5 SHL 16)+ 22),
+	XMS_EVT_3GVCONF_STOP				= ((5 SHL 16)+ 23),
+	XMS_EVT_SENDFAX			                = ((6 SHL 16)+ 01),
+	XMS_EVT_RECVFAX					        = ((6 SHL 16)+ 02),
+			
+	XMS_EVT_SENDIODATA						= ((7 SHL 16)+ 01),
+	XMS_EVT_RECVIODATA						= ((7 SHL 16)+ 02),
+		
+	XMS_EVT_MODMONITOR				        = ((8 SHL 16)+ 01),
+	XMS_EVT_DEV_TIMER						= ((8 SHL 16)+ 02),
+	XMS_EVT_MODRELATE				        = ((8 SHL 16)+ 03),
+	XMS_EVT_VOIPMON  				        = ((8 SHL 16)+ 04),
+	
+	XMS_EVT_UNIFAILURE						= ((9 SHL 16)+ 01)
+);
+
+Type XMS_DEVMAIN_TYPE=
+(
+  XMS_DEVMAIN_CONFIG               = 01,
+	XMS_DEVMAIN_VOICE                = 02,
+	XMS_DEVMAIN_FAX                  = 03,
+	XMS_DEVMAIN_DIGITAL_PORT         = 04,
+	XMS_DEVMAIN_INTERFACE_CH         = 05,
+	XMS_DEVMAIN_DSS1_LINK            = 06,
+	XMS_DEVMAIN_SS7_LINK             = 07,
+	XMS_DEVMAIN_BOARD                = 08,
+	XMS_DEVMAIN_CTBUS_TS             = 09,
+	XMS_DEVMAIN_RTP                  = 10,
+	XMS_DEVMAIN_MEDIAEX              = 11,
+	XMS_DEVMAIN_CONFERENCE           = 12,
+	XMS_DEVMAIN_VIDEO                = 13,
+	XMS_DEVMAIN_CTX                  = 16,
+	XMS_DEVMAIN_RTPX                 = 17,
+	XMS_DEVMAIN_VOIP                 = 18,
+	XMS_DEVMAIN_VIDEOCONF            = 31
+);
+
+Type XMS_INTERFACE_DEVSUB_TYPE=
+(
+	XMS_DEVSUB_BASE                       =  0,  
+	XMS_DEVSUB_ANALOG_TRUNK               =  01,
+	XMS_DEVSUB_ANALOG_USER                =  02,
+	XMS_DEVSUB_ANALOG_HIZ                 =  03, 
+	XMS_DEVSUB_ANALOG_EMPTY               =  04, 
+	XMS_DEVSUB_E1_PCM                     =  05, 
+	XMS_DEVSUB_E1_CAS                     =  06, 
+	XMS_DEVSUB_E1_DSS1                    =  07, 
+	XMS_DEVSUB_E1_SS7_TUP                 =  08, 
+	XMS_DEVSUB_E1_SS7_ISUP                =  09,
+	XMS_DEVSUB_ANALOG_VOC2W			      =  10, 
+    XMS_DEVSUB_ANALOG_VOC4W			      =  11, 
+    XMS_DEVSUB_ANALOG_EM			      =  12, 
+    XMS_DEVSUB_ANALOG_MAG			      =  13, 
+    XMS_DEVSUB_E1_DCH				      =  14, 
+    XMS_DEVSUB_E1_BCH				      =  15,
+    XMS_DEVSUB_UNUSABLE				      =  16,
+	XMS_DEVSUB_HIZ_CAS				      =  17, 
+	XMS_DEVSUB_HIZ_PRI				      =  18, 
+	XMS_DEVSUB_HIZ_SS7					  =  19, 
+	XMS_DEVSUB_HIZ_PRI_LINK			      =  20, 
+	XMS_DEVSUB_HIZ_SS7_64K_LINK  		  =  21, 
+	XMS_DEVSUB_HIZ_SS7_2M_LINK    		  =  22, 
+	XMS_DEVSUB_SS7_LINK		              =  23, 
+	XMS_DEVSUB_LINESIDE		              =  24, 
+	XMS_DEVSUB_ANALOG_REC	              =  25, 
+	XMS_DEVSUB_HIZ_HDLC_N64K_LINK         =  26, 
+	XMS_DEVSUB_SS7_2M_LINK                =  27, 
+	XMS_DEVSUB_HIZ_HDLC                   =  28, 
+	XMS_DEVSUB_DIGITAL_REC	              =  32
+);
+
+Type ERROR_CODE=(
+ACSERR_LOADLIBERR              =01,
+ACSERR_BADPARAMETER            =02,
+ACSERR_NOSERVER                =03,
+ACSERR_MAXCONN_EXCEED          =04,
+ACSERR_BADHDL                  =05,
+ACSERR_FAILSEND                =06,
+ACSERR_LINKBROKEN              =07,
+ACSERR_NOMESSAGE               =08,
+ACSERR_GETRESFAIL              =09,
+ACSERR_NOSUPPORTCMD            =10,
+ACSERR_DEVICEERR               =11,
+ACSERR_CTX_REGOVERRUN     		=12,
+ACSERR_CTX_REG_NAMEEXIS        =13,
+ACSERR_CTX_UNREG_NOREG		    =14,
+ACSERR_CTX_TRAN_NODEST		    =15,
+ACSERR_CTX_TRAN_NOSRC		    =16,
+ACSERR_CTX_LINK_FAIL           =17,
+ACSERR_CTX_APPDATA_NODEST      =18,
+ACSERR_CTX_APPDATA_NOSRC       =19,
+ACSERR_NOTMASTER               =20,
+ACSERR_PUTTEXTINPIC_PARAMERROR =20,
+ACSERR_PUTTEXTINPIC_OPENPICFAIL =21,
+ACSERR_PUTTEXTINPIC_SAVEPICFAIL =22
+);
+
+Type DEVICE_CALL_STATE=
+(
+DEVICE_COMMON_STATE_START   = 0,
+DCS_FREE                    = 1, // 空闲状态(TUP,ISUP,PRI,VOIP,ANA_TRK,ANA_USR)
+DCS_LOCAL_BLOCK             = 2, // 本地阻塞(TUP,ISUP)
+DCS_REMOTE_BLOCK            = 3, // 远端阻塞(TUP,ISUP)
+DCS_BLOCK                   = 4, // 本地和远端阻塞(ISUP)
+DCS_UNAVAILABLE             = 5, // 不可用(TUP,ISUP,PRI)
+
+DCS_CALLOUT                 = 6, // 开始呼出(TUP,ISUP,PRI,VOIP,ANA_TRK)
+DCS_CALLIN                  = 7, // 呼叫进入(TUP,ISUP,PRI,VOIP,ANA_TRK)
+DCS_ALERTING                = 8, // 地址收齐对用户振铃等(TUP,ISUP)
+
+DCS_CONNECT                 = 9, // 连通(不分主被叫方式)(TUP,ISUP,PRI,VOIP,ANA_TRK,ANA_USR)
+
+DCS_DISCONNECT              = 10, // 收到拆线(TUP,ISUP,PRI,VOIP,ANA_TRK,ANA_USR)
+DCS_WAIT_FREE               = 11  // 对拆线的响应(TUP,ISUP,PRI,VOIP)
+);
+
+
+Type XMS_E1_TYPE=
+  (
+	XMS_E1_TYPE_Analog30	         = 1,
+	XMS_E1_TYPE_PCM31		         = 2,
+	XMS_E1_TYPE_PCM30		         = 3,
+	XMS_E1_TYPE_CAS			         = 4,
+	XMS_E1_TYPE_PRI			         = 5,
+	XMS_E1_TYPE_SS7_TUP_0_Link	     = 6,
+	XMS_E1_TYPE_SS7_TUP_1_Link	     = 7,
+	XMS_E1_TYPE_SS7_TUP_2_Link	     = 8,
+	XMS_T1_TYPE_D4	                 = 9,
+	XMS_T1_TYPE_ESF		             = 10,
+	XMS_J1_TYPE_D4		             = 11,
+	XMS_J1_TYPE_ESF		             = 12,
+	XMS_SLC_TYPE_96    	             = 13,
+	XMS_E1_TYPE_SS7_ISUP_0_Link	     = 14,
+	XMS_E1_TYPE_SS7_ISUP_1_Link	     = 15,
+	XMS_E1_TYPESS7_ISUP_2_Link	     = 16,
+	XMS_E1_TYPE_6D25B		     = 17,
+	XMS_E1_TYPE_1D30B                    = 18,
+	XMS_E1_TYPE_11D20B                   = 19,
+	XMS_E1_TYPE_HIZ_CAS                  = 20,
+	XMS_E1_TYPE_HIZ_PRI                  = 21,
+	XMS_E1_TYPE_HIZ_SS7                  = 22,
+	XMS_E1_TYPE_HIZ_64K_SS7   	         = 23,
+	XMS_E1_TYPE_HIZ_2M_SS7               = 24,
+	XMS_E1_TYPE_LINESIDE                 = 25,
+	XMS_E1_TYPE_HIZ_N64K_HDLC            = 26,
+	XMS_E1_TYPE_2M_SS7									 = 27
+);
+
+Type
+CmdParamData_GtdFreq_t=record
+m_u16Freq_Index:Word;
+m_u16Freq_Coef: Word;
+end;
+
+Type
+CmdParamData_GtdProtoType_t=record
+m_u16GtdID:Word;
+m_u16Freq_Mask:Word;
+m_u16Amp_Threshold:Word;
+m_u16Envelope_Mode:Word;
+m_u16Repeat_Count:Word;
+m_u16Min_On_Time1:Word;
+m_u16Max_On_Time1:Word;
+m_u16Min_Off_Time1:Word;
+m_u16Max_Off_Time1:Word;
+m_u16Min_On_Time2:Word;
+m_u16Max_On_Time2:Word;
+m_u16Min_Off_Time2:Word;
+m_u16Max_Off_Time2:Word;
+end;
+
+Type
+TYPE_ANALOG_GTD_PARAM=record
+m_u16Freq0:                       Word;
+m_u16Freq1:                       Word;
+m_u16DialTone_FreqIndexMask:      Word;
+m_u16DialTone_On_Time:            Word;
+m_u16RingBackTone_FreqIndexMask:  Word;
+m_u16RingBackTone_On_Time:        Word;
+m_u16RingBackTone_Off_Time:       Word;
+m_u16RingBackTone_TimeDeviation:  Word;
+
+m_u16BusyTone0_FreqIndexMask:     Word;
+m_u16BusyTone0_On_Time:           Word;
+m_u16BusyTone0_Off_Time:          Word;
+m_u16BusyTone0_TimeDeviation:     Word;
+
+m_u16BusyTone1_FreqIndexMask:     Word;
+m_u16BusyTone1_On_Time:           Word;
+m_u16BusyTone1_Off_Time:          Word;
+m_u16BusyTone1_TimeDeviation:     Word;
+
+m_u16BusyTone2_FreqIndexMask:     Word;
+m_u16BusyTone2_On_Time:           Word;
+m_u16BusyTone2_Off_Time:          Word;
+m_u16BusyTone2_TimeDeviation:     Word;
+
+m_u16NoDialToneAfterOffHook:      Word;
+m_u16Ringback_NoAnswerTime:       Word;
+m_u16SendFSKCallerIDTime:         Word;
+end;
+
+Type XMS_BOARD_PARAM_TYPE=
+(
+  BOARD_PARAM_GETBOARDINFO          = 0,
+	BOARD_PARAM_SETFSK                = 1,
+	BOARD_PARAM_SETFLASH              = 2,
+	BOARD_PARAM_SETGTDFREQ            = 3,
+	BOARD_PARAM_SETGTDTONE            = 4,
+	BOARD_PARAM_SETTRUNKFLASH         = 5,
+	BOARD_PARAM_SETGTGFREQ            = 6, //GTG Freq
+	BOARD_PARAM_SETGTGTONE            = 7, //GTG Tone
+	BOARD_PARAM_SETVSD                = 8, //VSD
+	BOARD_PARAM_SET_ACTIVE_MEM_VAD    = 9, //ACTIVE MEM VAD
+  BOARD_PARAM_SETCTCLK              = 10,
+  BOARD_PARAM_SET_MIN_VAD           = 11, //ACTIVE MEM VAD
+	BOARD_PARAM_SET_COMMON_CFG        = 12, //COMMON CFG
+	BOARD_PARAM_SET_RST_MASTER        = 13 //
+  );
+
+Type XMS_MEDIA_IO_TYPE=
+(
+	XMS_IO_TYPE_DTMF                = 1,
+	XMS_IO_TYPE_MR2F                = 2,
+	XMS_IO_TYPE_MR2B                = 3,
+	XMS_IO_TYPE_GTG                 = 4,
+	XMS_IO_TYPE_GTD                 = 4,
+	XMS_IO_TYPE_FSK                 = 5,
+	XMS_IO_TYPE_DPD                 = 6,
+	XMS_IO_TYPE_PVD                 = 7,
+	XMS_IO_TYPE_MSK                 = 8,
+	XMS_IO_TYPE_VSD                 = 9,
+	XMS_IO_TYPE_MSKREND             = 10,
+	XMS_IO_TYPE_DRS                 = 11
+);
+
+Type XMS_CAS_PARAM_TYPE=
+(
+	  CAS_PARAM_UNIPARAM = 0,
+    CAS_PARAM_MFCTYPE  = 1,
+    CAS_PARAM_CALLTYPE      = 2,    //0 all (default)  1 逐位拨号 CmdParamData_CAS->m_u8CallType;
+    CAS_PARAM_APPENDCALLEE  = 3    //CmdParamData_CAS->m_u8AppendCallee 一次一位
+);
+
+Type XMS_VOC_PARAM_TYPE=
+(
+	  VOC_PARAM_UNIPARAM = 0,
+    VOC_PARAM_BREAKEN_CALL  = 1,
+    VOC_PARAM_3GFAXTONE      = 2
+);
+
+Type
+  Acs_CallControl_Data=record
+  m_s32AcsEvtState:Integer;
+  m_s32AcsEvtErrCode:Integer;
+  m_s32CallClearCause:Integer;
+  m_u8CallingCategory:Byte;
+  m_u8CallingAddressIndicator:Byte;
+  m_u8CalledAddressIndicator:Byte;
+  m_s8Rfu1:ShortInt;
+  m_s8CallingNum:Array[0..31] of Shortint;
+  m_s8CalledNum:Array[0..31] of Shortint;
+  m_u8DRSCallDirectFlag:Byte;
+  m_s8Rfu2:Array[0..30] of Shortint;
+  m_PrivData:PrivateData_t;
+end;
+
+Type
+  Acs_GeneralProc_Data=record
+  m_s32AcsEvtState:Integer;
+  m_s32AcsEvtErrCode:Integer;
+  m_s32DeviceState:Integer;
+  m_s32Resrv:Integer;
+  m_PrivData:PrivateData_t;
+end;
+
+Type
+  Acs_IO_Data=record
+  m_s32AcsEvtState:integer;
+  m_s32AcsEvtErrCode:integer;
+  m_u16IoType:Word;
+  m_u16IoDataLen:Word;
+end;
+
+Type
+  VocInputControlParam_t=record
+  m_u8AgcEnable:Byte;
+  m_u8AgcMode:Byte;
+  m_u8EcEnable:Byte;
+  m_u8EcRefType:Byte;
+  m_u8VadEnable:Byte;
+  m_u8TadEnable:Byte;
+  m_u8NrEnable:Byte;
+  m_u8Reserved:Word;
+  m_u16FixGain:Byte;
+  m_u16EcRefCh:Word;
+  m_u32Reserved:Cardinal;
+end;
+
+
+
+Type
+  MixerControlParam_t=record
+  m_u8SRC1_Ctrl:Byte;
+  m_u8SRC2_Ctrl:Byte;
+  m_u16SRC_ChID1:Word;
+  m_u16SRC_ChID2:Word;
+  m_u8Video:Byte;
+  m_s8Rfu:Shortint;
+end;
+
+Type
+  VocOutputControlParam_t=record
+  m_u8AgcEnable:Byte;
+  m_u8AgcMode:Byte;
+  m_u8OutputType:Byte;
+  m_u8Reserved:Byte;
+  m_u16FixGain:Word;
+  m_s8Rfu:Array[0..1] of Shortint;
+  m_MixerControl:MixerControlParam_t;
+end;
+
+Type
+  VocGtdControlParam_t=record
+  m_u8ChannelEnable:Byte;
+  m_u8DTMFEnable:Byte;
+  m_u8MR2FEnable:Byte;
+  m_u8MR2BEnable:Byte;
+  m_u8GTDEnable:Byte;
+  m_u8FSKEnable:Byte;
+  m_u8EXTEnable:Byte;
+  m_u8Reserved:Byte;
+  m_u8GTDID:Array[0..7] of char;
+end;
+
+Type
+  CmdParamData_Voice_t=record
+  m_u8InputCtrlValid:Byte;
+  m_u8PlayGainMode:Byte;
+  m_u16PlayFixGain:Word;
+  m_VocInputControl: VocInputControlParam_t;
+  m_u8OutputCtrlValid:Byte;
+  m_s8Rfu2:Array[0..2] of char;
+  m_VocOutputControl: VocOutputControlParam_t;
+  m_u8GtdCtrlValid:Byte;
+  m_s8Rfu3:Array[0..2] of char;
+  m_VocGtdControl:VocGtdControlParam_t;
+end;
+
+Type
+  Tglobal=record
+  cfg_IniName:array [0..255] of char;
+  cfg_CallingNum:Array[0..31] of char;
+  cfg_SimCalledNum:Array[0..31] of char;
+  cfg_IniShortName:string;
+  cfg_ServerID:ServerID_t;
+  cfg_iCalledLen:integer;
+  cfg_iPartWork:integer;
+  cfg_iPartWorkModuleID:integer;
+  cfg_iCallOutRule:integer;
+  cfg_s32DebugOn:integer;
+  g_acsHandle:LongWord;
+  g_u8UnitID:Byte;
+  cfg_iVoiceRule:Integer;
+  AllDeviceRes:Array[0..255] of TYPE_XMS_DSP_DEVICE_RES_DEMO;
+  g_iTotalModule:Integer;
+  MapTable_Module:Array[0..255] of Shortint;
+  g_iTotalPcm:Integer;
+  g_iTotalPcmOpened:Integer;
+  MapTable_Pcm:Array[0..63] of TYPE_CHANNEL_MAP_TABLE;
+  g_iTotalTrunk:Integer;
+  g_iTotalTrunkOpened:Integer;
+  MapTable_Trunk:Array[0..2047] of TYPE_CHANNEL_MAP_TABLE;
+  g_iTotalUser:Integer;
+  g_iTotalUserOpened:Integer;
+  MapTable_User:Array[0..2047] of TYPE_CHANNEL_MAP_TABLE;
+  g_iTotalVoice:Integer;
+  g_iTotalVoiceOpened:Integer;
+  g_iTotalVoiceFree:Integer;
+  MapTable_Voice:Array[0..2047] of TYPE_CHANNEL_MAP_TABLE;
+  g_Param_Analog:TYPE_ANALOG_GTD_PARAM;
+  g_Param_CAS:CmdParamData_CAS_t;
+  CAS_Cfg_IniName:string;
+  Analog_Cfg_IniName:string;
+  cfg_iDispChnl:integer;
+end;
+
+implementation
+end.
+
+
+
+

@@ -1,0 +1,13 @@
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.csproj.ResolveComReference.cache
+D:\PROGRAM\DJKeygoe\Demo\Demo\bin\Release\Demo.exe
+D:\PROGRAM\DJKeygoe\Demo\Demo\bin\Release\Demo.pdb
+D:\PROGRAM\DJKeygoe\Demo\Demo\bin\Release\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\Demo\Demo\bin\Release\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\ResolveAssemblyReference.cache
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.DemoForm.resources
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.Properties.Resources.resources
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.csproj.GenerateResource.Cache
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.exe
+D:\PROGRAM\DJKeygoe\Demo\Demo\obj\Release\Demo.pdb

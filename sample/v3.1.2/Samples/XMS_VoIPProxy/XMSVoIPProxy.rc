@@ -1,0 +1,245 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\XMSVoIPProxy.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\XMSVoIPProxy.ico"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_XMSVOIPPROXY_DIALOG DIALOGEX 0, 0, 506, 463
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DonJin Keygoe VoIP Proxy"
+FONT 8, "Tahoma"
+BEGIN
+    GROUPBOX        "XMS Server",IDC_STATIC,7,7,491,48
+    LTEXT           "Address",IDC_STATIC,19,22,27,8
+    EDITTEXT        IDC_EDIT_SERVER_IP,51,20,72,12,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,124,21,8,8
+    EDITTEXT        IDC_EDIT_SERVER_PORT,132,20,25,12,ES_AUTOHSCROLL
+    LTEXT           "Username",IDC_STATIC,172,22,33,8
+    EDITTEXT        IDC_EDIT_USERNAME,210,20,41,12,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,264,22,32,8
+    EDITTEXT        IDC_EDIT_PASSWORD,300,20,41,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "DSP ID",IDC_STATIC,22,39,23,8
+    EDITTEXT        IDC_EDIT_DSPID,50,37,16,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Init XMS System",IDC_BUTTON_INIT,413,18,73,17
+    GROUPBOX        "Registration Slot",IDC_STATIC,7,59,269,272
+    CONTROL         "List1",IDC_LIST_REG,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,11,68,260,260
+    GROUPBOX        "IP Device",IDC_STATIC,285,59,214,272,WS_GROUP
+    CONTROL         "List1",IDC_LIST_IP,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,289,68,205,260
+    LTEXT           "Proxy Mode",IDC_STATIC,6,450,48,8
+    CONTROL         "Interactive",IDC_CHECK_INTERACTIVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,63,450,65,10
+    PUSHBUTTON      "Cancel",IDCANCEL,449,449,50,14
+    GROUPBOX        "Registration Slot",IDC_STATIC,7,333,492,56
+    CONTROL         "List1",IDC_LIST_ROUTE,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,190,341,305,44
+    EDITTEXT        IDC_EDIT_ROUTE_IP,51,344,72,12,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,124,345,8,8
+    EDITTEXT        IDC_EDIT_ROUTE_PORT,132,344,25,12,ES_AUTOHSCROLL
+    LTEXT           "Username",IDC_STATIC,11,361,33,8
+    EDITTEXT        IDC_EDIT_ROUTE_USERNAME,51,359,41,12,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,106,361,32,8
+    EDITTEXT        IDC_EDIT_ROUTE_PASSWORD,141,359,41,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",ID_ADD,105,372,37,14
+    PUSHBUTTON      "Delete",ID_DELETE,145,372,37,14
+    EDITTEXT        IDC_EDIT_ROUTE_CALLEE_HEAD,51,372,41,12,ES_AUTOHSCROLL
+    LTEXT           "Address",IDC_STATIC,71,39,27,8
+    EDITTEXT        IDC_EDIT_DSP_IP,103,37,72,12,ES_AUTOHSCROLL
+    CONTROL         "DSP behind NAT",IDC_CHECK_DSP_NAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,179,39,77,10
+    CONTROL         "Auto Manage RTP",IDC_CHECK_AUTO_RTP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,263,39,82,10
+    CONTROL         "Use Dsp RTP",IDC_CHECK_USE_DSP_RTP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,350,39,65,10
+    PUSHBUTTON      "Register",IDC_BUTTON2,196,402,46,14
+    PUSHBUTTON      "Add ",IDC_BUTTON3,443,398,37,13
+    PUSHBUTTON      "unRegister",IDC_BUTTON4,196,426,46,14
+    PUSHBUTTON      "Delete",IDC_BUTTON5,443,415,37,13
+    PUSHBUTTON      "Query",IDC_BUTTON6,443,432,37,12
+    GROUPBOX        "Register Information",IDC_STATIC,6,391,247,57
+    LTEXT           "Address",IDC_STATIC,17,346,27,8
+    LTEXT           "Username",IDC_STATIC,12,361,33,8
+    LTEXT           "Callee",IDC_STATIC,23,374,20,8
+    EDITTEXT        IDC_EDIT_ROUTE_IP2,53,402,72,12,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,126,404,8,8
+    EDITTEXT        IDC_EDIT_ROUTE_PORT2,134,402,25,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ROUTE_USERNAME2,53,418,41,12,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,108,420,32,8
+    EDITTEXT        IDC_EDIT_ROUTE_PASSWORD2,143,418,41,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "TelNO",IDC_STATIC,21,433,24,8
+    EDITTEXT        IDC_EDIT_ROUTE_CALLEE_HEAD2,53,431,41,12,ES_AUTOHSCROLL
+    LTEXT           "Address",IDC_STATIC,19,405,27,8
+    LTEXT           "Username",IDC_STATIC,14,420,33,8
+    LTEXT           "UserID",IDC_STATIC,107,434,23,8
+    EDITTEXT        IDC_EDIT_ROUTE_PASSWORD3,143,432,41,12,ES_AUTOHSCROLL
+    GROUPBOX        "Options Information",IDC_STATIC,253,391,247,57
+    EDITTEXT        IDC_EDIT_ROUTE_IP3,301,402,72,12,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,373,404,8,8
+    EDITTEXT        IDC_EDIT_ROUTE_PORT3,381,402,25,12,ES_AUTOHSCROLL
+    LTEXT           "TelNO",IDC_STATIC,269,433,24,8
+    EDITTEXT        IDC_EDIT_ROUTE_CALLEE_HEAD3,301,431,41,12,ES_AUTOHSCROLL
+    LTEXT           "Address",IDC_STATIC,267,405,27,8
+    LTEXT           "UserID",IDC_STATIC,355,434,23,8
+    EDITTEXT        IDC_EDIT_ROUTE_PASSWORD5,391,432,41,12,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "XMSVoIPProxy MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "XMSVoIPProxy\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "XMSVoIPProxy.EXE\0"
+            VALUE "ProductName", "XMSVoIPProxy Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\XMSVoIPProxy.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,25 @@
+unit Dial;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TDialForm = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DialForm: TDialForm;
+
+implementation
+
+{$R *.dfm}
+
+end.
+ 

@@ -1,0 +1,73 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: XMS_Demo - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/XMS_Demo.res" /d "_DEBUG" "C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_Demo.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2908.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/XMS_Demo.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\Analog_Common_Code\Analog_Common_Code.cpp"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\CAS_Common_Code\CAS_Common_Cfg.CPP"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_Demo.cpp"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_Demo_Event.cpp"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_Demo_String.cpp"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_Demo_Sub.cpp"
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\XMS_DemoDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2908.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2909.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/XMS_Demo.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\桌面\K3.1例子程序修改\XMS_Demo\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2909.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP290A.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/XMS_Demo.pdb" /debug /machine:I386 /out:"Debug/XMS_Demo.exe" /pdbtype:sept 
+".\Debug\Analog_Common_Code.obj"
+".\Debug\CAS_Common_Cfg.obj"
+".\Debug\StdAfx.obj"
+".\Debug\XMS_Demo.obj"
+".\Debug\XMS_Demo_Event.obj"
+".\Debug\XMS_Demo_String.obj"
+".\Debug\XMS_Demo_Sub.obj"
+".\Debug\XMS_DemoDlg.obj"
+".\Debug\XMS_Demo.res"
+"..\..\..\..\..\DJKeygoe\Lib\DJAcsAPI.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP290A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Analog_Common_Code.cpp
+CAS_Common_Cfg.CPP
+XMS_Demo.cpp
+XMS_Demo_Event.cpp
+XMS_Demo_String.cpp
+XMS_Demo_Sub.cpp
+XMS_DemoDlg.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP290C.bat" with contents
+[
+@echo off
+copy .\debug\*.exe .
+]
+Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP290C.bat"
+
+.\debug\XMS_Demo.exe
+已复制         1 个文件。
+
+
+
+<h3>Results</h3>
+XMS_Demo.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

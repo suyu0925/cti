@@ -1,0 +1,2848 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\XMSApi_Test.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\XMSApi_Test.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About XMSApi_Test"
+FONT 9, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "XMSApi_Test Ver1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyrigh Donjin Co. (C) 2008",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_XMSAPI_TEST_DIALOG DIALOGEX 0, 0, 628, 429
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Donjin XMSApi_Test (Used by internel)"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,517,353,50,14
+    PUSHBUTTON      "CloseDevice",IDC_BUTTON_CloseDevice,158,35,59,10
+    PUSHBUTTON      "ResetDevice",IDC_BUTTON_ResetDevice,219,35,59,10
+    PUSHBUTTON      "GetDeviceList",IDC_BUTTON_GetDeviceList,280,35,59,11
+    PUSHBUTTON      "SetDeviceGroup",IDC_BUTTON_SetDeviceGroup,341,35,59,11,
+                    WS_DISABLED
+    PUSHBUTTON      "QueryLicense",IDC_BUTTON_QueryLicense,402,35,59,11,
+                    WS_DISABLED
+    PUSHBUTTON      "GetBoardInfo",IDC_BUTTON_GetBoardInfo,158,47,59,11
+    PUSHBUTTON      "LinkDevice",IDC_BUTTON_LinkDevice,219,47,59,11
+    PUSHBUTTON      "CTXLink",IDC_BUTTON_CTXLINK,280,47,59,11
+    PUSHBUTTON      "Timer",IDC_BUTTON_TIMER,341,47,59,11
+    PUSHBUTTON      "SendRawFrame",IDC_BUTTON_SendRawFrame,402,47,59,11,
+                    WS_DISABLED
+    PUSHBUTTON      "GetDeviceState",IDC_BUTTON_GetDeviceState,158,60,59,11
+    PUSHBUTTON      "UnlinkDevice",IDC_BUTTON_UnlinkDevice,219,60,59,11
+    PUSHBUTTON      "CTXUnLink",IDC_BUTTON_CTXUNLINK,280,60,59,11
+    PUSHBUTTON      "Register",IDC_BUTTON_Register,341,60,59,11
+    PUSHBUTTON      "MonitorFilter",IDC_BUTTON_ChangeMonitorFilter,402,60,59,
+                    11,WS_DISABLED
+    PUSHBUTTON      "MakeCallOut",IDC_BUTTON_MakeCallOut,158,73,59,10
+    EDITTEXT        IDC_EDIT_CALLINGNUM,257,75,82,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "AlertCall",IDC_BUTTON_AlertCall,158,85,59,11
+    EDITTEXT        IDC_EDIT_CALLEDNUM,257,90,82,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "AnswerCallIn",IDC_BUTTON_AnswerCallIn,158,97,59,11
+    PUSHBUTTON      "ClearCall",IDC_BUTTON_ClearCall,158,110,59,11
+    CONTROL         "H323",IDC_RADIO_H323,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,225,104,30,10
+    CONTROL         "SIP",IDC_RADIO_SIP,"Button",BS_AUTORADIOBUTTON,263,105,
+                    24,10
+    EDITTEXT        IDC_EDIT_CALLEE_ADDR,221,116,59,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CALLEE_PORT,301,115,37,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "SendIOData",IDC_BUTTON_SendIOData,341,131,59,11
+    PUSHBUTTON      "SendSigData",IDC_BUTTON_SendSignalData,341,143,59,11
+    PUSHBUTTON      "SendAppData",IDC_BUTTON_SendAppData,341,155,59,11
+    PUSHBUTTON      "SetParam..",IDC_BUTTON_SetParam,158,140,59,11
+    COMBOBOX        IDC_COMBO_ParamType,220,140,120,265,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "GetParam..",IDC_BUTTON_GetParam,158,154,59,11
+    COMBOBOX        IDC_COMBO_GetParamType,220,153,120,79,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "InitPlayIndex",IDC_BUTTON_InitPlayIndex,158,178,59,11
+    PUSHBUTTON      "BuildPlayIndex",IDC_BUTTON_BuildPlayIndex,158,191,59,11
+    COMBOBOX        IDC_COMBO_NowIndexList,220,190,105,120,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "IsExPath",IDC_CHECK_260_PATH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,220,206,48,9
+    COMBOBOX        IDC_COMBO_STOP_MEDIA_TYPE,270,204,55,53,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Play Detail",IDC_BUTTON_PlayDetail,158,211,59,11
+    PUSHBUTTON      "Play",IDC_BUTTON_Play,158,223,59,10
+    EDITTEXT        IDC_EDIT_PLAY,220,219,105,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_STOP_VMEDIA_TYPE,269,232,56,53,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Record",IDC_BUTTON_Record,158,236,59,10
+    PUSHBUTTON      "Record Detail",IDC_BUTTON_RecordDetail,158,247,59,11
+    EDITTEXT        IDC_EDIT1_RECORD,220,246,105,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "CtrlPlay",IDC_BUTTON_ControlPlay,341,213,60,10
+    PUSHBUTTON      "StopPlay",IDC_BUTTON_My_StopPlay,341,224,60,10
+    PUSHBUTTON      "StopRecord",IDC_BUTTON_My_StopRecord,341,249,60,10
+    PUSHBUTTON      "CtrlRecord",IDC_BUTTON_ControlRecord,341,238,60,10
+    PUSHBUTTON      "JoinToConf",IDC_BUTTON_JoinConf,341,176,60,11
+    PUSHBUTTON      "LeaveFromConf",IDC_BUTTON_LeaveFromConf,341,188,60,11
+    PUSHBUTTON      "ClearConf",IDC_BUTTON_ClearConf,341,200,60,11
+    PUSHBUTTON      "Connect",IDC_BUTTON_CONN,158,262,59,11
+    EDITTEXT        IDC_EDIT_DSPIP,254,261,71,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "DisConnect",IDC_BUTTON_DISCONN,158,276,59,11
+    EDITTEXT        IDC_EDIT_DSPPORT,269,276,56,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Record CSP",IDC_BUTTON_RECCSP,158,291,59,11
+    EDITTEXT        IDC_EDIT_RECCSP_FILE,220,291,105,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Play CSP",IDC_BUTTON_PLAYCSP,158,306,59,11
+    EDITTEXT        IDC_EDIT_PLAYCSP_FILE,220,305,105,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Stop Rec CSP",IDC_BUTTON_CTRLRECCSP,341,292,59,11
+    PUSHBUTTON      "Stop Play CSP",IDC_BUTTON_CTRLPLAYCSP,341,305,59,11
+    PUSHBUTTON      "SendFax",IDC_BUTTON_SendFax,158,326,59,11
+    EDITTEXT        IDC_EDIT_SENDFAX,220,326,105,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "StopSendFax",IDC_BUTTON_StopSendFax,341,327,59,11
+    PUSHBUTTON      "ReceiveFax",IDC_BUTTON_ReceiveFax,158,341,59,10
+    EDITTEXT        IDC_EDIT_RECEIVEFAX,220,340,105,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "StopRecFax",IDC_BUTTON_StopReceiveFax,341,342,59,10
+    PUSHBUTTON      "StartFaxT38",IDC_BUTTON_SendFaxT38,158,355,59,11
+    COMBOBOX        IDC_COMBO_FAXTYPE,219,354,106,47,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "SEND",IDC_RADIO_SEND,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,350,362,32,9
+    CONTROL         "RECV",IDC_RADIO_RECV,"Button",BS_AUTORADIOBUTTON,350,
+                    370,32,9
+    LTEXT           "   Port:",IDC_STATIC,508,318,38,8
+    LISTBOX         IDC_LIST_DEVICE_INFO,7,41,144,209,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Server IP Addr:",IDC_STATIC,480,302,62,8
+    GROUPBOX        "Valid Device Info In System",IDC_STATIC,7,7,146,381
+    PUSHBUTTON      "OpenDevice",IDC_BUTTON_OpenDevice,97,239,50,14,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_EDIT_NOW_OPEN_DEVICE,7,235,141,14,ES_AUTOHSCROLL | 
+                    NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "OpenDevice³É¹¦µÄDevice Info",IDC_STATIC,7,255,146,100
+    GROUPBOX        "API Test",IDC_STATIC,153,7,310,382
+    LISTBOX         IDC_LIST_MSG,472,31,149,254,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SERVER_IPADDR,547,300,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SERVER_IPPORT,547,316,60,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "<==>",IDC_BUTTON_Exchange,288,17,41,13
+    LTEXT           "Dev1:",IDC_STATIC,159,19,21,11
+    EDITTEXT        IDC_EDIT_DEVICE1,184,17,100,12,ES_AUTOHSCROLL
+    LTEXT           "Dev2:",IDC_STATIC,333,19,22,11
+    LTEXT           "Caller:",IDC_STATIC,224,78,29,8
+    LTEXT           "Callee:",IDC_STATIC,224,91,29,8
+    COMBOBOX        IDC_COMBO_DEVICE,60,25,86,140,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "DeviceType:",IDC_STATIC,15,25,41,8
+    LISTBOX         IDC_LIST_MSG_HIDDEN,477,35,135,14,LBS_NOINTEGRALHEIGHT | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Info Type:",IDC_STATIC,471,17,41,8
+    COMBOBOX        IDC_COMBO_MSG,523,15,86,62,CBS_DROPDOWN | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BUTTON_SelectSendFaxFile,325,328,14,9
+    PUSHBUTTON      "...",IDC_BUTTON_SelectReceiveFaxFile,326,342,14,9
+    PUSHBUTTON      "...",IDC_BUTTON_SelectPlayFile,326,221,13,9
+    PUSHBUTTON      "...",IDC_BUTTON_SelectRecordFile,326,248,13,9
+    LISTBOX         IDC_LIST_DEVICE_OPENED,8,253,143,133,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DEVICE2,359,17,100,12,ES_AUTOHSCROLL
+    CONTROL         "Auto Scroll",IDC_CHECK_AutoScroll,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,547,288,60,10
+    EDITTEXT        IDC_EDIT_MsgDetail,7,408,614,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "Debug Mode On",IDC_CHECK_DEBUG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,547,334,68,10
+    LTEXT           "DSP IP:",IDC_STATIC,223,263,28,10
+    LTEXT           "DSP Port:",IDC_STATIC,223,278,41,9
+    PUSHBUTTON      "...",IDC_BUTTON_SelectRecordFile2,326,293,13,9
+    EDITTEXT        IDC_EDIT_DEVICE3,136,389,21,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    LTEXT           "Dev3:",IDC_STATIC,112,391,22,11,NOT WS_VISIBLE
+    PUSHBUTTON      "StopSendFaxT38",IDC_BUTTON_StopSendFaxT38,170,390,27,14,
+                    NOT WS_VISIBLE
+    PUSHBUTTON      "ReceiveFaxT38",IDC_BUTTON_ReceiveFaxT38,280,391,37,14,
+                    NOT WS_VISIBLE
+    PUSHBUTTON      "StopReceiveFaxT38",IDC_BUTTON_StopReceiveFaxT38,226,390,
+                    21,14,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,220,68,181,62
+    CONTROL         "Other",IDC_RADIO_OTHER,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,36,392,36,10
+    CONTROL         "IP",IDC_RADIO_VOIP,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,72,391,22,10
+    GROUPBOX        "FaxSelect",IDC_STATIC,341,353,59,31
+    PUSHBUTTON      "...",IDC_BUTTON_SelectPlayFile2,326,306,13,9
+    LTEXT           ":",IDC_STATIC,290,117,8,8
+    GROUPBOX        "Media Control Interface",IDC_STATIC,153,167,310,222
+    CONTROL         "Caller DTMF",IDC_RADIO_CALLER_DTMF,"Button",
+                    BS_AUTORADIOBUTTON,341,77,56,10
+    CONTROL         "Caller FSK",IDC_RADIO_CALLER_FSK,"Button",
+                    BS_AUTORADIOBUTTON,341,92,56,10
+    PUSHBUTTON      "LedCtrl",IDC_BUTTON_LED,401,73,60,11
+    PUSHBUTTON      "SetMaster",IDC_BUTTON_Set_Master,401,85,60,10
+    PUSHBUTTON      "GetRelateMod",IDC_BUTTON_GET_RELATE_MOD,401,96,60,10
+    CONTROL         "Control RTP",IDC_AUTORTP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,343,105,60,10
+END
+
+IDD_DIALOG_PLAY DIALOG DISCARDABLE  0, 0, 449, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Play Parameter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_Play_DevcieID,78,17,117,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_Play_u32TaskID,77,53,86,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_Play_u32MaxSize,77,71,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_u32MaxTime,77,89,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_u8SrcMode:",IDC_STATIC,27,110,49,8
+    CONTROL         "SRC_8K",IDC_RADIO_SRC_8K,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,76,109,40,10
+    CONTROL         "SRC_6K",IDC_RADIO_SRC_6K,"Button",BS_AUTORADIOBUTTON,
+                    119,109,40,10
+    CONTROL         "SRC_GTG",IDC_RADIO_SRC_GTG,"Button",BS_AUTORADIOBUTTON,
+                    161,109,44,10
+    CONTROL         "SRC_FSK",IDC_RADIO_SRC_FSK,"Button",BS_AUTORADIOBUTTON,
+                    205,109,44,10
+    CONTROL         "SRC_FAX",IDC_RADIO_SRC_FAX,"Button",BS_AUTORADIOBUTTON,
+                    252,109,44,10
+    CONTROL         "SRC_11K",IDC_RADIO_SRC_11K,"Button",BS_AUTORADIOBUTTON,
+                    301,109,44,10
+    LTEXT           "m_u8DecodeType:",IDC_STATIC,15,127,61,8
+    CONTROL         "Alaw_type",IDC_RADIO_Alaw_type,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,76,127,52,10
+    CONTROL         "Ulaw_type",IDC_RADIO_Ulaw_type,"Button",
+                    BS_AUTORADIOBUTTON,130,127,52,10
+    CONTROL         "Vox_type",IDC_RADIO_Vox_type,"Button",
+                    BS_AUTORADIOBUTTON,184,127,48,10
+    CONTROL         "Linear_8bit",IDC_RADIO_Linear_8bit,"Button",
+                    BS_AUTORADIOBUTTON,233,127,60,10
+    CONTROL         "Linear_16bit",IDC_RADIO_Play_Linear_16bit,"Button",
+                    BS_AUTORADIOBUTTON,300,127,64,10
+    LTEXT           "m_u32StopMode:",IDC_STATIC,19,145,57,8
+    CONTROL         "Normal_Stop",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,76,146,60,10
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,139,146,60,10
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,201,146,48,10
+    EDITTEXT        IDC_EDIT_Play_u32StopCode,78,161,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_u16FileOffset,78,179,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_u16PlayType:",IDC_STATIC,19,199,57,8
+    CONTROL         "PLAY_TYPE_FILE",IDC_RADIO_PLAY_TYPE_FILE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,78,199,72,10
+    CONTROL         "PLAY_TYPE_INDEX",IDC_RADIO_PLAY_TYPE_INDEX,"Button",
+                    BS_AUTORADIOBUTTON,153,199,76,10
+    CONTROL         "PLAY_TYPE_FILE_QUEUE",IDC_RADIO_PLAY_TYPE_FILE_QUEUE,
+                    "Button",BS_AUTORADIOBUTTON,235,199,96,10
+    CONTROL         "PLAY_TYPE_INDEX_QUEUE",IDC_RADIO_PLAY_TYPE_INDEX_QUEUE,
+                    "Button",BS_AUTORADIOBUTTON,333,199,100,10
+    EDITTEXT        IDC_EDIT_Play_u16PlayIndex,79,213,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_s8PlayContent,79,231,304,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    DEFPUSHBUTTON   "Start Play",IDOK,128,258,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,263,258,50,14
+    LTEXT           "    m_u32TaskID:",IDC_STATIC,10,56,65,8
+    LTEXT           "m_u32MaxSize:",IDC_STATIC,22,74,53,8
+    LTEXT           "m_u32MaxTime:",IDC_STATIC,22,90,53,8
+    LTEXT           "m_u32StopCode:",IDC_STATIC,19,163,57,8
+    LTEXT           "m_u16FileOffset:",IDC_STATIC,11,180,65,8
+    LTEXT           "m_u16PlayIndex:",IDC_STATIC,16,216,61,8
+    LTEXT           "m_s8PlayContent:",IDC_STATIC,12,233,65,8
+    GROUPBOX        "PlayGtgProperty",IDC_STATIC,7,43,435,207
+    LTEXT           "Play DeviceID:",IDC_STATIC,15,19,57,8
+    LTEXT           "(10ms)",IDC_STATIC,163,92,25,8
+END
+
+IDD_DIALOG_CONTROLPLAY DIALOG DISCARDABLE  0, 0, 331, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Control Play"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Return",IDOK,140,134,50,14
+    LTEXT           "m_u16ControlType:",IDC_STATIC,23,42,69,8
+    LTEXT           "m_u16StepSize:",IDC_STATIC,35,71,57,8
+    LTEXT           "m_u16TuneType:",IDC_STATIC,35,90,57,8
+    LTEXT           "m_u16SpeedSize:",IDC_STATIC,31,109,61,8
+    EDITTEXT        IDC_EDIT_u16StepSize,98,69,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,98,88,86,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT3,97,108,86,14,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "Stop",IDC_BUTTON_Stop,97,30,50,14
+    PUSHBUTTON      "Pause",IDC_BUTTON_Pause,155,30,50,14
+    PUSHBUTTON      "Resume",IDC_BUTTON_Resume,213,30,50,14
+    PUSHBUTTON      "Step Back",IDC_BUTTON_StepBack,97,49,50,14
+    PUSHBUTTON      "Step Forward",IDC_BUTTON_Forward,155,49,60,14
+    LTEXT           "ControlPlay DeviceID:",IDC_STATIC,9,13,85,8
+    EDITTEXT        IDC_EDIT_ControlPlay_DeviceID,98,11,118,14,
+                    ES_AUTOHSCROLL | WS_DISABLED
+END
+
+IDD_DIALOG_RECORD DIALOG DISCARDABLE  0, 0, 416, 287
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Record Parameter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_Record_u32MaxSize,98,32,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Record_u32MaxTime,98,50,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_u8EncodeType:",IDC_STATIC,33,68,63,11
+    CONTROL         "Alaw_type",IDC_RADIO_Alaw_type,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,98,68,52,10
+    CONTROL         "Ulaw_type",IDC_RADIO_Ulaw_type,"Button",
+                    BS_AUTORADIOBUTTON,152,68,52,10
+    CONTROL         "Vox_type",IDC_RADIO_Vox_type,"Button",
+                    BS_AUTORADIOBUTTON,206,68,48,10
+    CONTROL         "Linear_8bit",IDC_RADIO_Linear_8bit,"Button",
+                    BS_AUTORADIOBUTTON,255,68,60,10
+    CONTROL         "Linear_16bit",IDC_RADIO_Linear_16bit,"Button",
+                    BS_AUTORADIOBUTTON,326,68,64,10
+    LTEXT           "m_u8SRCMode:",IDC_STATIC,45,85,49,8
+    CONTROL         "SRC_8K",IDC_RADIO_SRC_8K,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,98,85,40,10
+    CONTROL         "SRC_6K",IDC_RADIO_SRC_6K,"Button",BS_AUTORADIOBUTTON,
+                    142,85,40,10
+    CONTROL         "SRC_GTG",IDC_RADIO_SRC_GTG,"Button",BS_AUTORADIOBUTTON,
+                    184,85,44,10
+    CONTROL         "SRC_FSK",IDC_RADIO_SRC_FSK,"Button",BS_AUTORADIOBUTTON,
+                    227,85,44,10
+    CONTROL         "SRC_FAX",IDC_RADIO_SRC_FAX,"Button",BS_AUTORADIOBUTTON,
+                    274,85,44,10
+    CONTROL         "SRC_11K",IDC_RADIO_SRC_11K,"Button",BS_AUTORADIOBUTTON,
+                    319,85,44,10
+    LTEXT           "m_u8StopMode:",IDC_STATIC,40,101,53,8
+    CONTROL         "Normal_Stop",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,98,102,60,10
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,161,102,60,10
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,223,102,48,10
+    LTEXT           "m_u8StopCode:",IDC_STATIC,40,118,53,8
+    EDITTEXT        IDC_EDIT_Record_u8StopCode,99,117,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_s8IsMixEnable:",IDC_STATIC,29,135,65,8
+    CONTROL         "Mix Enable",IDC_CHECK_s8MixEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,99,136,56,10
+    GROUPBOX        "    m_MixerControl",IDC_STATIC,7,147,402,81
+    LTEXT           "m_u8SRC1_Ctrl:",IDC_STATIC,36,159,57,8
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,98,160,52,10
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,155,160,56,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,211,160,52,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,268,160,52,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP,"Button",
+                    BS_AUTORADIOBUTTON,324,160,48,10
+    LTEXT           "m_u16SRC_ChID1:",IDC_STATIC,31,177,61,8
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID1,99,175,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_u8SRC2_Ctrl:",IDC_STATIC,34,195,57,8
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,98,195,52,10
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT2,"Button",
+                    BS_AUTORADIOBUTTON,155,195,56,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY2,"Button",
+                    BS_AUTORADIOBUTTON,211,195,52,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF2,"Button",
+                    BS_AUTORADIOBUTTON,268,195,52,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP2,"Button",
+                    BS_AUTORADIOBUTTON,324,195,48,10
+    LTEXT           "m_u16SRC_ChID2:",IDC_STATIC,29,212,61,8
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID2,99,211,86,14,ES_AUTOHSCROLL
+    LTEXT           "m_s8IsAppend:",IDC_STATIC,36,232,53,8
+    CONTROL         "Append",IDC_CHECK_s8IsAppend,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,99,232,40,10
+    LTEXT           "m_s8FileName:",IDC_STATIC,35,247,53,8
+    EDITTEXT        IDC_EDIT_Record_s8FileName,99,247,304,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,133,266,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,249,266,50,14
+    LTEXT           "m_u8EncodeType:",IDC_STATIC,33,68,63,11
+    LTEXT           "m_u8StopCode:",IDC_STATIC,40,118,53,8
+    GROUPBOX        "    m_MixerControl",IDC_STATIC,7,147,402,81
+    LTEXT           "m_s8FileName:",IDC_STATIC,35,247,53,8
+    LTEXT           "m_u32MaxSize:",IDC_STATIC,41,34,53,8
+    LTEXT           "m_u32MaxTime:",IDC_STATIC,41,53,53,8
+    LTEXT           "Record DeviceID:",IDC_STATIC,29,16,65,8
+    EDITTEXT        IDC_EDIT_Record_DevcieID,98,13,117,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "TaskID:",IDC_STATIC,233,14,29,8
+    EDITTEXT        IDC_EDIT_RECORD_TASKID,272,12,40,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "(10ms)",IDC_STATIC,186,53,25,8
+END
+
+IDD_DIALOG_CONTROLRECORD DIALOG DISCARDABLE  0, 0, 283, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Return",IDOK,117,160,50,14
+    LTEXT           "ControlRecord DeviceID:",IDC_STATIC,7,26,93,8
+    EDITTEXT        IDC_EDIT_ControlRecord_DeviceID,105,23,118,14,
+                    ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "m_u32ControlType:",IDC_STATIC,28,66,69,8
+    LTEXT           "m_u32StepSize:",IDC_STATIC,39,95,57,8
+    LTEXT           "m_u32DelayStop:",IDC_STATIC,35,118,61,8
+    EDITTEXT        IDC_EDIT_u32StepSize,101,93,86,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_u32SpeedSize,190,93,86,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Stop",IDC_BUTTON_Stop,101,52,50,14
+    PUSHBUTTON      "Pause",IDC_BUTTON_Pause,160,52,50,14
+    PUSHBUTTON      "Resume",IDC_BUTTON_Resume,217,52,50,14
+    PUSHBUTTON      "Step Back",IDC_BUTTON_StepBack,101,73,50,14
+    CONTROL         "XMS_REC_DELAY_STOP_DISABLE",
+                    IDC_RADIO_XMS_REC_DELAY_STOP_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON,101,120,131,10
+    CONTROL         "XMS_REC_DELAY_STOP_ENABLE",
+                    IDC_RADIO_XMS_REC_DELAY_STOP_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,101,134,129,10
+END
+
+IDD_DIALOG_CONF DIALOG DISCARDABLE  0, 0, 265, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Join/Leave Conf"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,76,110,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,110,50,14
+    LTEXT           "m_u8InputOpt:",IDC_STATIC,13,65,53,8
+    LTEXT           "m_u8OutputOpt:",IDC_STATIC,9,89,57,8
+    CONTROL         "0-Silence",IDC_RADIO_InputOpt_0,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,71,65,52,10
+    CONTROL         "1-Voice Input",IDC_RADIO_InputOpt_1,"Button",
+                    BS_AUTORADIOBUTTON,124,65,68,10
+    CONTROL         "2-Voice Play",IDC_RADIO_InputOpt_2,"Button",
+                    BS_AUTORADIOBUTTON,193,65,64,10
+    CONTROL         "0-Silence",IDC_RADIO_OutputOpt_0,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,71,89,52,10
+    CONTROL         "1-Normal Conf",IDC_RADIO_OutputOpt_1,"Button",
+                    BS_AUTORADIOBUTTON,124,89,68,10
+    CONTROL         "2-Conf Sum",IDC_RADIO_OutputOpt_2,"Button",
+                    BS_AUTORADIOBUTTON,193,89,56,10
+    LTEXT           "Conf DeviceID:",IDC_STATIC,12,17,57,8
+    LTEXT           "Media DeviceID:",IDC_STATIC,7,42,61,8
+    EDITTEXT        IDC_EDIT_Conf_DeviceID,73,13,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_Media_DeviceID,72,40,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+IDD_DIALOG_PARAM_VOICE DIALOG DISCARDABLE  0, 0, 472, 323
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Parameter - Voice"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8ChannelEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,63,40,10
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8DTMFEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,82,40,10
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8MR2FEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,101,40,10
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8GTDEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,158,40,10
+    CONTROL         "DPDEnable",IDC_CHECK_Gtd_u8DPDEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,349,191,52,10
+    CONTROL         "PVDEnable",IDC_CHECK_Gtd_u8PVDEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,349,208,52,10
+    CONTROL         "MSKEnable",IDC_CHECK_Gtd_u8MSKEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,406,191,52,10
+    CONTROL         "VSDEnable",IDC_CHECK_Gtd_u8VSDEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,406,208,52,10
+    EDITTEXT        IDC_EDIT_Gtd_u8GTDID,413,246,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_u16FixGain,83,298,45,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,343,302,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,409,302,50,14
+    CONTROL         "AGC Enable",IDC_CHECK_In_u8AgcEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,71,63,56,10
+    CONTROL         "0-ALS Mode",IDC_RADIO_In_ALS_Mode,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,70,79,56,10
+    CONTROL         "1-AGC Mode",IDC_RADIO_In_AGC_Mode,"Button",
+                    BS_AUTORADIOBUTTON,70,92,56,10
+    CONTROL         "EC Enable",IDC_CHECK_In_u8EcEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,71,109,52,10
+    CONTROL         "0-Ref Input",IDC_RADIO_In_Ref_Input,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,70,125,60,10
+    CONTROL         "1-Ref Output",IDC_RADIO_In_Ref_Output,"Button",
+                    BS_AUTORADIOBUTTON,70,138,64,10
+    EDITTEXT        IDC_EDIT_In_u16EcRefCh,71,151,47,14,ES_AUTOHSCROLL
+    CONTROL         "VAD Enable",IDC_CHECK_In_u8VadEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,71,170,56,10
+    CONTROL         "TAD Enable",IDC_CHECK_In_u8TadEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,71,186,56,10
+    EDITTEXT        IDC_EDIT_In_u16FixGain,71,216,47,14,ES_AUTOHSCROLL
+    CONTROL         "AGC Enable",IDC_CHECK_Out_u8AgcEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,207,65,56,10
+    CONTROL         "0-ALS Mode",IDC_RADIO_Out_ALS_Mode,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,206,80,56,10
+    CONTROL         "1-AGC Mode",IDC_RADIO_Out_AGC_Mode,"Button",
+                    BS_AUTORADIOBUTTON,206,93,56,10
+    CONTROL         "0-Silence",IDC_RADIO_Out_Silence,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,206,109,52,10
+    CONTROL         "1-Input",IDC_RADIO_Out_Input,"Button",
+                    BS_AUTORADIOBUTTON,263,110,44,10
+    CONTROL         "2-Play",IDC_RADIO_Out_Play,"Button",BS_AUTORADIOBUTTON,
+                    206,122,40,10
+    CONTROL         "3-Mixer",IDC_RADIO_Out_Mixer,"Button",
+                    BS_AUTORADIOBUTTON,263,123,44,10
+    EDITTEXT        IDC_EDIT_Out_u16FixGain,206,150,47,14,ES_AUTOHSCROLL
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,207,179,52,10
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,261,179,56,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,207,192,52,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,261,193,52,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP,"Button",
+                    BS_AUTORADIOBUTTON,207,204,48,10
+    EDITTEXT        IDC_EDIT_Out_u16SRC_ChID1,208,217,86,14,ES_AUTOHSCROLL
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,208,235,52,10
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT2,"Button",
+                    BS_AUTORADIOBUTTON,261,235,56,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY2,"Button",
+                    BS_AUTORADIOBUTTON,208,247,52,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF2,"Button",
+                    BS_AUTORADIOBUTTON,261,247,52,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP2,"Button",
+                    BS_AUTORADIOBUTTON,208,260,48,10
+    EDITTEXT        IDC_EDIT_Out_u16SRC_ChID2,208,273,86,14,ES_AUTOHSCROLL
+    LTEXT           "voice DeviceID:",IDC_STATIC,28,16,61,8
+    EDITTEXT        IDC_EDIT_ParamVoice_DeviceID,93,14,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    GROUPBOX        "m_VocInputControl",IDC_STATIC,7,48,128,189
+    GROUPBOX        "m_VocOutputControl",IDC_STATIC,137,47,191,269
+    GROUPBOX        "m_VocGtdControl",IDC_STATIC,331,47,134,250
+    LTEXT           "m_u8AgcEnable:",IDC_STATIC,14,64,57,8
+    LTEXT           "m_u8AgcMode:",IDC_STATIC,21,80,49,8
+    LTEXT           "m_u8EcEnable:",IDC_STATIC,16,109,53,8
+    LTEXT           "m_u8EcRefType:",IDC_STATIC,12,125,57,8
+    LTEXT           "m_u8VadEnable:",IDC_STATIC,12,171,57,8
+    LTEXT           "m_u8TadEnable:",IDC_STATIC,12,186,57,8
+    LTEXT           "m_u16FixGain:",IDC_STATIC,15,218,53,8
+    LTEXT           "m_u16EcRefCh:",IDC_STATIC,15,153,53,8
+    LTEXT           "m_u8AgcEnable:",IDC_STATIC,148,65,57,8
+    LTEXT           "m_u8AgcMode:",IDC_STATIC,155,80,49,8
+    LTEXT           "m_u8OutputType:",IDC_STATIC,143,109,61,8
+    LTEXT           "m_u8ChannelEnable:",IDC_STATIC,340,64,73,8
+    LTEXT           "m_u8DTMFEnable:",IDC_STATIC,345,80,61,8
+    LTEXT           "m_u8MR2FEnable:",IDC_STATIC,345,99,61,8
+    LTEXT           "m_u8FskEnable:",IDC_STATIC,349,137,57,8
+    LTEXT           "m_u8GTDEnable:",IDC_STATIC,349,156,57,8
+    LTEXT           "m_u8GTDID[8]:",IDC_STATIC,353,248,53,8
+    GROUPBOX        "m_MixerControl",IDC_STATIC,137,169,191,147
+    LTEXT           "m_u16FixGain:",IDC_STATIC,149,151,53,8
+    CONTROL         "m_u8InputCtrlValid Enable",IDC_CHECK_u8InputCtrlValid,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,35,116,10
+    CONTROL         "m_u8OutputCtrlValid Enable",IDC_CHECK_u8OutputCtrlValid,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,34,120,10
+    CONTROL         "m_u8GtdCtrlValid Enable",IDC_CHECK_u8GtdCtrlValid,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,338,34,108,10
+    LTEXT           "m_u8SRC1_Ctrl:",IDC_STATIC,142,180,57,8
+    LTEXT           "m_u8SRC2_Ctrl:",IDC_STATIC,142,234,57,8
+    LTEXT           "m_u16SRC_ChID1:",IDC_STATIC,142,218,61,8
+    LTEXT           "m_u16SRC_ChID2:",IDC_STATIC,142,275,61,8
+    LTEXT           "m_u16PlayFixGain:",IDC_STATIC,12,301,69,8
+    GROUPBOX        "m_u8PlayGainMode",IDC_STATIC,8,237,127,78
+    LTEXT           "m_u8EXTEnable:",IDC_STATIC,350,176,57,8
+    CONTROL         "GAIN_MODE_NOCHANGE",IDC_RADIO_GAIN_MODE_NOCHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,247,88,10
+    CONTROL         "GAIN_MODE_FIX",IDC_RADIO_GAIN_MODE_FIX,"Button",
+                    BS_AUTORADIOBUTTON,11,260,68,10
+    CONTROL         "GAIN_MODE_ALS",IDC_RADIO_GAIN_MODE_ALS,"Button",
+                    BS_AUTORADIOBUTTON,11,274,68,10
+    CONTROL         "GAIN_MODE_AGC",IDC_RADIO_GAIN_MODE_AGC,"Button",
+                    BS_AUTORADIOBUTTON,11,287,68,10
+    CONTROL         "NR Enable",IDC_CHECK_In_u8NrEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,71,202,52,10
+    LTEXT           "m_u8NrEnable:",IDC_STATIC,12,202,53,8
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8MR2BEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,120,40,10
+    LTEXT           "m_u8MR2BEnable:",IDC_STATIC,345,118,61,8
+    CONTROL         "Enable",IDC_CHECK_Gtd_u8FSKEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,414,138,40,10
+END
+
+IDD_DIALOG_BuildPlayIndex DIALOG DISCARDABLE  0, 0, 304, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Build Play Index"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Return",IDOK,126,86,50,14
+    LTEXT           "Voc DeviceID:",IDC_STATIC,15,13,53,8
+    EDITTEXT        IDC_EDIT_BuildIndex_DeviceID,75,11,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "BUILD_INDEX_FILE",IDC_RADIO_INDEX_FILE,"Button",
+                    BS_AUTORADIOBUTTON,73,40,80,10
+    CONTROL         "BUILD_INDEX_RAM",IDC_RADIO_INDEX_RAM,"Button",
+                    BS_AUTORADIOBUTTON,165,40,76,10
+    LTEXT           "Index Type:",IDC_STATIC,22,40,45,8
+    LTEXT           "FileName:",IDC_STATIC,29,62,37,8
+    PUSHBUTTON      "...",IDC_BUTTON_SelectBuildIndex,206,64,17,9
+    EDITTEXT        IDC_EDIT_BuildPlayIndex,75,61,125,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Build",IDC_BUTTON_Build,229,62,50,14
+END
+
+IDD_DIALOG_SENDIODATA DIALOG DISCARDABLE  0, 0, 330, 139
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Send IO Data"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,261,118,50,14
+    LTEXT           "m_u16IoType:",IDC_STATIC,167,44,49,8
+    LTEXT           "m_u16IoLen:",IDC_STATIC,32,45,45,8
+    EDITTEXT        IDC_EDIT_u16IoLen,83,42,63,14,ES_AUTOHSCROLL
+    LTEXT           "Data Content:",IDC_STATIC,23,78,53,8
+    EDITTEXT        IDC_EDIT_DataContent,83,77,226,14,ES_AUTOHSCROLL
+    LTEXT           "DeviceID:",IDC_STATIC,40,16,37,8
+    EDITTEXT        IDC_EDIT_DevcieID,83,14,117,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Send",IDC_BUTTON1,46,118,50,14
+    COMBOBOX        IDC_COMBO1,225,41,85,118,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Stop",IDC_BUTTON2,157,118,50,14
+    LTEXT           "ms",IDC_STATIC,82,101,12,12
+    EDITTEXT        IDC_EDIT1,51,99,28,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_PARAM_CAS DIALOG DISCARDABLE  0, 0, 278, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Parameter - CAS"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,138,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,156,138,50,14
+    LTEXT           "CAS DeviceID:",IDC_STATIC,34,25,53,8
+    LTEXT           "voice DeviceID:",IDC_STATIC,27,54,61,8
+    EDITTEXT        IDC_EDIT_ParamVoice_DeviceID,92,53,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_ParamCAS_DeviceID,92,23,118,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Other parameter refer to C:\\DJKeygoe\\XMS_CAS_Cfg.INI!",
+                    IDC_STATIC,28,98,227,8
+END
+
+IDD_DIALOG_ANATRUNK DIALOG DISCARDABLE  0, 0, 284, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Parameter - AnalogTrunk"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_TRUNK_DEV,96,11,95,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "AnalogTrunk Dev:",IDC_STATIC,24,13,60,8
+    RTEXT           "Voc Dev:",IDC_STATIC,23,26,61,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_VOC_DEV,96,25,95,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "m_u16CallInRingCount:",IDC_STATIC,13,56,77,8
+    EDITTEXT        IDC_EDIT_CALLINRINGCOUNT,114,54,42,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel",IDCANCEL,147,106,42,11
+    PUSHBUTTON      "OK",IDOK,90,106,42,11
+    LTEXT           "(ms)",IDC_STATIC,164,75,15,8
+    LTEXT           "m_u16AnswerCallInTimeOut:",IDC_STATIC,14,75,94,8
+    EDITTEXT        IDC_EDIT_ANSWERCALLINTIMEOUT,114,72,42,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_ANAUSER DIALOG DISCARDABLE  0, 0, 287, 123
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    RTEXT           "AnalogUser Dev:",IDC_STATIC,37,14,60,8
+    RTEXT           "Voc Dev:",IDC_STATIC,36,27,61,8,NOT WS_VISIBLE
+    LTEXT           "m_u8CallerIdOption:",IDC_STATIC,9,49,70,9
+    LTEXT           "m_u8RingCadenceType:",IDC_STATIC,9,62,81,8
+    EDITTEXT        IDC_EDIT_USER_DEV,109,12,95,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_VOC_DEV,109,26,95,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    CONTROL         "Disable",IDC_RADIO_CALLERID_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON,98,48,38,10
+    CONTROL         "FSK CallerID",IDC_RADIO_CALLERID_FSK,"Button",
+                    BS_AUTORADIOBUTTON,154,48,57,10
+    CONTROL         "DTMF CallerID",IDC_RADIO_CALLERID_DTMF,"Button",
+                    BS_AUTORADIOBUTTON,213,48,59,10
+    CONTROL         "Single-Pulse",IDC_RADIO_SINGLEPULSE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,98,62,55,10
+    CONTROL         "Double-Pulse",IDC_RADIO_DOUBLEPULSE,"Button",
+                    BS_AUTORADIOBUTTON,154,62,58,10
+    CONTROL         "Triple-Pulse",IDC_RADIO_TRIPPULSE,"Button",
+                    BS_AUTORADIOBUTTON,214,63,55,10
+    PUSHBUTTON      "OK",IDC_BUTTON1,85,102,35,10
+    PUSHBUTTON      "Cancel",IDCANCEL,157,100,37,12
+    LTEXT           "Static",IDC_STATIC,265,15,19,8
+    LTEXT           "m_u8CallOutRingTimeOut:",IDC_STATIC,9,76,87,8
+    EDITTEXT        IDC_EDIT_CALLOUTRINGTIMETOU,103,74,47,14,ES_AUTOHSCROLL
+    LTEXT           "second(s)",IDC_STATIC,157,76,33,8
+END
+
+IDD_DIALOG_RECCSP DIALOG DISCARDABLE  0, 0, 359, 205
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Record CSP"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_ENCODETYPE,76,16,102,122,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SRCMODE,248,17,102,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PACKLEN,76,34,102,12,ES_AUTOHSCROLL
+    CONTROL         "BargeIn",IDC_RADIO_BARGE_IN,"Button",BS_AUTORADIOBUTTON,
+                    255,36,38,10
+    CONTROL         "No BargeIn",IDC_RADIO_NO_BARGE_IN,"Button",
+                    BS_AUTORADIOBUTTON,303,36,49,10
+    PUSHBUTTON      "OK",IDC_BUTTON1,106,188,40,11
+    PUSHBUTTON      "Cancel",IDCANCEL,224,188,40,11
+    LTEXT           "m_u8EncodeType",IDC_STATIC,15,18,60,8
+    LTEXT           "m_u8SrcMode",IDC_STATIC,193,18,49,9
+    LTEXT           "m_u16PacketLen",IDC_STATIC,15,34,57,8
+    LTEXT           "m_u8CSPRecType",IDC_STATIC,191,36,61,8
+    LTEXT           "m_s8IsMixEnable:",IDC_STATIC,15,101,49,8
+    CONTROL         "Mix Enable",IDC_CHECK_s8MixEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,76,102,51,8
+    GROUPBOX        "    m_MixerControl",IDC_STATIC,11,114,343,73
+    LTEXT           "m_u8SRC1_Ctrl:",IDC_STATIC,14,128,57,11
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,72,128,55,9
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,128,128,57,9
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,186,128,54,8
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,241,128,54,8
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP,"Button",
+                    BS_AUTORADIOBUTTON,296,128,49,8
+    LTEXT           "m_u16SRC_ChID1:",IDC_STATIC,15,143,64,9
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID1,95,142,67,12,ES_AUTOHSCROLL
+    LTEXT           "m_u8SRC2_Ctrl:",IDC_STATIC,15,159,55,10
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,72,159,54,9
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT2,"Button",
+                    BS_AUTORADIOBUTTON,128,159,56,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY2,"Button",
+                    BS_AUTORADIOBUTTON,186,159,54,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF2,"Button",
+                    BS_AUTORADIOBUTTON,241,159,54,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP2,"Button",
+                    BS_AUTORADIOBUTTON,297,159,49,10
+    LTEXT           "m_u16SRC_ChID2:",IDC_STATIC,15,173,63,9
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID2,95,173,65,12,ES_AUTOHSCROLL
+    LTEXT           "m_u8StopMode:",IDC_STATIC,15,67,54,9
+    CONTROL         "Normal_Stop",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,75,68,56,8
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,136,68,52,8
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,197,68,46,8
+    LTEXT           "m_u8StopCode:",IDC_STATIC,15,84,55,9
+    EDITTEXT        IDC_EDIT_Record_u8StopCode,77,82,65,12,ES_AUTOHSCROLL
+    LTEXT           "m_u8IsVADEnable",IDC_STATIC,15,50,61,9
+    CONTROL         "m_u8IsVADEnable",IDC_CHECK_u8VADEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,76,51,86,8
+END
+
+IDD_DIALOG_PLAYCSP DIALOG DISCARDABLE  0, 0, 184, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Play CSP"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_TASKID,69,5,79,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DECODE_TYPE,69,23,79,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SRC_MODE,69,41,79,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Normal_Stop",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON,17,99,53,10
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,75,99,53,10
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,133,99,47,10
+    EDITTEXT        IDC_EDIT_CSP_STOP_MODE,69,118,78,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAX_SIZE,69,59,78,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_MAX_TIME,69,79,78,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "OK",IDC_BUTTON1,32,140,40,12
+    PUSHBUTTON      "Cancel",IDCANCEL,102,141,40,12
+    LTEXT           "m_u8TaskID:",IDC_STATIC,21,7,44,8
+    LTEXT           "m_u8DecodeType:",IDC_STATIC,3,25,62,8
+    LTEXT           "m_u8SrcMode:",IDC_STATIC,15,43,50,8
+    LTEXT           "m_u32MaxSize:",IDC_STATIC,11,61,54,8
+    LTEXT           "m_u32MaxTime:",IDC_STATIC,10,79,55,8
+    LTEXT           "Stop Mode:",IDC_STATIC,26,121,38,8
+END
+
+IDD_DIALOG_PARAM_VOIP DIALOG DISCARDABLE  0, 0, 248, 138
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VOIP SetParam"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,53,117,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,154,117,50,14
+    EDITTEXT        IDC_EDIT_IPDEV,39,15,68,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_VOCDEV,153,15,79,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "IP Dev",IDC_STATIC,14,19,23,8
+    LTEXT           "Voc Dev",IDC_STATIC,122,18,28,8
+    GROUPBOX        "Mixer Option",IDC_STATIC,13,33,228,75,BS_CENTER
+    CONTROL         "XMS_MIXER_FROM_NULL",IDC_RADIO_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON,19,45,103,10
+    CONTROL         "XMS_MIXER_FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,19,57,106,10
+    CONTROL         "XMS_MIXER_FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,19,69,103,10
+    CONTROL         "XMS_MIXER_FROM_CONF",IDC_RADIO_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,19,81,104,10
+    CONTROL         "XMS_MIXER_FROM_IP",IDC_RADIO_MIXER_FROM_IP,"Button",
+                    BS_AUTORADIOBUTTON,19,93,92,10
+    CONTROL         "Video",IDC_CHECK_IS_VIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,178,47,34,10
+END
+
+IDD_DIALOG_PARAM_FSK DIALOG DISCARDABLE  0, 0, 166, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set FSK Parameter"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,26,173,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,173,50,14
+    LTEXT           "rxFilterWindow",IDC_STATIC,16,17,50,8
+    EDITTEXT        IDC_EDIT_rxFilterWindow,82,17,54,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "rxPeriodTheshold",IDC_STATIC,16,33,59,8
+    EDITTEXT        IDC_EDIT_rxPeriodTheshold,82,32,54,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_rxAllOneSamples,82,62,55,14,ES_AUTOHSCROLL
+    LTEXT           "rxAllOneSamples",IDC_STATIC,16,65,57,8
+    LTEXT           "rxDataTimeOut",IDC_STATIC,16,81,50,8
+    EDITTEXT        IDC_EDIT_rxDataTimeOut,82,77,55,14,ES_AUTOHSCROLL
+    LTEXT           "txBit1Freq",IDC_STATIC,16,97,35,8
+    EDITTEXT        IDC_EDIT_txBit1Freq,82,92,54,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_txBit0Freq,82,108,54,14,ES_AUTOHSCROLL
+    LTEXT           "txBit0Freq",IDC_STATIC,16,113,35,8
+    GROUPBOX        " Parameter Set",IDC_STATIC,7,7,148,158,BS_CENTER
+    LTEXT           "tx55Count",IDC_STATIC,16,129,34,8
+    EDITTEXT        IDC_EDIT_tx55Count,82,124,53,14,ES_AUTOHSCROLL
+    LTEXT           "txAllOneSamples",IDC_STATIC,16,145,57,8
+    EDITTEXT        IDC_EDIT_txAllOneSamples,82,140,53,14,ES_AUTOHSCROLL
+    LTEXT           "rx55Count",IDC_STATIC,16,49,34,8
+    EDITTEXT        IDC_EDIT_rx55Count,82,47,54,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_PARAM_Flash DIALOG DISCARDABLE  0, 0, 200, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HookFlash Set Parameter"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,25,76,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,76,50,14
+    GROUPBOX        "Paramer Set",IDD_ABOUTBOX,7,7,186,59,BS_CENTER
+    LTEXT           "m_u8MinHookFlashTime",IDC_STATIC,18,23,82,8
+    LTEXT           "m_u8MaxHookFlashTime",IDC_STATIC,18,46,84,8
+    EDITTEXT        IDC_EDIT_m_u8MinHookFlashTime,118,21,59,14,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_m_u8MaxHookFlashTime,118,43,58,14,
+                    ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_GTDSET DIALOGEX 0, 0, 289, 425
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GTD SetParam"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,404,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,175,404,50,14
+    CONTROL         "Tab1",IDC_TAB_GTD_FREQ,"SysTabControl32",TCS_HOTTRACK,
+                    49,7,188,76,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    GROUPBOX        "Set Freq",IDC_STATIC,104,27,77,41,BS_CENTER
+    LTEXT           "Freq_Index",IDC_STATIC,110,39,38,8
+    LTEXT           "Freq_Coef",IDC_STATIC,110,54,34,8
+    EDITTEXT        IDC_EDIT_FREQ_INDEX,150,36,26,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_FREQ_COEF,150,52,26,14,ES_AUTOHSCROLL
+    CONTROL         "Tab2",IDC_TAB_GTD_TONE,"SysTabControl32",WS_BORDER,7,93,
+                    275,308,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    GROUPBOX        "Set DialTone",IDC_STATIC,44,115,173,275,BS_CENTER
+    LTEXT           "GTD_ID",IDC_STATIC,60,133,35,11
+    LTEXT           "Freq_Msk",IDC_STATIC,60,153,44,11
+    LTEXT           "Amp_Threshold",IDC_STATIC,60,173,69,11
+    LTEXT           "Envelop_Mode",IDC_STATIC,60,189,67,11
+    LTEXT           "Repeat_Count",IDC_STATIC,60,209,63,11
+    LTEXT           "Min_On_Time1",IDC_STATIC,60,229,67,11
+    LTEXT           "Max_On_Time1",IDC_STATIC,60,251,69,11
+    LTEXT           "Min_Off_Time1",IDC_STATIC,60,269,67,11
+    LTEXT           "Max_Off_Time1",IDC_STATIC,60,289,69,11
+    LTEXT           "Min_On_Time2",IDC_STATIC,60,309,67,11
+    LTEXT           "Max_On_Time2",IDC_STATIC,60,329,69,11
+    LTEXT           "Min_Off_Time2",IDC_STATIC,60,349,67,11
+    LTEXT           "Max_Off_Time2",IDC_STATIC,60,369,69,11
+    EDITTEXT        IDC_EDIT_GTDID,131,129,73,19,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_MINONTIME1,131,229,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_THRESHOLD,131,169,73,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FREQ_MASK,131,147,74,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_REPEATCOUNT,131,209,72,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAXONTIME1,131,247,72,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MINOFFTIME1,131,267,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAXOFFTIME1,131,285,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MINONTIME2,131,307,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAXONTIME2,131,327,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MINOFFTIME2,131,345,71,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAXOFFTIME2,131,365,71,19,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ENVELOP,131,189,75,60,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_PARAM_ATRUNKFLASH DIALOGEX 0, 0, 201, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SetParam Trigger AnalogTrunk FlashEvent"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,26,95,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,119,95,50,14
+    GROUPBOX        "Parameters",IDC_STATIC,17,6,166,82,BS_CENTER
+    LTEXT           "m_u8Channel_Eanbled",IDC_STATIC,23,19,76,8
+    LTEXT           "m_u8Type",IDC_STATIC,23,34,35,8
+    LTEXT           "m_u8Tx_State",IDC_STATIC,23,51,48,8
+    EDITTEXT        IDC_EDIT_AT_TYPE,107,30,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_AT_TXSTATE,107,47,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "Enabled",IDC_CHECK_AT_CHANNEL_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,107,19,43,10,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "m_u8Rx_State",IDC_STATIC,25,70,49,8
+    EDITTEXT        IDC_EDIT_AT_RXSTATE,107,66,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+IDD_DIALOG_PARAM_3GFaxTone DIALOG DISCARDABLE  0, 0, 187, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "3GFaxToneSet"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,75,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,75,50,14
+    GROUPBOX        "3GFaxTone Option",IDC_STATIC,43,18,103,43,BS_CENTER
+    CONTROL         "Enabled",IDC_CHECK_3GFAXTONE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,59,35,43,10
+END
+
+IDD_DIALOG_PARAM_FAXHEADER DIALOG DISCARDABLE  0, 0, 235, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SetParam -FaxHeader"
+FONT 10, "System"
+BEGIN
+    CONTROL         "PAGE_HEADER_TYPE_CLEAR",
+                    IDC_RADIO_PAGE_HEADER_TYPE_CLEAR,"Button",
+                    BS_AUTORADIOBUTTON,68,16,114,10
+    CONTROL         "PAGE_HEADER_TYPE_SET",IDC_RADIO_PAGE_HEADER_TYPE_SET,
+                    "Button",BS_AUTORADIOBUTTON,68,31,105,10
+    EDITTEXT        IDC_EDIT_HEADERUSER,68,46,54,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_HEADERFROM,68,65,54,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_HEADERTO,68,84,160,14,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,34,129,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,136,129,50,14
+    LTEXT           "m_u32Op",IDC_STATIC,20,16,32,8
+    LTEXT           "m_u16XPos",IDC_STATIC,12,50,40,8
+    LTEXT           "m_u16YPos",IDC_STATIC,11,68,41,8
+    LTEXT           "m_u8Data",IDC_STATIC,18,86,34,8
+END
+
+IDD_DIALOG_PARAM_ATRUNKEM DIALOG DISCARDABLE  0, 0, 198, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,96,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,96,50,14
+    GROUPBOX        "Params",IDC_STATIC,7,7,184,103,BS_CENTER
+    LTEXT           "m_u8Channel_Eanbled:",IDC_STATIC,14,21,78,8
+    CONTROL         "Enable",IDC_RADIO_ATEM_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,98,21,39,10
+    CONTROL         "Disable",IDC_RADIO_ATEM_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON,145,21,41,10
+    LTEXT           "m_u8Type",IDC_STATIC,14,38,35,8
+    LTEXT           "m_u8Tx_State",IDC_STATIC,14,59,48,8
+    LTEXT           "m_u8Rx_State",IDC_STATIC,14,80,49,8
+    EDITTEXT        IDC_EDIT_ATEM_TYPE,99,37,40,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_ATEM_TXSTATE,99,56,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ATEM_RXSTATE,99,75,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_FAX_ECM_SET_PARAM DIALOG DISCARDABLE  0, 0, 127, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,10,63,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,67,63,50,14
+    GROUPBOX        "FaxECMModeType",IDC_STATIC,8,9,109,48,BS_CENTER
+    CONTROL         "FAX NORMAL",IDC_CHECK_FAX_NORMAL,"Button",
+                    BS_AUTORADIOBUTTON,31,22,60,10
+    CONTROL         "FAX ECM",IDC_CHECK_FAX_ECM,"Button",BS_AUTORADIOBUTTON,
+                    31,36,46,10
+END
+
+IDD_DIALOG_3GPPBuildPlayIndex DIALOG DISCARDABLE  0, 0, 207, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "3GPPBuildPlayIndex"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Build",IDOK,145,103,22,14
+    PUSHBUTTON      "Return",IDCANCEL,170,103,23,14
+    LTEXT           "Voc DeviceID:",IDC_STATIC,5,13,46,8
+    EDITTEXT        IDC_EDIT_BuildIndex_DeviceID,65,12,129,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Index Type:",IDC_STATIC,12,30,39,8
+    CONTROL         "BuildIndexFile",IDC_RADIO_INDEX_FILE,"Button",
+                    BS_AUTORADIOBUTTON,64,30,63,10
+    CONTROL         "BuilIndexRam",IDC_RADIO_INDEX_RAM,"Button",
+                    BS_AUTORADIOBUTTON,128,30,62,10
+    LTEXT           "AudioFileName:",IDC_STATIC,0,47,52,8
+    EDITTEXT        IDC_EDIT_BuildPlayIndex,66,45,105,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_SelectBuildIndex,171,45,22,14
+    LTEXT           "Index Type:",IDC_STATIC,13,69,39,8
+    CONTROL         "BuildVIndexFile",IDC_RADIO_INDEX_FILE_VIDEO,"Button",
+                    BS_AUTORADIOBUTTON,64,67,67,10
+    CONTROL         "BuildVIndexRam",IDC_RADIO_INDEX_RAM_VIDEO,"Button",
+                    BS_AUTORADIOBUTTON,130,67,70,10
+    LTEXT           "Index Type:",IDC_STATIC,13,106,39,8
+    COMBOBOX        IDC_COMBO_BuildIndex_MediaType,67,103,77,56,
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "VideoFileName:",IDC_STATIC,0,84,52,8
+    EDITTEXT        IDC_EDIT_BuildPlayIndex_Video,67,81,103,14,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_SelectBuildIndex_Video,170,81,23,14,
+                    BS_CENTER
+END
+
+IDD_DIALOG_PLAY_3GPP DIALOG DISCARDABLE  0, 0, 421, 229
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "XMSApi_3GPPPlaySet"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_Play_DevcieID,80,9,138,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "PlayGtgProperty",IDC_STATIC,7,24,407,182
+    LTEXT           "    m_u32TaskID:",IDC_STATIC,18,36,56,8
+    EDITTEXT        IDC_EDIT_Play_u32TaskID,80,34,40,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "m_u32MaxTime:",IDC_STATIC,129,37,55,8
+    EDITTEXT        IDC_EDIT_Play_u32MaxTime,186,34,44,14,ES_AUTOHSCROLL
+    LTEXT           "m_u8MediaType:",IDC_STATIC,247,13,57,8
+    CONTROL         "AnV",IDC_RADIO_ANV,"Button",BS_AUTORADIOBUTTON,309,13,
+                    26,10
+    CONTROL         "Audio",IDC_RADIO_AUDIO,"Button",BS_AUTORADIOBUTTON,342,
+                    13,29,10
+    CONTROL         "Video",IDC_RADIO_VIDEO,"Button",BS_AUTORADIOBUTTON,378,
+                    13,29,10
+    LTEXT           "m_u8SrcMode:",IDC_STATIC,24,54,50,8
+    CONTROL         "SRC_8K",IDC_RADIO_SRC_8K,"Button",BS_AUTORADIOBUTTON,80,
+                    54,38,10
+    CONTROL         "SRC_6K",IDC_RADIO_SRC_6K,"Button",BS_AUTORADIOBUTTON,
+                    136,54,37,10
+    CONTROL         "SRC_GTG",IDC_RADIO_SRC_GTG,"Button",BS_AUTORADIOBUTTON,
+                    193,54,43,10
+    CONTROL         "SRC_FSK",IDC_RADIO_SRC_FSK,"Button",BS_AUTORADIOBUTTON,
+                    247,54,42,10
+    CONTROL         "SRC_FAX",IDC_RADIO_SRC_FAX,"Button",BS_AUTORADIOBUTTON,
+                    297,54,41,10
+    CONTROL         "SRC_3GP_VIDEO",IDC_RADIO_SRC_3GP_VIDEO,"Button",
+                    BS_AUTORADIOBUTTON,345,54,67,10
+    LTEXT           "m_u8DecodeType:",IDC_STATIC,12,68,62,8
+    CONTROL         "Alaw_type",IDC_RADIO_Alaw_type,"Button",
+                    BS_AUTORADIOBUTTON,80,69,43,10
+    CONTROL         "Ulaw_type",IDC_RADIO_Ulaw_type,"Button",
+                    BS_AUTORADIOBUTTON,136,69,45,10
+    CONTROL         "Vox_type",IDC_RADIO_Vox_type,"Button",
+                    BS_AUTORADIOBUTTON,193,69,41,10
+    CONTROL         "Linear_8bit",IDC_RADIO_Linear_8bit,"Button",
+                    BS_AUTORADIOBUTTON,247,69,48,10
+    CONTROL         "Linear_16bit",IDC_RADIO_PLY_Linear_16bit,"Button",
+                    BS_AUTORADIOBUTTON,297,69,52,10
+    CONTROL         "Amr_type",IDC_RADIO_PLY_AMR_TYPE,"Button",
+                    BS_AUTORADIOBUTTON,80,85,42,10
+    CONTROL         "G723_Type",IDC_RADIO_PLY_G723_TYPE,"Button",
+                    BS_AUTORADIOBUTTON,136,85,48,10
+    CONTROL         "Code_Stream",IDC_RADIO_PLY_CODE_STRM,"Button",
+                    BS_AUTORADIOBUTTON,193,85,54,10
+    LTEXT           "m_u32StopMode:",IDC_STATIC,14,100,58,8
+    CONTROL         "Normal_Stop",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON,80,100,51,10
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,136,100,52,10
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,193,100,44,10
+    LTEXT           "m_u32StopCode:",IDC_STATIC,15,116,56,8
+    EDITTEXT        IDC_EDIT_Play_u32StopCode,80,115,40,14,ES_AUTOHSCROLL
+    LTEXT           "m_u16TimeOffset:",IDC_STATIC,142,117,60,8
+    EDITTEXT        IDC_EDIT_Play_u16TimeOffset,205,116,42,14,ES_AUTOHSCROLL
+    LTEXT           "m_u16VideoTimeOffset:",IDC_STATIC,257,118,78,8
+    EDITTEXT        IDC_EDIT_Play_u16VideoTimeOffset,340,117,42,14,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_u16PlayType:",IDC_STATIC,15,134,56,8
+    CONTROL         "PLAY_TYPE_FILE",IDC_RADIO_PLAY_TYPE_FILE,"Button",
+                    BS_AUTORADIOBUTTON,80,134,69,10
+    CONTROL         "PLAY_TYPE_INDEX",IDC_RADIO_PLAY_TYPE_INDEX,"Button",
+                    BS_AUTORADIOBUTTON,150,134,76,10
+    CONTROL         "TYPE_FILE_QUEUE",IDC_RADIO_PLAY_TYPE_FILE_QUEUE,"Button",
+                    BS_AUTORADIOBUTTON,228,134,75,10
+    CONTROL         "PLAY_TYPE_INDEX_QUEUE",IDC_RADIO_PLAY_TYPE_INDEX_QUEUE,
+                    "Button",BS_AUTORADIOBUTTON,305,134,106,10
+    EDITTEXT        IDC_EDIT_Play_u16PlayIndex,80,150,40,14,ES_AUTOHSCROLL
+    LTEXT           "m_u16VideoPlayIndex:",IDC_STATIC,122,152,76,8
+    EDITTEXT        IDC_EDIT_Play_u16PlayIndex_Video,204,149,43,14,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_s8PlayContent,80,169,307,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Play_s8PlayContent_3GPP,80,189,307,14,
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,112,208,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,250,208,50,14
+    LTEXT           "Play DeviceID:",IDC_STATIC,12,10,49,8
+    LTEXT           "m_u16PlayIndex:",IDC_STATIC,13,151,58,8
+    LTEXT           "m_s8PlayContent:",IDC_STATIC,12,173,60,8
+    LTEXT           "m_s8VPlayContent:",IDC_STATIC,8,192,64,8
+    PUSHBUTTON      "...",IDC_BUTTON_GET_AFILE_NAME,388,169,25,14,BS_VCENTER
+    PUSHBUTTON      "...",IDC_BUTTON_GET_VFILE_NAME,388,189,25,14,BS_VCENTER
+    LTEXT           "m_u32VideoMaxTime:",IDC_STATIC,268,37,73,8
+    EDITTEXT        IDC_EDIT_Play_u32VideoMaxTime,344,35,44,14,
+                    ES_AUTOHSCROLL
+    LTEXT           "(10ms)",IDC_STATIC,231,37,23,8
+    LTEXT           "(10ms)",IDC_STATIC,391,38,23,8
+END
+
+IDD_DIALOG_CONTROL3GPPPLAY DIALOG DISCARDABLE  0, 0, 196, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Return",IDOK,148,49,40,14
+    LTEXT           "ControlPlay DeviceID:",IDC_STATIC,15,13,72,8
+    EDITTEXT        IDC_EDIT_ControlPlay_DeviceID,97,11,50,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "m_u16ControlType:",IDC_STATIC,22,34,64,8
+    PUSHBUTTON      "Stop",IDC_BUTTON_Stop,95,31,28,14
+    PUSHBUTTON      "Pause",IDC_BUTTON_Pause,126,31,30,14
+    PUSHBUTTON      "Resume",IDC_BUTTON_Resume,159,31,29,14
+    COMBOBOX        IDC_COMBO_MEDIA_TYPE,96,50,48,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "m_u8MediaType:",IDC_STATIC,29,52,57,8
+END
+
+IDD_DIALOG_GET_3GP_CFG DIALOG DISCARDABLE  0, 0, 168, 174
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Get 3GP CFG"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,152,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,81,153,50,14
+    LTEXT           "MediaType:",IDC_STATIC,7,13,39,8
+    CONTROL         "AnV",IDC_RADIO_ANV,"Button",BS_AUTORADIOBUTTON,57,13,28,
+                    10
+    CONTROL         "Audio",IDC_RADIO_AUDIO,"Button",BS_AUTORADIOBUTTON,89,
+                    13,34,10
+    CONTROL         "Video",IDC_RADIO_VIDEO,"Button",BS_AUTORADIOBUTTON,124,
+                    13,34,10
+    GROUPBOX        "Audio",IDC_STATIC,7,26,154,63
+    GROUPBOX        "Video",IDC_STATIC,7,90,154,59
+    LTEXT           "FileType:",IDC_STATIC,15,36,31,8
+    CONTROL         "NonIndex",IDC_RADIO_AUDIO_NO_INDEX,"Button",
+                    BS_AUTORADIOBUTTON,58,37,47,10
+    CONTROL         "Index",IDC_RADIO_AUDIO_Index,"Button",
+                    BS_AUTORADIOBUTTON,108,38,34,10
+    LTEXT           "IndexNo:",IDC_STATIC,16,52,30,8
+    EDITTEXT        IDC_EDIT_AUDIO_Index,59,50,92,14,ES_AUTOHSCROLL
+    LTEXT           "FileName:",IDC_STATIC,12,72,34,8
+    EDITTEXT        IDC_EDIT_AUDIO_FILE_NAME,59,69,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_AUDIO_GET_PATH,134,69,17,14
+    LTEXT           "FileType:",IDC_STATIC,15,102,31,8
+    CONTROL         "NonIndex",IDC_RADIO_VIDEO_NO_INDEX,"Button",
+                    BS_AUTORADIOBUTTON,58,99,47,10
+    CONTROL         "Index",IDC_RADIO_VIDEO_Index,"Button",
+                    BS_AUTORADIOBUTTON,109,99,34,10
+    LTEXT           "IndexNo:",IDC_STATIC,16,117,30,8
+    EDITTEXT        IDC_EDIT_VIDEO_Index,59,113,92,14,ES_AUTOHSCROLL
+    LTEXT           "FileName:",IDC_STATIC,12,131,34,8
+    EDITTEXT        IDC_EDIT_VIDEO_FILE_NAME,59,132,74,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_VIDEO_GET_PATH,134,132,16,14
+END
+
+IDD_DIALOG_Record_3GPP DIALOG DISCARDABLE  0, 0, 382, 317
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rec 3GPP"
+FONT 10, "System"
+BEGIN
+    LTEXT           "m_u8StopMode:",IDC_STATIC,14,11,53,10
+    CONTROL         "Normal_Code",IDC_RADIO_Normal_Stop,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,77,11,55,9
+    CONTROL         "Single_Code",IDC_RADIO_Single_Code,"Button",
+                    BS_AUTORADIOBUTTON,133,11,54,9
+    CONTROL         "Any_Code",IDC_RADIO_Any_Code,"Button",
+                    BS_AUTORADIOBUTTON,77,22,44,10
+    LTEXT           "m_u8StopCode:",IDC_STATIC,14,36,54,9
+    EDITTEXT        IDC_EDIT_Record_u8StopCode,78,35,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_u32MaxTime:",IDC_STATIC,206,13,56,9
+    EDITTEXT        IDC_EDIT_Record_u32MaxTime,279,11,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_s8IsAppend:",IDC_STATIC,206,26,53,9
+    CONTROL         "Append",IDC_CHECK_s8IsAppend,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,279,25,36,11
+    LTEXT           "m_s8FileName:",IDC_STATIC,125,38,54,9
+    EDITTEXT        IDC_EDIT_Record_s8FileName,179,37,196,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "m_u8AudioEncodeType:",IDC_STATIC,14,58,81,8
+    CONTROL         "AMR",IDC_RADIO_amr_type,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,94,57,27,10
+    LTEXT           "m_u8SRCMode:",IDC_STATIC,14,68,55,8
+    CONTROL         "XMS_SRC_3GVIDEO",IDC_RADIO_SRC_3GVIDEO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,94,69,80,10
+    LTEXT           "m_u8AudioProfiles:",IDC_STATIC,206,57,64,8
+    EDITTEXT        IDC_EDIT_Record_Audio_Profile,279,55,40,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_u8AudioLevel:",IDC_STATIC,206,68,57,8
+    EDITTEXT        IDC_EDIT_Record_Audio_Level,279,68,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_s8AudioIsMixEnable:",IDC_STATIC,14,81,81,9
+    CONTROL         "m_s8AudioIsMixEnable",IDC_CHECK_s8MixEnable,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,81,89,10
+    LTEXT           "m_u8SRC1_Ctrl:",IDC_STATIC,14,100,58,10
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,75,100,54,12
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,134,100,58,12
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,196,100,55,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,255,100,54,10
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP,"Button",
+                    BS_AUTORADIOBUTTON,314,100,47,10
+    CONTROL         "FROM_324",IDC_RADIO_MIXER_FROM_324,"Button",
+                    BS_AUTORADIOBUTTON,134,113,52,10
+    CONTROL         "FROM_RTPX",IDC_RADIO_MIXER_FROM_CTD,"Button",
+                    BS_AUTORADIOBUTTON,196,113,58,10
+    LTEXT           "m_u16SRC_ChID1:",IDC_STATIC,14,113,63,10
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID1,89,112,38,12,ES_AUTOHSCROLL
+    LTEXT           "m_u8SRC2_Ctrl:",IDC_STATIC,14,127,56,9
+    CONTROL         "FROM_NULL",IDC_RADIO_MIXER_FROM_NULL2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,75,127,55,9
+    CONTROL         "FROM_INPUT",IDC_RADIO_MIXER_FROM_INPUT2,"Button",
+                    BS_AUTORADIOBUTTON,134,127,58,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_MIXER_FROM_PLAY2,"Button",
+                    BS_AUTORADIOBUTTON,196,127,55,10
+    CONTROL         "FROM_CONF",IDC_RADIO_MIXER_FROM_CONF2,"Button",
+                    BS_AUTORADIOBUTTON,255,127,56,9
+    CONTROL         "FROM_RTP",IDC_RADIO_MIXER_FROM_RTP2,"Button",
+                    BS_AUTORADIOBUTTON,315,127,50,9
+    CONTROL         "FROM_324",IDC_RADIO_MIXER_FROM_324_2,"Button",
+                    BS_AUTORADIOBUTTON,134,140,52,10
+    CONTROL         "FROM_RTPX",IDC_RADIO_MIXER_FROM_CTD2,"Button",
+                    BS_AUTORADIOBUTTON,196,140,58,10
+    LTEXT           "m_u16SRC_ChID2:",IDC_STATIC,14,140,62,9
+    EDITTEXT        IDC_EDIT_Record_u16SRC_ChID2,89,138,37,12,ES_AUTOHSCROLL
+    LTEXT           "m_u8VideoEncodeType:",IDC_STATIC,14,163,79,8
+    CONTROL         "XMS_VIDEO_CODE_TYPE_H263",IDC_Radio_Record_H263,"Button",
+                    BS_AUTORADIOBUTTON,96,163,117,10
+    CONTROL         "XMS_VIDEO_CODE_TYPE_MP4V",IDC_Radio_Record_Mp4v,"Button",
+                    BS_AUTORADIOBUTTON,96,174,118,10
+    CONTROL         "XMS_VIDEO_CODE_TYPE_H264",IDC_Radio_Record_H264,"Button",
+                    BS_AUTORADIOBUTTON,96,184,119,10
+    LTEXT           "m_u8VideoFrameRate:",IDC_STATIC,12,202,75,8
+    EDITTEXT        IDC_EDIT_Record_VIdeoFrameRate,95,201,38,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_u8VideoProfiles:",IDC_STATIC,256,162,64,8
+    EDITTEXT        IDC_EDIT_Record_Vdieo_Profile,331,160,40,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_u8VideoLevel:",IDC_STATIC,256,174,57,8
+    EDITTEXT        IDC_EDIT_Record_Video_Level,331,173,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_u16VideoWidth:",IDC_STATIC,256,186,62,8
+    EDITTEXT        IDC_EDIT_Record_Vdieo_Width,331,185,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_u16VideoHeight:",IDC_STATIC,256,198,64,8
+    EDITTEXT        IDC_EDIT_Record_Video_Height,331,197,40,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_s8VideoIsMixEnable:",IDC_STATIC,11,218,81,9
+    CONTROL         "m_s8VideoIsMixEnable",IDC_CHECK_Viedeo_s8MixEnable,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,218,90,10
+    LTEXT           "m_u8SRC1_Ctrl:",IDC_STATIC,13,238,58,10
+    CONTROL         "FROM_NULL",IDC_RADIO_Video_MIXER_FROM_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,74,238,54,12
+    CONTROL         "FROM_INPUT",IDC_RADIO_Video_MIXER_FROM_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,133,238,58,12
+    CONTROL         "FROM_PLAY",IDC_RADIO_Video_MIXER_FROM_PLAY,"Button",
+                    BS_AUTORADIOBUTTON,195,238,55,10
+    CONTROL         "FROM_CONF",IDC_RADIO_Video_MIXER_FROM_CONF,"Button",
+                    BS_AUTORADIOBUTTON,254,238,54,10
+    CONTROL         "FROM_RTP",IDC_RADIO_Video_MIXER_FROM_RTP,"Button",
+                    BS_AUTORADIOBUTTON,314,238,47,10
+    CONTROL         "FROM_324",IDC_RADIO_Video_MIXER_FROM_324,"Button",
+                    BS_AUTORADIOBUTTON,133,251,52,10
+    CONTROL         "FROM_RTPX",IDC_RADIO_Video_MIXER_FROM_CTD,"Button",
+                    BS_AUTORADIOBUTTON,195,252,58,10
+    LTEXT           "m_u16SRC_ChID1:",IDC_STATIC,13,251,63,10
+    EDITTEXT        IDC_EDIT_Record_Video_u16SRC_ChID1,88,250,38,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "m_u8SRC2_Ctrl:",IDC_STATIC,13,265,56,9
+    CONTROL         "FROM_NULL",IDC_RADIO_Video_MIXER_FROM_NULL2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,74,265,55,9
+    CONTROL         "FROM_INPUT",IDC_RADIO_Video_MIXER_FROM_INPUT2,"Button",
+                    BS_AUTORADIOBUTTON,133,265,58,10
+    CONTROL         "FROM_PLAY",IDC_RADIO_Video_MIXER_FROM_PLAY2,"Button",
+                    BS_AUTORADIOBUTTON,195,265,55,10
+    CONTROL         "FROM_CONF",IDC_RADIO_Video_MIXER_FROM_CONF2,"Button",
+                    BS_AUTORADIOBUTTON,254,265,56,9
+    CONTROL         "FROM_RTP",IDC_RADIO_Video_MIXER_FROM_RTP2,"Button",
+                    BS_AUTORADIOBUTTON,314,265,50,9
+    CONTROL         "FROM_324",IDC_RADIO_Video_MIXER_FROM_324_2,"Button",
+                    BS_AUTORADIOBUTTON,133,278,52,10
+    CONTROL         "FROM_RTPX",IDC_RADIO_Video_MIXER_FROM_CTD2,"Button",
+                    BS_AUTORADIOBUTTON,195,279,58,10
+    LTEXT           "m_u16SRC_ChID2:",IDC_STATIC,13,278,62,9
+    EDITTEXT        IDC_EDIT_Record_Video_u16SRC_ChID2,88,276,37,12,
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,76,296,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,225,296,50,14
+    GROUPBOX        "m_AudioMixerControl",IDC_STATIC,8,90,367,62
+    GROUPBOX        "Audio",IDC_STATIC,8,48,367,104
+    GROUPBOX        "Video",IDC_STATIC,7,152,368,142
+    GROUPBOX        "m_VideoMixerControl",IDC_STATIC,7,228,368,65
+    LTEXT           "(10ms)",IDC_STATIC,322,13,23,8
+END
+
+IDD_DIALOG_VSD DIALOG DISCARDABLE  0, 0, 121, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,9,58,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,58,50,14
+    GROUPBOX        "VSD Param",IDC_STATIC,6,4,108,53
+    LTEXT           "SilenceLevel:",IDC_STATIC,12,17,45,8
+    LTEXT           "TimeOut:",IDC_STATIC,12,35,30,8
+    EDITTEXT        IDC_EDIT_LEVEL,59,15,46,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TIME_OUT,59,32,46,14,ES_AUTOHSCROLL
+END
+
+IDD_DLG_PARAMTYPE DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Paramter type"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,108,73,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,34,73,40,14
+    LTEXT           "Parmeter type:",IDC_STATIC,33,32,49,8
+    COMBOBOX        IDC_CMB_PARAMTYPE,103,31,48,46,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_RTPXINPUT DIALOG DISCARDABLE  0, 0, 178, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RTPX INPUT"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,107,84,42,14
+    PUSHBUTTON      "Cancel",IDCANCEL,31,84,42,14
+    LTEXT           "Media Type:",IDC_STATIC,37,33,41,8
+    LTEXT           "Payload Type:",IDC_STATIC,37,58,48,8
+    COMBOBOX        IDC_CMB_MEDIATYPE,97,31,48,61,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PAYLOAD,98,56,40,14,ES_AUTOHSCROLL
+    CONTROL         "Enable",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,71,12,39,10
+END
+
+IDD_DLG_RTPXOUTPUT DIALOG DISCARDABLE  0, 0, 190, 197
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RTPX OUTPUT"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,118,176,42,14
+    PUSHBUTTON      "Cancel",IDCANCEL,32,176,41,14
+    CONTROL         "Enable",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,15,39,10
+    LTEXT           "Media Type:",IDC_STATIC,35,32,41,8
+    LTEXT           "Payload Type:",IDC_STATIC,35,55,48,8
+    LTEXT           "SRC_CTRL:",IDC_STATIC,34,82,39,8
+    LTEXT           "SRC_ID:",IDC_STATIC,34,102,28,8
+    COMBOBOX        IDC_CMB_MEDIATYPE,101,31,48,61,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PAYLOAD,101,52,40,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_SRCCTRL,101,81,48,62,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SRCID,101,102,40,14,ES_AUTOHSCROLL
+    LTEXT           "IP:",IDC_STATIC,36,129,10,8
+    LTEXT           "Port:",IDC_STATIC,36,151,16,8
+    EDITTEXT        IDC_EDIT_PORT,67,148,40,14,ES_AUTOHSCROLL
+    CONTROL         "IPAddress1",IDC_IPADDRESS_IP,"SysIPAddress32",
+                    WS_TABSTOP,67,128,98,14
+END
+
+IDD_DLG_RTPXADDR DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RTPX ADDR"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,112,73,43,14
+    PUSHBUTTON      "Cancel",IDCANCEL,30,74,45,13
+    LTEXT           "IP:",IDC_STATIC,41,22,10,8
+    LTEXT           "Port:",IDC_STATIC,41,48,16,8
+    CONTROL         "IPAddress1",IDC_IPADDRESS_IP,"SysIPAddress32",
+                    WS_TABSTOP,75,19,91,13
+    EDITTEXT        IDC_EDIT_PORT,74,46,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DLG_RTPXMIXER DIALOG DISCARDABLE  0, 0, 182, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RTPX MIXER"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,107,74,42,13
+    PUSHBUTTON      "Cancel",IDCANCEL,27,74,42,13
+    LTEXT           "SRC_CTRL:",IDC_STATIC,36,18,39,8
+    EDITTEXT        IDC_EDIT_SRCID,93,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "SRC_ID",IDC_STATIC,37,43,26,8
+    COMBOBOX        IDC_CMB_SRCCTRL,93,15,48,62,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_CONTROL3GPPRECORD DIALOG DISCARDABLE  0, 0, 294, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Return",IDOK,113,148,50,14
+    PUSHBUTTON      "Stop",IDC_BUTTON_3GPP_Stop,113,44,50,14
+    PUSHBUTTON      "Pause",IDC_BUTTON_3GPP_Pause,173,44,50,14
+    PUSHBUTTON      "Resume",IDC_BUTTON_3GPP_Resume,233,44,50,14
+    EDITTEXT        IDC_EDIT_ControlRecord_3GPP_DeviceID,113,20,110,14,
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_3GPP_u32StepSize,113,85,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_3GPP_u32SpeedSize,113,112,60,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "ControlRecord DeviceID:",IDC_STATIC,20,23,81,8
+    LTEXT           "m_u32ControlType:",IDC_STATIC,20,46,64,8
+    LTEXT           "m_u32StepSize:",IDC_STATIC,20,85,54,8
+    LTEXT           "m_u32SpeedSize:",IDC_STATIC,20,115,60,8
+    PUSHBUTTON      "StepBack",IDC_BUTTON_3GPP_StepBack,113,62,50,14
+END
+
+IDD_DLG_MEDIAEX_PARAM DIALOG DISCARDABLE  0, 0, 204, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MediaEx parameter"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,120,83,41,13
+    PUSHBUTTON      "Cancel",IDCANCEL,36,83,41,13
+    EDITTEXT        IDC_EDIT_CHNUM,107,54,40,14,ES_AUTOHSCROLL
+    LTEXT           "Channel Number:",IDC_STATIC,35,55,57,8
+    LTEXT           "Parameter Type:",IDC_STATIC,35,27,55,8
+    COMBOBOX        IDC_CMB_PARAMTYPE,107,25,48,42,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_MEDIAEX_INPUT DIALOG DISCARDABLE  0, 0, 175, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MediaEx input parameter"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,104,43,13
+    PUSHBUTTON      "Cancel",IDCANCEL,29,105,42,12
+    LTEXT           "Media Type:",IDC_STATIC,35,23,41,8
+    LTEXT           "Payload:",IDC_STATIC,35,43,30,8
+    LTEXT           "Port:",IDC_STATIC,35,64,16,8
+    LTEXT           "Profile Level:",IDC_STATIC,35,84,44,8
+    COMBOBOX        IDC_CMB_MT,92,21,48,57,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PT,92,40,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PORT,92,61,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL,92,82,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DLG_MEDIAEX_OUTPUT DIALOG DISCARDABLE  0, 0, 193, 216
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MediaEx output parameter"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,112,196,43,13
+    PUSHBUTTON      "Cancel",IDCANCEL,30,196,42,13
+    LTEXT           "Media Type:",IDC_STATIC,36,25,41,8
+    LTEXT           "Payload:",IDC_STATIC,37,44,30,8
+    LTEXT           "IP:",IDC_STATIC,37,65,10,8
+    LTEXT           "Port:",IDC_STATIC,37,87,16,8
+    LTEXT           "X:",IDC_STATIC,38,110,8,8
+    LTEXT           "Y:",IDC_STATIC,38,132,8,8
+    LTEXT           "Max fps:",IDC_STATIC,38,152,29,8
+    LTEXT           "Max kbps:",IDC_STATIC,38,171,35,8
+    COMBOBOX        IDC_CMB_MT,107,23,48,69,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PT,107,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_IP,107,62,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PORT,107,83,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_X,107,104,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Y,107,125,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FPS,107,146,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_KBPS,107,167,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_DEV_TIMER DIALOG DISCARDABLE  0, 0, 127, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Timer"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,58,50,14
+    EDITTEXT        IDC_EDIT_ELAPSE_TIME,79,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "Elapse Time(ms):",IDC_STATIC,15,32,58,8
+    CONTROL         "Timer",IDC_RADIO_TIMER,"Button",BS_AUTORADIOBUTTON,14,
+                    11,35,10
+    CONTROL         "Dev Timer",IDC_RADIO_DEV_TIMER,"Button",
+                    BS_AUTORADIOBUTTON,67,12,50,10
+END
+
+IDD_DIALOG_CTX_Register DIALOG DISCARDABLE  0, 0, 145, 75
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CtxRegDlg"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_REGTYPE,67,34,69,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Run",IDC_Excute,15,54,50,14
+    DEFPUSHBUTTON   "Exit",IDOK,86,54,52,14
+    EDITTEXT        IDC_EDIT_REGNAME,67,15,69,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "m_s8RegName:",IDC_STATIC,11,16,53,8
+    LTEXT           "m_u8RegType:",IDC_STATIC,11,36,50,8
+END
+
+IDD_DIALOG_CTXLinkDlg DIALOG DISCARDABLE  0, 0, 187, 92
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CtxLinkDlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,122,71,50,14
+    LTEXT           "m_srcDev",IDC_STATIC,36,14,34,8
+    LTEXT           "m_destDev",IDC_STATIC,32,32,38,8
+    LTEXT           "m_u8CtxLinkOpt",IDC_STATIC,16,53,54,8
+    EDITTEXT        IDC_EDIT_SRCDEV,78,10,102,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_DESTDEV,78,31,102,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_Link_Option,78,52,103,60,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "CTX Run",IDC_BUTTON_CTX_LINK,45,71,50,14
+END
+
+IDD_DIALOG_CtxAppData DIALOG DISCARDABLE  0, 0, 222, 228
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CtxAppData"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_SRC_APP_REG_NAME,86,15,128,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SRC_APP_UNITID,86,32,128,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_DEST_APP_REG_NAME,86,66,128,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DEST_APP_UNITID,86,83,128,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DEST_APP_REQ_TYPE,86,100,128,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TEST_NUMBER_1,86,133,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TEST_NUMBER_2,86,151,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TEST_STRING,86,169,129,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Send App Data",IDC_BUTTON_SendData,45,207,50,14
+    LTEXT           "s8SrcAppRegName:",IDC_STATIC,15,17,66,8
+    LTEXT           "u8SrcAppUnitID:",IDC_STATIC,27,34,54,8
+    LTEXT           "s8DestAppRegName:",IDC_STATIC,10,69,70,8
+    LTEXT           "u8DestAppUnitID:",IDC_STATIC,22,84,58,8
+    LTEXT           "u8AppReqType:",IDC_STATIC,28,103,52,8
+    LTEXT           "Test Nums1:",IDC_STATIC,37,136,42,8
+    LTEXT           "Test Nums2:",IDC_STATIC,37,154,42,8
+    LTEXT           "Test String:",IDC_STATIC,41,172,38,8
+    DEFPUSHBUTTON   "Exit",IDOK,142,207,50,14
+    GROUPBOX        "User Data",IDC_STATIC,7,120,208,65
+    EDITTEXT        IDC_EDIT_SRC_CTX_DEVID,86,49,128,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "ctxDeviceID:",IDC_STATIC,37,51,42,8
+END
+
+IDD_DIALOG_CTXLinkCTX DIALOG DISCARDABLE  0, 0, 191, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CtxLinkCtxDlg"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_Link_Option,78,52,103,60,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Ctx2Ctx Run",ID_CTX_LINK_2_CTX,35,70,50,14
+    PUSHBUTTON      "Exit",IDCANCEL,108,70,50,14
+    LTEXT           "m_srcDev",IDC_STATIC,36,14,34,8
+    LTEXT           "m_destDev",IDC_STATIC,32,32,38,8
+    LTEXT           "m_u8CtxLinkOpt",IDC_STATIC,16,53,54,8
+    EDITTEXT        IDC_EDIT_SRCDEV,78,10,102,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_DESTDEV,78,31,102,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+IDD_DIALOG_SEND_SIGNAL DIALOG DISCARDABLE  0, 0, 168, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Send Signal Data"
+FONT 10, "System"
+BEGIN
+    CONTROL         "XMS_324_CMD_TYPE_NORMAL_START",
+                    IDC_RADIO_XMS_324_CMD_TYPE_NORMAL_START,"Button",
+                    BS_AUTORADIOBUTTON,7,22,147,10
+    CONTROL         "XMS_324_CMD_TYPE_MONITOR_START",
+                    IDC_RADIO_XMS_324_CMD_TYPE_MONITOR_START,"Button",
+                    BS_AUTORADIOBUTTON,7,39,150,10
+    CONTROL         "XMS_324_CMD_TYPE_STOP",IDC_RADIO_XMS_324_CMD_TYPE_STOP,
+                    "Button",BS_AUTORADIOBUTTON,7,56,111,10
+    CONTROL         "XMS_324_CMD_TYPE_RESET",
+                    IDC_RADIO_XMS_324_CMD_TYPE_RESET,"Button",
+                    BS_AUTORADIOBUTTON,7,73,115,10
+    PUSHBUTTON      "Run",IDC_BUTTON_RUN,31,92,50,14
+    DEFPUSHBUTTON   "Exit",IDOK,92,91,50,14
+    GROUPBOX        "324 CMD",IDC_STATIC,7,7,154,84
+END
+
+IDD_DIALOG_GTGSET DIALOGEX 0, 0, 270, 364
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,42,343,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,213,343,50,14
+    CONTROL         "Tab1",IDC_TAB_GTG_FREQ,"SysTabControl32",TCS_HOTTRACK,
+                    45,7,190,71,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Tab2",IDC_TAB_GTG_TONE,"SysTabControl32",WS_BORDER,7,83,
+                    256,255,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    GROUPBOX        "Set Freq",IDC_STATIC,106,26,92,44,BS_CENTER
+    GROUPBOX        "Set DialTone",IDC_STATIC,49,108,177,223,BS_CENTER
+    LTEXT           "Freq_Index",IDC_STATIC,110,39,44,8
+    LTEXT           "Freq_Coef",IDC_STATIC,110,54,42,8
+    EDITTEXT        IDC_EDIT_FREQ_INDEX,154,36,26,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_FREQ_COEF,154,52,26,14,ES_AUTOHSCROLL
+    LTEXT           "GTG_ID",IDC_STATIC,60,123,35,11
+    LTEXT           "Freq1_Index ",IDC_STATIC,60,139,44,11
+    LTEXT           "Amp_Threshold_1",IDC_STATIC,60,179,69,11
+    LTEXT           "Envelop_Mode",IDC_STATIC,60,216,67,11
+    LTEXT           "Repeat_Count",IDC_STATIC,57,236,63,11
+    LTEXT           "On_Time1",IDC_STATIC,60,255,69,11
+    LTEXT           "Off_Time1",IDC_STATIC,60,274,69,11
+    LTEXT           "On_Time2",IDC_STATIC,60,295,69,11
+    LTEXT           "Off_Time2",IDC_STATIC,60,311,69,11
+    EDITTEXT        IDC_EDIT_GTGID,131,119,73,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_THRESHOLD1,131,175,73,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FREQ_INDEX1,131,138,74,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_REPEATCOUNT,131,233,73,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ONTIME1,131,252,73,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_OFFTIME1,131,272,73,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ONTIME2,131,292,73,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_OFFTIME2,131,309,74,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ENVELOP,131,215,75,60,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_THRESHOLD2,131,196,73,15,ES_AUTOHSCROLL
+    LTEXT           "Amp_Threshold_2",IDC_STATIC,59,198,69,11
+    EDITTEXT        IDC_EDIT_FREQ_INDEX2,131,158,74,14,ES_AUTOHSCROLL
+    LTEXT           "Freq2_Index ",IDC_STATIC,59,160,44,11
+END
+
+IDD_CLKDIALOG DIALOG DISCARDABLE  0, 0, 171, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "Master",IDC_RADIO_CLK_TYPE_MASTER,"Button",
+                    BS_AUTORADIOBUTTON,81,27,40,10
+    CONTROL         "Slave",IDC_RADIO_CLK_TYPE_SLAVE,"Button",
+                    BS_AUTORADIOBUTTON,81,44,36,10
+    LTEXT           "NETNEF",IDC_STATIC,24,75,32,8
+    COMBOBOX        IDC_NETCOMBO,61,74,62,60,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,13,122,44,14
+    PUSHBUTTON      "Cancel",IDCANCEL,77,122,38,14
+    GROUPBOX        "CLCLK PARAM",IDC_STATIC,7,7,157,92
+    LTEXT           "E1ClkType:",IDC_STATIC,22,30,54,8
+END
+
+IDD_DIALOG_CSPPLAY_CTRL DIALOG DISCARDABLE  0, 0, 156, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CSPPlayCtrl Dlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,13,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,37,50,14
+    CONTROL         "StopCSPPlay",IDC_RADIO_STOP_CSPPLAY,"Button",
+                    BS_AUTORADIOBUTTON,64,10,59,10
+    LTEXT           "Stop CSP Play:",IDC_STATIC,7,10,50,8
+    CONTROL         "DelayStopCSPPlay",IDC_RADIO_DELAY_STOP_CSPPLAY,"Button",
+                    BS_AUTORADIOBUTTON,64,23,78,10
+END
+
+IDD_DIALOG_CSPREC_CTRL DIALOG DISCARDABLE  0, 0, 149, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CSPRec Ctrl Dlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,16,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,85,36,50,14
+    CONTROL         "StopCSPRec",IDC_RADIO_STOP_CSPREC,"Button",
+                    BS_AUTORADIOBUTTON,64,10,55,10
+    LTEXT           "Stop CSP Rec:",IDC_STATIC,10,10,48,8
+    CONTROL         "DelayStopCSPRec",IDC_RADIO_DELAY_STOP_CSPREC,"Button",
+                    BS_AUTORADIOBUTTON,64,23,75,10
+END
+
+IDD_DIALOG_CONF_PARAM_SET DIALOG DISCARDABLE  0, 0, 160, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Conf Param Set Dlg"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_VAD_CHECK_INTERVAL,99,10,53,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Enable",IDC_RADIO_RPT_CONF_MEM_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,100,28,39,10
+    CONTROL         "Disable",IDC_RADIO_RPT_CONF_MEM_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON,100,41,41,10
+    DEFPUSHBUTTON   "OK",IDOK,21,53,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,91,53,50,14
+    LTEXT           "m_u16VadCheckInterval:",IDC_STATIC,13,12,81,8
+    LTEXT           "m_u8RptConfMemEnable:",IDC_STATIC,9,28,85,8
+END
+
+IDD_DIALOG_ACTIVE_MEM DIALOG DISCARDABLE  0, 0, 142, 56
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Active Mem Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,13,35,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,78,35,50,14
+    LTEXT           "m_s32VadLevel:",IDC_STATIC,12,11,55,8
+    EDITTEXT        IDC_EDIT_ACTIVE_MEM_VAD_LEVEL,73,9,60,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_FAX_BPS DIALOG DISCARDABLE  0, 0, 163, 118
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fax Bps Dlg"
+FONT 10, "System"
+BEGIN
+    CONTROL         "XMS_BPS_2400",IDC_RADIO_XMS_BPS_2400,"Button",
+                    BS_AUTORADIOBUTTON,71,10,69,10
+    CONTROL         "XMS_BPS_4800",IDC_RADIO_XMS_BPS_4800,"Button",
+                    BS_AUTORADIOBUTTON,71,23,69,10
+    CONTROL         "XMS_BPS_7200",IDC_RADIO_XMS_BPS_7200,"Button",
+                    BS_AUTORADIOBUTTON,71,36,69,10
+    CONTROL         "XMS_BPS_9600",IDC_RADIO_XMS_BPS_9600,"Button",
+                    BS_AUTORADIOBUTTON,71,49,69,10
+    CONTROL         "XMS_BPS_12000",IDC_RADIO_XMS_BPS_12000,"Button",
+                    BS_AUTORADIOBUTTON,71,62,73,10
+    CONTROL         "XMS_BPS_14400",IDC_RADIO_XMS_BPS_14400,"Button",
+                    BS_AUTORADIOBUTTON,71,75,73,10
+    DEFPUSHBUTTON   "OK",IDOK,20,97,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,92,97,50,14
+    LTEXT           "m_u8BPS:",IDC_STATIC,15,11,35,8
+END
+
+IDD_DIALOG_FAX_MULTI_FILE DIALOG DISCARDABLE  0, 0, 187, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fax Multi File Set"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,66,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,66,50,14
+    LTEXT           "m_u32Op",IDC_STATIC,29,15,32,8
+    CONTROL         "TYPE_CLEAR",IDC_RADIO_TYPE_CLEAR,"Button",
+                    BS_AUTORADIOBUTTON,65,15,60,10
+    CONTROL         "TYPE_ADD",IDC_RADIO_TYPE_ADD,"Button",
+                    BS_AUTORADIOBUTTON,65,30,52,10
+    LTEXT           "m_strFileName",IDC_STATIC,10,51,51,8
+    EDITTEXT        IDC_EDIT_FAX_FILE_NAME,65,47,103,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FIND_FILE_PATH,168,47,10,14
+END
+
+IDD_DIALOG_BOARD_SET_MAIN_CLOCK DIALOG DISCARDABLE  0, 0, 212, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BoardSetMainClockDlg"
+FONT 10, "System"
+BEGIN
+    CONTROL         "XMS_BOARD_EXT_TYPE_NULL",
+                    IDC_RADIO_XMS_BOARD_EXT_TYPE_NULL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,17,23,120,10
+    CONTROL         "XMS_BOARD_EXT_TYPE_CLOCK",
+                    IDC_RADIO_XMS_BOARD_EXT_TYPE_CLOCK,"Button",
+                    BS_AUTORADIOBUTTON,17,39,125,10
+    GROUPBOX        "m_u8SysClockMode",IDC_STATIC,17,63,169,39
+    CONTROL         "XMS_BOARD_CLOCK_MODE_MANUAL",
+                    IDC_RADIO_XMS_BOARD_EXT_CLOCK_NO_SET,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,17,74,142,10
+    CONTROL         "XMS_BOARD_CLOCK_MODE_AUTO",
+                    IDC_RADIO_XMS_BOARD_EXT_CLOCK_SET,"Button",
+                    BS_AUTORADIOBUTTON,17,89,132,10
+    GROUPBOX        "m_u8SysClockType",IDC_STATIC,17,114,171,52
+    CONTROL         "XMS_BOARD_EXT_CLOCK_TYPE_MASTER",
+                    IDC_RADIO_XMS_BOARD_CLK_MASTER,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,17,129,157,10
+    CONTROL         "XMS_BOARD_EXT_CLOCK_TYPE_SLAVE",
+                    IDC_RADIO_XMS_BOARD_CLK_SLAVE,"Button",
+                    BS_AUTORADIOBUTTON,17,144,150,10
+    DEFPUSHBUTTON   "OK",IDOK,48,172,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,115,172,50,14
+    GROUPBOX        "m_u32ExtType",IDC_STATIC,17,12,168,41
+END
+
+IDD_DIALOG_BRD_VAD_MIN_LEVEL DIALOG DISCARDABLE  0, 0, 135, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BoardVadMinLevelDlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,58,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,71,58,50,14
+    LTEXT           "m_s32VadLevel:",IDC_STATIC,14,14,55,8
+    EDITTEXT        IDC_EDIT_VAD_MIN_LEVEL,82,12,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "m_u16VadInterval:",IDC_STATIC,14,36,62,8
+    EDITTEXT        IDC_EDIT_VAD_INTERVAL,82,34,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_DIALOG_BoardComParam DIALOG DISCARDABLE  0, 0, 178, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,32,62,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,108,62,50,14
+    EDITTEXT        IDC_EDIT_CNG_GAIN_LEVEL,119,35,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "m_u16CNGGainLevel:",IDC_STATIC,30,38,73,8
+    CONTROL         "m_u8IsCNGEnable",IDC_RADIO_CNG_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,29,15,77,10
+END
+
+IDD_DIALOG_SS7RAWFRAME DIALOG DISCARDABLE  0, 0, 354, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,115,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,184,185,50,14
+    LTEXT           "m_u8UserType",IDC_STATIC,34,77,51,8
+    LTEXT           "m_u8LinkType",IDC_STATIC,35,132,51,8
+    LTEXT           "m_u8MsgType",IDC_STATIC,36,149,51,8
+    LTEXT           "m_u8InfoLen",IDC_STATIC,35,10,51,8
+    LTEXT           "m_u8UnitId",IDC_STATIC,179,10,51,8
+    LTEXT           "m_u8E1Port",IDC_STATIC,35,26,51,8
+    LTEXT           "m_u8Ts",IDC_STATIC,179,26,51,8
+    LTEXT           "m_u8Reserved1",IDC_STATIC,35,42,55,8
+    LTEXT           "m_u8Info",IDC_STATIC,179,42,51,8
+    LTEXT           "Reserved2",IDC_STATIC,35,59,51,8
+    EDITTEXT        IDC_INFOLEN,93,10,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UNITID,237,10,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E1PORT,93,26,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_U8TS,237,26,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RESERVED1,93,42,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_U8INFO,237,42,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RESERVED2,93,58,76,12,ES_AUTOHSCROLL
+    CONTROL         "XMS_SS7_USER_TYPE_SCCP",IDC_XMS_SS7_USER_TYPE_SCCP,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,92,76,115,10
+    CONTROL         "XMS_SS7_USER_TYPE_TUP",IDC_XMS_SS7_USER_TYPE_TUP,"Button",
+                    BS_AUTORADIOBUTTON,214,74,111,10
+    CONTROL         "XMS_SS7_USER_TYPE_ISUP",IDC_XMS_SS7_USER_TYPE_ISUP,
+                    "Button",BS_AUTORADIOBUTTON,92,91,113,10
+    CONTROL         "XMS_SS7_LINK_TYPE_ITU",IDC_XMS_SS7_LINK_TYPE_ITU,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,93,131,105,10
+    CONTROL         "XMS_SS7_LINK_TYPE_CHINA",IDC_XMS_SS7_LINK_TYPE_CHINA,
+                    "Button",BS_AUTORADIOBUTTON,204,130,114,10
+    CONTROL         "XMS_SS7_MSG_DATA",IDC_XMS_SS7_MSG_DATA,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,93,149,89,10
+    CONTROL         "XMS_SS7_MSG_CMD",IDC_XMS_SS7_MSG_CMD,"Button",
+                    BS_AUTORADIOBUTTON,204,147,87,10
+    CONTROL         "XMS_SS7_MSG_STATUS",IDC_XMS_SS7_MSG_STATUS,"Button",
+                    BS_AUTORADIOBUTTON,93,164,98,10
+END
+
+IDD_USERREADXMSBOARD DIALOG DISCARDABLE  0, 0, 395, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "UserReadXmsBoardInfo"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,192,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,186,192,50,14
+    LTEXT           "m_u8MacAddr",IDC_STATIC,23,26,47,8
+    LTEXT           "m_u8ChassisType",IDC_STATIC,23,153,62,8
+    LTEXT           "m_u8ChassisIndex",IDC_STATIC,208,26,64,8
+    LTEXT           "m_u8ChassisSlot",IDC_STATIC,23,46,58,8
+    LTEXT           "m_u8SubBoardIndex",IDC_STATIC,208,45,69,8
+    LTEXT           "m_u8BoardType",IDC_STATIC,23,135,55,8
+    LTEXT           "rfu1",IDC_STATIC,23,63,47,8
+    LTEXT           "m_s8SystemName",IDC_STATIC,208,60,63,8
+    LTEXT           "m_s8PlatformType",IDC_STATIC,23,171,62,8
+    LTEXT           "m_s8UserCode",IDC_STATIC,23,81,51,8
+    LTEXT           "m_s32SysId",IDC_STATIC,208,79,47,8
+    LTEXT           "rfu2",IDC_STATIC,23,100,47,8
+    LTEXT           "m_s8FirmwareName",IDC_STATIC,208,98,68,8
+    LTEXT           "m_s8FirmwareVersion",IDC_STATIC,23,118,74,8
+    LTEXT           "m_s8RevisionDate",IDC_STATIC,210,116,63,8
+    EDITTEXT        IDC_u8MacAddr,99,26,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_u8ChassisIndex,280,26,94,12,ES_AUTOHSCROLL
+    CONTROL         "ITP1200",IDC_ITP1200,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,99,153,43,10
+    CONTROL         "3U chassis",IDC_3U_chassis,"Button",BS_AUTORADIOBUTTON,
+                    169,153,53,10
+    CONTROL         "5U chassis",IDC_5U_chassis,"Button",BS_AUTORADIOBUTTON,
+                    244,153,53,10
+    CONTROL         "11U chassis",IDC_11U_chassis,"Button",
+                    BS_AUTORADIOBUTTON,317,153,57,10
+    EDITTEXT        IDC_u8ChassisSlot,99,44,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_u8SubBoardIndex,280,42,94,12,ES_AUTOHSCROLL
+    CONTROL         "itp1200",IDC_itp_1200,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,99,136,40,10
+    CONTROL         "itp2400",IDC_itp_2400,"Button",BS_AUTORADIOBUTTON,169,
+                    136,40,10
+    CONTROL         "itp4800",IDC_itp_4800,"Button",BS_AUTORADIOBUTTON,244,
+                    137,40,10
+    EDITTEXT        IDC_rfu1,99,62,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_s8SystemName,280,60,94,12,ES_AUTOHSCROLL
+    CONTROL         "callback",IDC_callback,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,99,171,43,10
+    CONTROL         "keygoe 1000",IDC_keygoe_1000,"Button",
+                    BS_AUTORADIOBUTTON,169,171,58,10
+    CONTROL         "keygoe 3000",IDC_keygoe_3000,"Button",
+                    BS_AUTORADIOBUTTON,244,172,58,10
+    CONTROL         "keygoe 8000",IDC_keygoe_8000,"Button",
+                    BS_AUTORADIOBUTTON,317,172,58,10
+    EDITTEXT        IDC_s8UserCode,99,80,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_s32SysId,280,77,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rfu2,99,98,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_s8FirmwareName,281,95,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_s8FirmwareVersion,99,115,94,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_s8RevisionDate,281,114,94,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_CMDPARAMDATA_CAS DIALOG DISCARDABLE  0, 0, 320, 208
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CmdParamData_CAS_t"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,92,175,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,175,50,14
+    LTEXT           "m_u8CalledTableCount",IDC_STATIC,43,21,76,8,NOT 
+                    WS_GROUP
+    LTEXT           "m_CalledTable",IDC_STATIC,43,33,50,8,NOT WS_GROUP
+    LTEXT           "m_u8CalledLen",IDC_STATIC,43,61,52,8,NOT WS_GROUP
+    LTEXT           "m_u8CalledTimeOut",IDC_STATIC,43,74,67,8,NOT WS_GROUP
+    LTEXT           "m_u8NeedCaller",IDC_STATIC,43,113,55,8,NOT WS_GROUP
+    LTEXT           "m_u8AreaCodeLen",IDC_STATIC,43,47,62,8,NOT WS_GROUP
+    LTEXT           "m_u8KA",IDC_STATIC,43,87,28,8,NOT WS_GROUP
+    LTEXT           "m_u8KD",IDC_STATIC,43,99,29,8,NOT WS_GROUP
+    LTEXT           "m_u8ControlMode",IDC_STATIC,43,125,60,8,NOT WS_GROUP
+    LTEXT           "m_u8CountryCode",IDC_STATIC,43,138,61,8,NOT WS_GROUP
+    EDITTEXT        IDC_m_u8CalledTableCount,132,21,62,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_m_CalledTable,132,33,62,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_m_u8CalledLen,132,61,62,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_m_u8CalledTimeOut,132,74,62,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_m_u8AreaCodeLen,132,47,62,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_m_u8KA,132,87,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_m_u8KD,132,99,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "CHINA",IDC_CHINA,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    108,138,37,10
+    CONTROL         "KOREA",IDC_KOREA,"Button",BS_AUTORADIOBUTTON,160,138,39,
+                    10
+    CONTROL         "INDIA",IDC_INDIA,"Button",BS_AUTORADIOBUTTON,223,137,34,
+                    10
+    CONTROL         "VIETNAM",IDC_VIETNAM,"Button",BS_AUTORADIOBUTTON,108,
+                    154,46,10
+    CONTROL         "COUNTRY_END",IDC_COUNTRY_END,"Button",
+                    BS_AUTORADIOBUTTON,160,154,68,10
+    CONTROL         "None",IDC_None,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,108,125,33,10
+    CONTROL         "Caller Control",IDC_Caller_Control,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,160,125,60,10
+    CONTROL         "Called Control",IDC_Called_Control,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,223,124,62,10
+    CONTROL         "Yes",IDC_Yes,"Button",BS_AUTORADIOBUTTON | WS_DISABLED | 
+                    WS_GROUP,108,114,29,10
+    CONTROL         "No ",IDC_No,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,
+                    160,114,27,10
+END
+
+IDD_DIALOG_AREC_VOLTAGE DIALOG DISCARDABLE  0, 0, 146, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Analog Rec Mod Voltage Dlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,17,51,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,51,50,14
+    LTEXT           "m_u8Valtage:",IDC_STATIC,15,19,45,8
+    EDITTEXT        IDC_EDIT_m_u8Valtage,66,17,57,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_REC_MOD_MODE_SET DIALOG DISCARDABLE  0, 0, 254, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RecModModeSetDlg"
+FONT 10, "System"
+BEGIN
+    LTEXT           "m_u8Enable:",IDC_STATIC,45,14,44,8
+    CONTROL         "Enable",IDC_RADIO_RDMS_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,97,14,39,10
+    CONTROL         "Disable",IDC_RADIO_RDMS_Disable,"Button",
+                    BS_AUTORADIOBUTTON,146,14,41,10
+    LTEXT           "m_u8SwitchMode:",IDC_STATIC,29,30,60,8
+    CONTROL         "Avaya",IDC_RADIO_XMS_DRS_SWITCH_AVAYA,"Button",
+                    BS_AUTORADIOBUTTON,97,30,36,10
+    CONTROL         "Simenz",IDC_RADIO_XMS_DRS_SWITCH_SIMENZ,"Button",
+                    BS_AUTORADIOBUTTON,146,30,41,10
+    CONTROL         "Tadirant",IDC_RADIO_XMS_DRS_SWITCH_TADIRANT,"Button",
+                    BS_AUTORADIOBUTTON,199,30,43,10
+    CONTROL         "Erricsion",IDC_RADIO_XMS_DRS_SWITCH_ERRICSION,"Button",
+                    BS_AUTORADIOBUTTON,97,43,45,10
+    CONTROL         "Toshiba",IDC_RADIO_XMS_DRS_SWITCH_TOSHIBA,"Button",
+                    BS_AUTORADIOBUTTON,146,44,42,10
+    LTEXT           "m_u8EncodeType:",IDC_STATIC,28,72,61,8
+    CONTROL         "A-Law",IDC_RADIO_XMS_Alaw_type,"Button",
+                    BS_AUTORADIOBUTTON,97,72,35,10
+    CONTROL         "U-Law",IDC_RADIO_XMS_Ulaw_type,"Button",
+                    BS_AUTORADIOBUTTON,146,72,36,10
+    LTEXT           "m_u8IsRecordSigData:",IDC_STATIC,14,96,76,8
+    CONTROL         "Enable",IDC_RADIO_RDMS_ENABLE_SigData,"Button",
+                    BS_AUTORADIOBUTTON,98,94,39,10
+    CONTROL         "Disable",IDC_RADIO_RDMS_Disable_SigData,"Button",
+                    BS_AUTORADIOBUTTON,147,94,41,10
+    DEFPUSHBUTTON   "OK",IDOK,57,120,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,120,50,14
+END
+
+IDD_DIALOG_DSS1_CALL_PARAM DIALOG DISCARDABLE  0, 0, 478, 269
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DSS1 Call Param Dlg"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,149,248,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,257,248,50,14
+END
+
+IDD_DIALOG_LED_CTRL DIALOG DISCARDABLE  0, 0, 433, 236
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Led Control"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "OK",IDC_BUTTON1,143,163,35,11
+    LTEXT           "Dsp UnitID",IDC_STATIC,22,164,36,8
+    EDITTEXT        IDC_EDIT_UNITID,63,162,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "LED time paramter",IDC_STATIC,19,9,134,63
+    CONTROL         "m_u8LedTimeEnable",IDC_RADIO_LEDTIME_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,29,21,85,10
+    EDITTEXT        IDC_EDIT_LED_ONTIME,84,38,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LED_OFFTIME,84,52,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_u16OnTime",IDC_STATIC,30,39,48,8
+    LTEXT           "m_u16OffTime",IDC_STATIC,30,53,48,8
+    GROUPBOX        "Watchdog out paramter",IDC_STATIC,19,90,144,63
+    CONTROL         "m_u8WatchDogOutEnbale",IDC_RADIO_WD_OUT_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,30,104,101,10
+    LTEXT           "m_u16WatchDogOutTime",IDC_STATIC,30,121,85,8
+    EDITTEXT        IDC_EDIT_WD_OUT_TIME,117,119,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "WatchDog time paramter",IDC_STATIC,173,12,152,63
+    EDITTEXT        IDC_EDIT_WD_ONTIME,271,39,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_WD_OFFTIME,271,53,40,12,ES_AUTOHSCROLL
+    LTEXT           "m_u16WatchDogOnTime",IDC_STATIC,184,40,82,8
+    LTEXT           "m_u16WatchDogOffTime",IDC_STATIC,184,54,82,8
+    GROUPBOX        "Feed watchdog",IDC_STATIC,174,90,144,63
+    CONTROL         "m_u8FeedWatchDogEnable",IDC_CHECK_FEED_WD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,183,113,108,10
+    CONTROL         "m_u8WatchDogTimeEnable",IDC_RADIO_WD_TIME_ENABLE,"Button",
+                    BS_AUTORADIOBUTTON,183,25,106,10
+END
+
+IDD_DIALOG_VOIP_SET_PARAM DIALOG DISCARDABLE  0, 0, 208, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set VoIP Media Params"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,98,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,151,191,50,14
+    GROUPBOX        "Media Info",IDC_STATIC,7,7,194,108
+    EDITTEXT        IDC_EDIT_DTMF,63,22,40,14,ES_AUTOHSCROLL
+    LTEXT           "Payload DTMF",IDC_STATIC,13,24,49,8
+    EDITTEXT        IDC_EDIT_TONE,155,22,40,14,ES_AUTOHSCROLL
+    LTEXT           "Payload Tone",IDC_STATIC,108,24,46,8
+    CONTROL         "Audio",IDC_CHECK_AUDIO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,43,49,10
+    EDITTEXT        IDC_EDIT_AUDIO_ADDR,63,41,88,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_AUDIO_PORT,155,41,40,14,ES_AUTOHSCROLL
+    CONTROL         "Video",IDC_CHECK_VIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,79,49,10
+    EDITTEXT        IDC_EDIT_VIDEO_ADDR,63,77,88,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VIDEO_PORT,155,77,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CAPSLIST_V,63,95,132,14,ES_AUTOHSCROLL
+    LTEXT           "CapsList",IDC_STATIC,13,97,30,8
+    EDITTEXT        IDC_EDIT_CAPSLIST_A,63,59,132,14,ES_AUTOHSCROLL
+    LTEXT           "CapsList",IDC_STATIC,13,61,30,8
+    GROUPBOX        "Static",IDC_STATIC,7,144,194,42
+    CONTROL         "RTP Addr",IDC_CHECK_RTP_ADDR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,158,46,10
+    CONTROL         "RTP Session",IDC_CHECK_RTP_SESSION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,79,158,58,10
+    CONTROL         "RTP Codec",IDC_CHECK_RTP_CODEC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,144,158,52,10
+    CONTROL         "VoIP Media",IDC_CHECK_VOIP_MEDIA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,172,53,10
+    CONTROL         "Open RTP",IDC_CHECK_OPEN_RTP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,79,172,49,10
+    GROUPBOX        "DSP Info",IDC_STATIC,7,115,194,29
+    EDITTEXT        IDC_EDIT_DSP_ADDR,63,123,88,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DSP_PORT,155,123,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "Use DSP",IDC_CHECK_USE_DSP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,126,45,10
+END
+
+IDD_DIALOG_GET_RELATE_MOD_DLG DIALOG DISCARDABLE  0, 0, 156, 76
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetRelateDlg"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_GET_RELATE_MT,81,13,52,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GET_RELATE_UID,81,34,52,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,17,55,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,55,50,14
+    LTEXT           "ModuleType:",IDC_STATIC,19,14,43,8
+    LTEXT           "Module UnitID:",IDC_STATIC,19,36,49,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "XMSApi_Test \0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "XMSApi_Test\0"
+            VALUE "LegalCopyright", "Copyright Donjin Co.  (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "XMSApi_Test.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "XMSApi_Test \0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+IDR_VERSION2 VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "China\0"
+            VALUE "FileDescription", "XMSApi_Test\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "XMSApi_Test\0"
+            VALUE "LegalCopyright", "Copyright ? 2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "XMSApi_Test.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "China XMSApi_Test\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_XMSAPI_TEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 621
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 422
+    END
+
+    IDD_DIALOG_PLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 442
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_DIALOG_CONTROLPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_DIALOG_RECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 409
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 280
+    END
+
+    IDD_DIALOG_CONTROLRECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_DIALOG_CONF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_DIALOG_PARAM_VOICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 465
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 316
+    END
+
+    IDD_DIALOG_BuildPlayIndex, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_DIALOG_SENDIODATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_DIALOG_PARAM_CAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_DIALOG_ANATRUNK, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 279
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_DIALOG_ANAUSER, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 284
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_DIALOG_RECCSP, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 354
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_DIALOG_PLAYCSP, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 182
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_DIALOG_PARAM_VOIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_DIALOG_PARAM_FSK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_DIALOG_PARAM_Flash, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG_GTDSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 418
+    END
+
+    IDD_DIALOG_PARAM_ATRUNKFLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_DIALOG_PARAM_3GFaxTone, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_DIALOG_PARAM_FAXHEADER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_DIALOG_PARAM_ATRUNKEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 110
+    END
+
+    IDD_DIALOG_FAX_ECM_SET_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_DIALOG_3GPPBuildPlayIndex, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+    END
+
+    IDD_DIALOG_PLAY_3GPP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 222
+    END
+
+    IDD_DIALOG_CONTROL3GPPPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DIALOG_GET_3GP_CFG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 161
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_DIALOG_Record_3GPP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 375
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 310
+    END
+
+    IDD_DIALOG_VSD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 114
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DLG_PARAMTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_RTPXINPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_DLG_RTPXOUTPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_DLG_RTPXADDR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_RTPXMIXER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_CONTROL3GPPRECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DLG_MEDIAEX_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DLG_MEDIAEX_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_DLG_MEDIAEX_OUTPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_DIALOG_DEV_TIMER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DIALOG_CTX_Register, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_DIALOG_CTXLinkDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+
+    IDD_DIALOG_CtxAppData, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_DIALOG_CTXLinkCTX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_SEND_SIGNAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 161
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_DIALOG_GTGSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 357
+    END
+
+    IDD_CLKDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_DIALOG_CSPPLAY_CTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+
+    IDD_DIALOG_CSPREC_CTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_DIALOG_CONF_PARAM_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_DIALOG_ACTIVE_MEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_DIALOG_FAX_BPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_DIALOG_FAX_MULTI_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_DIALOG_BOARD_SET_MAIN_CLOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_DIALOG_BRD_VAD_MIN_LEVEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DIALOG_BoardComParam, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_SS7RAWFRAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_USERREADXMSBOARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 388
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 212
+    END
+
+    IDD_DIALOG_CMDPARAMDATA_CAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 201
+    END
+
+    IDD_DIALOG_AREC_VOLTAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 139
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_DIALOG_REC_MOD_MODE_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_DIALOG_DSS1_CALL_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 471
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+
+    IDD_DIALOG_LED_CTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 153
+        TOPMARGIN, 2
+    END
+
+    IDD_DIALOG_VOIP_SET_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_DIALOG_GET_RELATE_MOD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_XMSAPI_TEST_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_FAXTYPE, 0x403, 16, 0
+0x4146, 0x5f58, 0x4f4e, 0x4d52, 0x4c41, 0x5428, 0x3033, 0x0029, 
+    IDC_COMBO_FAXTYPE, 0x403, 16, 0
+0x4146, 0x5f58, 0x4553, 0x5652, 0x5245, 0x5428, 0x3833, 0x0029, 
+    IDC_COMBO_FAXTYPE, 0x403, 17, 0
+0x4146, 0x5f58, 0x4147, 0x4554, 0x4157, 0x2859, 0x3354, 0x2938, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "About XMSApi_Test(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\XMSApi_Test.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

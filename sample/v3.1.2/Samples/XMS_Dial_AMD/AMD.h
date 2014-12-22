@@ -1,0 +1,96 @@
+
+//*****************************************************************************
+//Copyright(c)  :  DONJIN CORPORTAION  All Rights Reserved                       
+//FileName    :   Voc_Struct.h                                                              
+//Version      :   1.00                                                              
+//Author      :   LYK                                                             
+//DateTime    :  2005-01-29                                           
+//Description  :   定义语音处理功能内部运行时通道数据结构                                                              
+//*****************************************************************************
+//                          Modify History                                       
+//------------------------------------------------------------------------------------------------------------------- 
+//DateTime    :  YYYY-MM-DD hh:mm                                           
+//Author      :  修改者                                                               
+//Modification  :  修改描述                                                              
+//-------------------------------------------------------------------------------------------------------------------
+#ifndef	AMD_STRUCT_
+#define	AMD_STRUCT_
+
+
+#include "DJAcsDataDef.h"
+#include "DJAcsAPIDef.h"
+
+
+// barge Event
+#define   BARGE_START_EVENT   0x01 // barge 开始事件,目前没有使用
+
+#define  SILENCE_NORMAL_EVENT  0X02 //静音通常事件，静音结束时长事件
+#define   SILENCE_MIN_EVENT  0X03 // 最小静音时长事件
+#define   SILENCE_PERSON_EVENT  0X04 //真人摘机的最大静音事件
+#define  SILENCE_PROMPT_TONE_EVENT   0X05 //提示音的最大静音事件
+#define  SILENCE_TIMEOUT_EVENT 0X06  // 静音超时事件
+
+#define   VOICE_NORMAL_EVENT   0X09 //语音通常事件，语音结束时长事件
+#define   VOICE_MIN_EVENT   0X0a //最小语音时长事件
+#define   VOICE_MUSIC_EVENT  0x0b //彩铃最大语音事件
+#define   VOICE_TIMEOUT_EVENT  0X0c //语音超时事件
+
+
+#define   BARGE_GTD_EVENT  0x10  // 语音为GTD信号事件
+#define   BARGE_DTMF_EVENT  0X11 //语音为DTMF信号事件
+
+
+#define  BARGE_END_EVENT  0x20 //barge结束事件，目前没有使用
+//end
+
+
+#define	ITP_Disable		0
+#define	ITP_Enable		1
+//AMD result
+#define  AMD_RESULT_MUSIC  0X01 //彩铃
+
+#define  AMD_RESULT_VIRTUAL_PERSON  0X02 //真人摘机
+
+#define  AMD_RESULT_PROMPT_TONE  0X03  //提示音
+
+#define  AMD_CHECK_TIME    6000  // ont tick is  5ms  //480000 samples for 30s
+
+#define  MAX_AMD_CH    120
+
+// AMD detect Instance
+typedef struct{
+
+	DJ_U16   enable;  // 1: AMD enable
+	
+	DJ_U16  result;
+
+	DJ_U16   lastEvent;
+
+	DJ_U16   personValidFlag;
+
+	DJ_U16   toneValidFlag;
+
+	DJ_U16  u_16reserved[5];
+
+	DJ_U32  totalCheckTime;
+
+	DJ_U32   minSilenceCount;
+       DJ_U32   maxPersonSilencCount;
+	DJ_U32    silenceToutCount;
+
+	DJ_U32    minVocCount;
+	DJ_U32    maxMUSICCount;
+	DJ_U32    vocToutCount;
+
+	DJ_U32    maxToneSilenceTime;
+	DJ_U32    u_32reserved[5];
+	
+}AMD_DETECT_INSTANCE;
+
+
+
+
+
+
+#endif //VOC_STRUCT_
+

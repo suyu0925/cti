@@ -1,0 +1,26 @@
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\bin\Debug\Dial.exe
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\bin\Debug\Dial.pdb
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\bin\Debug\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\bin\Debug\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.csproj.ResolveComReference.cache
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.DialForm.resources
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.Properties.Resources.resources
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.csproj.GenerateResource.Cache
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.exe
+D:\PROGRAM\DJKeygoe\CSharp\Dial\Backup\Dial\obj\Debug\Dial.pdb
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.exe
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.pdb
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\bin\Debug\Dial.exe
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\bin\Debug\Dial.pdb
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\bin\Debug\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\bin\Debug\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Interop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\AxInterop.DJACSAPILib.dll
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.csproj.ResolveComReference.cache
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.DialForm.resources
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.Properties.Resources.resources
+D:\PROGRAM\DJKeygoe\CSharp\AcsAPI ActiveX\C#\C# 2005\Dail\Dial\obj\Debug\Dial.csproj.GenerateResource.Cache
