@@ -1,4 +1,6 @@
+######################################################
 ### node js ignore file
+######################################################
 # Logs
 logs
 *.log
@@ -27,7 +29,12 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+# Mongo
+database
+
+######################################################
 ### Go lang ignore file
+######################################################
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
