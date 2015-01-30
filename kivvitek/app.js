@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
@@ -12,32 +11,14 @@ var routes = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var users = require('./routes/users');
-var userlist = require('./routes/userlist');
-var newuser = require('./routes/newuser');
 
 var hash = require('./pass').hash;
 var setting = require('./setting');
 
-// mongodb
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/kivvitek');
+var debug = require('debug')('kivvitek:server');
+var http = require('http');
 
 var app = express();
-
-/*
-Database and Models
-*/
-global.db = {};
-global.db.connect = mongoose.connect("mongodb://localhost/kivvitek");
-var UserSchema = new mongoose.Schema({
-    username: String,
-    password: String,
-    salt: String,
-    hash: String
-});
-
-global.db.User = mongoose.model('users', UserSchema);
 
 /*
 View engine setup
@@ -57,7 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 Session
 */
 app.use(session({
-    secret: setting.cookieSecret,  
+    secret: setting.cookieSecret,
+    key: setting.db,
+    cookie: {maxAge: 1000*60*60*24*30},
     store: new MongoStore({
         db : setting.db
     })
@@ -71,12 +54,6 @@ app.use('/login', login);
 app.use('/signup', signup);
 
 app.use('/users', users);
-
-app.use('/userlist', userlist);
-app.get('/userlist', userlist.userlist(db));
-
-app.use('/newuser', newuser);
-app.post('/adduser', newuser.adduser(db));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -109,5 +86,55 @@ app.use(function(err, req, res, next) {
     });
 });
 
+/**
+ * Get port from environment and store in Express.
+ */
 
-module.exports = app;
+var port = parseInt(process.env.PORT, 10) || 80;
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error('Port ' + port + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error('Port ' + port + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  debug('Listening on port ' + server.address().port);
+}

@@ -1,6 +1,7 @@
 var setting = {  
     cookieSecret: "hello",  
-    db: "session"  
+    db: "session",
+    host: 'localhost'
 };
 
 module.exports = setting;
