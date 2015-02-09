@@ -78,7 +78,7 @@ exports.authenticate = function (name, pass, fn) {
                         console.log('authenticate ok.');
                         return fn(null, user);
                       } else {
-                        throw (new Error('authenticate failed.'));
+                        return fn(new Error('authenticate failed.'));
                       }
                   });
                 }
