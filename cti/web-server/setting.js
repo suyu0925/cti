@@ -1,5 +1,5 @@
-var setting = {  
-    cookieSecret: "hello",  
+var setting = {
+    cookieSecret: "hello",
     db: "session",
     host: 'localhost'
 };

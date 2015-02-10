@@ -7,13 +7,13 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoUrl = 'mongodb://localhost:27017/account';
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     res.render('login');
 });
 
 /* POST home page. */
 router.post("/", function (req, res) {
-     pass.authenticate(req.body.username, req.body.password, function (err, user) {
+    pass.authenticate(req.body.username, req.body.password, function (err, user) {
         console.log(err);
         if (user) {
             req.session.regenerate(function () {
