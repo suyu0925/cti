@@ -10,7 +10,6 @@ var MongoStore = require('connect-mongo')(session);
 var routes = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
-var users = require('./routes/users');
 
 var hash = require('./pass').hash;
 var setting = require('./setting');
@@ -43,7 +42,9 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},
     store: new MongoStore({
         db: setting.db
-    })
+    }),
+    resave: true,
+    saveUninitialized: true
 }));
 
 /*
@@ -53,7 +54,11 @@ app.use('/', routes);
 app.use('/login', login);
 app.use('/signup', signup);
 
-app.use('/users', users);
+app.get('/logout', function (req, res) {
+    req.session.destroy(function () {
+        res.redirect('/');
+    });
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

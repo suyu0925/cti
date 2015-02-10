@@ -5,7 +5,9 @@ var router = express.Router();
 router.get('/', function (req, res) {
     console.log("get/ req.session.user: " + JSON.stringify(req.session.user));
     if (req.session.user) {
-        res.render('workspace');
+        res.render('workspace', {
+        	'username': req.session.user.username
+        });
     } else {
         res.redirect('/login');
     }

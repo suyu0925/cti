@@ -1,6 +1,7 @@
 /* body */
 body {
     padding-top: 50px;
+    background: #eee;
 }
 
 /* btn-ready */
@@ -154,4 +155,15 @@ fieldset[disabled] .btn-ready.active {
 
 .sidebar-nav .nav-list.collapse.in {
     border-bottom: 1px solid #ccc;
+}
+
+/* content */
+.content {
+  min-width: 400px;
+  position: relative;
+  min-height: 600px;
+  background: #fff;
+  margin-left: 240px;
+  border-left: 1px solid #cccccc;
+  border-left: 3px solid #999999;
 }
