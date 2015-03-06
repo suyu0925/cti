@@ -1,3 +1,7 @@
+cd database
+mongod --dbpath . &
+cd ..
+
 cd web-server
 node app &
 cd ..
