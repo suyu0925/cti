@@ -19,6 +19,8 @@ var http = require('http');
 
 var app = express();
 
+var port = parseInt(process.env.PORT, 10) || 2345;
+
 /*
  View engine setup
  */
@@ -94,8 +96,6 @@ app.use(function (err, req, res, next) {
 /**
  * Get port from environment and store in Express.
  */
-
-var port = parseInt(process.env.PORT, 10) || 80;
 app.set('port', port);
 
 /**
