@@ -170,14 +170,26 @@
 
             </sources>
             <sources dir="${basedir}">
+                <file name="src/config.js"/>
+                <file name="src/application.js"/>
                 <file name="src/resource.js"/>
+                <file name="src/data.js"/>
                 <file name="src/app.js"/>
+                <file name="src/popup.js"/>
+                <file name="src/firstscene.js"/>
                 <file name="src/gamescene.js"/>
+                <file name="src/loadingscene.js"/>
+                <file name="src/mainscene.js"/>
+                <file name="src/rankscene.js"/>
+                <file name="src/readmescene.js"/>
+                <file name="src/stagescene.js"/>
                 <file name="src/monsters.js"/>
                 <file name="src/monster.js"/>
                 <file name="src/tower.js"/>
                 <file name="src/bullet.js"/>
                 <file name="src/utility.js"/>
+                <file name="src/user.js"/>
+                <file name="src/storage.js"/>
                 <file name="main.js"/>
 
             </sources>
