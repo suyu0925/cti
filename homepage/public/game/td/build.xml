@@ -175,14 +175,18 @@
                 <file name="src/resource.js"/>
                 <file name="src/data.js"/>
                 <file name="src/app.js"/>
-                <file name="src/popup.js"/>
-                <file name="src/firstscene.js"/>
-                <file name="src/gamescene.js"/>
-                <file name="src/loadingscene.js"/>
-                <file name="src/mainscene.js"/>
-                <file name="src/rankscene.js"/>
-                <file name="src/readmescene.js"/>
-                <file name="src/stagescene.js"/>
+                <file name="src/components/popup.js"/>
+                <file name="src/components/stagepopup.js"/>
+                <file name="src/components/optionpopup.js"/>
+                <file name="src/components/winpopup.js"/>
+                <file name="src/components/title.js"/>
+                <file name="src/scenes/firstscene.js"/>
+                <file name="src/scenes/gamescene.js"/>
+                <file name="src/scenes/loadingscene.js"/>
+                <file name="src/scenes/mainscene.js"/>
+                <file name="src/scenes/rankscene.js"/>
+                <file name="src/scenes/readmescene.js"/>
+                <file name="src/scenes/stagescene.js"/>
                 <file name="src/monsters.js"/>
                 <file name="src/monster.js"/>
                 <file name="src/tower.js"/>
@@ -190,6 +194,7 @@
                 <file name="src/utility.js"/>
                 <file name="src/user.js"/>
                 <file name="src/storage.js"/>
+                <file name="src/state.js"/>
                 <file name="main.js"/>
 
             </sources>
