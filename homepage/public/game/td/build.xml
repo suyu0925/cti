@@ -170,6 +170,7 @@
 
             </sources>
             <sources dir="${basedir}">
+                <file name="src/data/doc.js"/>
                 <file name="src/config.js"/>
                 <file name="src/application.js"/>
                 <file name="src/resource.js"/>
@@ -179,6 +180,9 @@
                 <file name="src/components/stagepopup.js"/>
                 <file name="src/components/optionpopup.js"/>
                 <file name="src/components/winpopup.js"/>
+                <file name="src/components/answerpopup.js"/>
+                <file name="src/components/towerpopup.js"/>
+                <file name="src/components/buildpop.js"/>
                 <file name="src/components/title.js"/>
                 <file name="src/scenes/firstscene.js"/>
                 <file name="src/scenes/gamescene.js"/>
