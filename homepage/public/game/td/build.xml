@@ -170,7 +170,6 @@
 
             </sources>
             <sources dir="${basedir}">
-                <file name="src/data/doc.js"/>
                 <file name="src/config.js"/>
                 <file name="src/application.js"/>
                 <file name="src/resource.js"/>
@@ -184,6 +183,15 @@
                 <file name="src/components/towerpopup.js"/>
                 <file name="src/components/buildpop.js"/>
                 <file name="src/components/title.js"/>
+                <file name="src/towers/towers.js"/>
+                <file name="src/towers/normaltower.js"/>
+                <file name="src/towers/normalbullet.js"/>
+                <file name="src/towers/slowtower.js"/>
+                <file name="src/towers/slowbullet.js"/>
+                <file name="src/towers/splashtower.js"/>
+                <file name="src/towers/splashbullet.js"/>
+                <file name="src/towers/throughtower.js"/>
+                <file name="src/towers/throughbullet.js"/>
                 <file name="src/scenes/firstscene.js"/>
                 <file name="src/scenes/gamescene.js"/>
                 <file name="src/scenes/loadingscene.js"/>
@@ -193,12 +201,11 @@
                 <file name="src/scenes/stagescene.js"/>
                 <file name="src/monsters.js"/>
                 <file name="src/monster.js"/>
-                <file name="src/tower.js"/>
-                <file name="src/bullet.js"/>
                 <file name="src/utility.js"/>
                 <file name="src/user.js"/>
                 <file name="src/storage.js"/>
                 <file name="src/state.js"/>
+                <file name="resources/questions/questions.js"/>
                 <file name="main.js"/>
 
             </sources>
