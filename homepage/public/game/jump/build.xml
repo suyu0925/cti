@@ -171,7 +171,14 @@
             </sources>
             <sources dir="${basedir}">
                 <file name="src/resource.js"/>
-                <file name="src/app.js"/>
+                <file name="src/components/energy.js"/>
+                <file name="src/components/health.js"/>
+                <file name="src/popup/pausepopup.js"/>
+                <file name="src/popup/answerpopup.js"/>
+                <file name="src/popup/relivepopup.js"/>
+                <file name="src/items/sunshine.js"/>
+                <file name="src/items/fruit.js"/>
+                <file name="src/items/items.js"/>
                 <file name="src/firstscene.js"/>
                 <file name="src/loadingscene.js"/>
                 <file name="src/mainscene.js"/>
@@ -184,6 +191,8 @@
                 <file name="src/config.js"/>
                 <file name="src/application.js"/>
                 <file name="src/storage.js"/>
+                <file name="src/utility.js"/>
+                <file name="resources/questions/questions.js"/>
                 <file name="main.js"/>
 
             </sources>
