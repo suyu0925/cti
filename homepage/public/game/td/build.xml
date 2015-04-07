@@ -182,8 +182,10 @@
                 <file name="src/components/answerpopup.js"/>
                 <file name="src/components/towerpopup.js"/>
                 <file name="src/components/buildpop.js"/>
+                <file name="src/components/upgradepop.js"/>
                 <file name="src/components/title.js"/>
                 <file name="src/towers/towers.js"/>
+                <file name="src/towers/tower.js"/>
                 <file name="src/towers/normaltower.js"/>
                 <file name="src/towers/normalbullet.js"/>
                 <file name="src/towers/slowtower.js"/>
