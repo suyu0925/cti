@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>奇瑞信息-Kivvitek</title>
+</head>
+<link href="style_normal.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {
+	overflow: scroll;
+}
+</style>
+<body>
+<div class="back_h"></div>
+<div id="div_head" class="page_head">
+  <div class="page_head_logo"></div>
+  <div class="page_head_nagi">
+    <iframe width="100%" height="43" id="iframe_navigation" src="nagivation.html" frameBorder="0" allowtransparency="true"></iframe>
+  </div>
+</div>
+<div id="div_cont" class="page_cont">
+  <iframe width="100%" id="iframe_content" src="page0.html" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight('iframe_content')"></iframe>
+  <div id="div_tail" class="page_tail">
+    <iframe width="100%" id="iframe_tail" src="tail.html" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight('iframe_tail')"></iframe>
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+function iFrameAutoHeight(iframeId) {
+	var ifm = document.getElementById(iframeId);
+	console.log('ifm: ' + ifm);
+	console.log('document.frames: ' + document.frames);
+	var subWeb = document.frames ? document.frames[iframeId].document : ifm.contentDocument;
+	if (ifm != null && subWeb != null) {
+		console.log('ifm.height: ' + ifm.height);
+		console.log('scrollHeight: ' + subWeb.body.scrollHeight);
+		ifm.height = subWeb.body.scrollHeight;
+	}
+}
+
+window.onload = function() {
+	
+}
+</script>

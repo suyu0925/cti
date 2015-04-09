@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<link href="style_normal.css" rel="stylesheet" type="text/css" />
+
+<body class="body_nagi">
+<div style="margin-left:25px; background-image:none"></div>
+<div></div>
+<li id="nagi0" class="li_selected" onClick="switchpages(0);">首页</li>
+<div></div>
+<li id="nagi1" class="li_normal" onClick="switchpages(1);">产品</li>
+<div></div>
+<li id="nagi2" class="li_normal" onClick="switchpages(2);">方案</li>
+<div></div>
+<li id="nagi3" class="li_normal" onClick="switchpages(3);">支持</li>
+<div></div>
+</body>
+</html>
+
+<script language="javascript">
+function switchpages(index){
+	var pagemax = 3;
+	
+	document.getElementById("nagi" + index).className="li_selected";
+	for (var i=0;i<=pagemax;i++){
+		if (i!=index) {
+			document.getElementById("nagi" + i).className="li_normal";
+		}
+	}
+	
+	parent.document.all("iframe_content").src="page" + index + ".html";
+}
+
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<link href="style_normal.css" rel="stylesheet" type="text/css" />
+<body class="body_cont">
+<table width="100%">
+  <tr>
+    <td width="340px"><div class="subfield">产品选择</div>
+      <div class="blank_h16px"></div>
+      <div class="divi_h">
+        <div></div>
+        <li id="nagi0" class="li_selected" onClick="switchpages(0);">智能 Call Center 开发</li>
+        <div></div>
+        <li id="nagi1" class="li_normal" onClick="switchpages(1);">门禁考勤系统</li>
+        <div></div>
+        
+        
+      </div>
+      <div style="height:45px;"></div>
+      <div><img width="340" src="images/product_s.png" /></div>
+      <div style="height:45px;"></div>
+      </td>
+    <td width="38px"></td>
+    <td><div class="subfield">产品简介</div>
+    <div class="blank_h16px"></div>
+      <iframe width="100%" id="iframe_content" src="product/0.html" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight('iframe_content')"></iframe></td>
+  </tr>
+</table>
+</body>
+</html>
+
+<script type="text/javascript">
+
+function iFrameAutoHeight(iframeId) {
+	var ifm = document.getElementById(iframeId);
+	var subWeb = document.frames ? document.frames[iframeId].document :
+	ifm.contentDocument;
+	if (ifm != null && subWeb != null) {
+		ifm.height = subWeb.body.scrollHeight;
+	}
+	parent.iFrameAutoHeight("iframe_content");//子窗口高度调整完后，父窗口高度需相应调
+}
+
+function switchpages(index){
+	var pagemax = 1;
+	
+	document.getElementById("nagi" + index).className="li_selected";
+	for (var i=0;i<=pagemax;i++){
+		if (i!=index) {
+			document.getElementById("nagi" + i).className="li_normal";
+		}
+	}
+	
+	window.document.all("iframe_content").src="product/" + index + ".html";
+}
+
+</script>
