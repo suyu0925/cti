@@ -73,11 +73,6 @@ table, tr, td, th {
 	padding-left: 10px;
 }
 
-.body_cont div.blank_h16px {
-	background-color: transparent;
-	height: 16px;
-}
-
 .body_cont .divi_h {
 	background-color: #fafafa;
 }
@@ -135,6 +130,23 @@ table, tr, td, th {
 }
 
 /*******************************/
+
+/********** body_product **********/
+
+.body_product p {
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 24px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.body_product div.txtarea {
+	margin-left:30px;
+	margin-right:30px;
+}
+
+/**********************************/
 
 .back_h {
 	position: relative;
@@ -196,6 +208,24 @@ table, tr, td, th {
 	width: 1366px;
 	margin-left: -683px;
 }
+
+.p_inde_a {
+	text-indent: 2em;
+}
+
+.div_image {
+	width:100%; 
+	background:center no-repeat;
+	background-color: transparent;
+}
+
+.blank_h16px {
+	background: url(images/blank.png) center no-repeat
+	background-color: transparent;
+	height: 16px;
+	width: 100%;
+}
+
 
 .test {
 	border:#000 solid 1px;

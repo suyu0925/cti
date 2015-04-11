@@ -1,0 +1,143 @@
+﻿http://wenku.baidu.com/link?url=yhJio_CKD7eXElZhyDkSRexo_pGoGIJNYF3X4z-CWGsxYq_oG2HUdmDEyiYPTUH351-U9OYcTU-GCJ5u8x1CCfqFnFwD4JyunWDWkQ4paQq
+呼叫中心常用英文
+
+客户案件库
+db.debt.insert(
+	{
+		id: "", // 个案序列号
+		order: { // 委案
+			name: "", // 委案方
+			amount: "", // 委案金额
+			date: "", // 委案日期
+		},
+		loan: { // 贷款
+			contract: "", // 合同编号
+			date: "", // 贷款日期
+			amount: "", // 贷款金额
+			terms: "", // 还款期数
+			principal: "", // 未出剩余本金
+			interest: "", // 未出剩余利息
+			monthly: "", // 每期还款金额
+			account: { // 还款账户
+				name: "", // 还款帐户名称
+				id: "", // 还款帐号
+				bank: "" // 还款银行
+			}
+		},
+		overdue: { // 逾期信息
+			days: "", // 逾期天数
+			terms: "", // 逾期期数
+			amount: "", // 逾期金额
+			principal: "", // 逾期本金
+			interest: "", // 逾期利息
+			default: "", // 逾期罚息
+			expenses: "", // 逾期管理费
+		},
+		borrower: { // 借款人
+			name: { // 名字
+				personal: "", // 人名
+				office: "", // 单位名
+			},
+			gender: "", // 性别
+			phone: {
+				mobile: ["", ""], // 手机
+				home: ["", ""], // 家庭电话
+				office: ["", ""] // 单位电话
+			},
+			address: {
+				home: "", // 家庭住址
+				office: "" // 单位地址
+			},
+			id: {
+				personal: "", // 身份证
+				company: "" // 营业执照编号
+			}
+		},
+		contacts: { // 联系人
+			spouse: { // 配偶
+				name: "",
+				phone: ""
+			},
+			guarantor: { // 担保人
+				name: "",
+				phone: ""
+			},
+			other: { // 其他联系人
+				name: ["", ""],
+				phone: ["", ""],
+				relationship: ["", ""] // 与借款人关系
+			}
+		}
+	}
+)
+
+工作案件库
+db.work.insert(
+	{
+		id: "", // 唯一id
+		row_case_id: "", // 与客户数据库关联
+		call: [call_id], // 与拨号数据库关联 ???? 是否需要与拨号数据库关联，还是直接把重要数据写在这里
+		memo: [
+			{
+				text: "", // 日志内容
+				user_id: "", // 操作员
+				datetime: "" // 时间日期
+			}
+		],
+		state: "" // 状态：未开始，完结，进行中
+	}
+)
+
+当前案件
+db.working.insert(
+	{
+		id: "",
+		case_id: "" // 关联工作案件库
+	}
+)
+
+历史案件
+db.history.insert(
+	{
+		id: "",
+		case_id: "" // 关联工作案件库
+	}
+)
+
+角色
+db.role.insert(
+	{
+		name: "",
+		permission: [""]
+	}
+)
+
+人员帐号（包括权限，上级，帐号密码）
+db.account.insert(
+	{
+		user_id: "", // 内线号  ????? 内线号是否可以与分机号合并，除了东进，其他人不需要知道内线号
+		user_phone: "", // 分机号
+		user_name: "", // 登录名，英文
+		user_natual_name: "" // 姓名，中文
+		password: "", // 密码
+		salt: "", // 密码密钥
+		role: "" // 关联角色数据库
+	}
+)
+
+座席状态（接通率，在线与中断时长等等）
+db.sitter.insert(
+	{
+	}
+)
+
+拨号（拨号次数，拨通成功率等等）
+db.call.insert(
+	{
+		id: "",
+		case_id: "",
+		datetime: "",
+		errorcode: "",
+		duration: ""
+	}
+)

@@ -30,17 +30,13 @@ body {
 
 function iFrameAutoHeight(iframeId) {
 	var ifm = document.getElementById(iframeId);
-	console.log('ifm: ' + ifm);
-	console.log('document.frames: ' + document.frames);
-	var subWeb = document.frames ? document.frames[iframeId].document : ifm.contentDocument;
+	var subWeb = document.frames ? document.frames[iframeId].document :	ifm.contentDocument;
 	if (ifm != null && subWeb != null) {
-		console.log('ifm.height: ' + ifm.height);
-		console.log('scrollHeight: ' + subWeb.body.scrollHeight);
 		ifm.height = subWeb.body.scrollHeight;
 	}
 }
 
 window.onload = function() {
-	
+	window.document.all("iframe_content").src="page0.html";
 }
 </script>

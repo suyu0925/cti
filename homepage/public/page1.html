@@ -16,31 +16,51 @@
         <div></div>
         <li id="nagi1" class="li_normal" onClick="switchpages(1);">门禁考勤系统</li>
         <div></div>
-        
-        
       </div>
       <div style="height:45px;"></div>
       <div><img width="340" src="images/product_s.png" /></div>
-      <div style="height:45px;"></div>
-      </td>
+      <div style="height:45px;"></div></td>
     <td width="38px"></td>
     <td><div class="subfield">产品简介</div>
-    <div class="blank_h16px"></div>
-      <iframe width="100%" id="iframe_content" src="product/0.html" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight('iframe_content')"></iframe></td>
+      <div class="blank_h16px"></div>
+      <iframe width="100%" id="iframe_content" src="product/0.html" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight2('iframe_content')"></iframe></td>
   </tr>
 </table>
 </body>
 </html>
-
 <script type="text/javascript">
 
 function iFrameAutoHeight(iframeId) {
 	var ifm = document.getElementById(iframeId);
-	var subWeb = document.frames ? document.frames[iframeId].document :
-	ifm.contentDocument;
+	var subWeb = document.frames ? document.frames[iframeId].document :	ifm.contentDocument;
 	if (ifm != null && subWeb != null) {
-		ifm.height = subWeb.body.scrollHeight;
+		ifm.height = ifm.Document.body.scrollHeight;
 	}
+	parent.iFrameAutoHeight("iframe_content");//子窗口高度调整完后，父窗口高度需相应调
+}
+
+function iFrameAutoHeight2(iframeId) { 
+	var pTar = null; 
+	if (document.getElementById){ 
+		pTar = document.getElementById(iframeId); 
+	} 
+	else{ 
+		eval('pTar = ' + iframeId + ';'); 
+	} 
+	if (pTar && !window.opera){ 
+		//begin resizing iframe 
+		pTar.style.display="block" 
+		if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){ 
+			//ns6 syntax 
+			pTar.height = pTar.contentDocument.body.offsetHeight + 20; 
+			pTar.width = pTar.contentDocument.body.scrollWidth; 
+		} 
+		else if (pTar.Document && pTar.Document.body.scrollHeight){ 
+			//ie5+ syntax 
+			pTar.height = pTar.Document.body.scrollHeight; 
+			pTar.width = pTar.Document.body.scrollWidth; 
+		} 
+	} 
 	parent.iFrameAutoHeight("iframe_content");//子窗口高度调整完后，父窗口高度需相应调
 }
 
