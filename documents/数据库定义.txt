@@ -56,11 +56,15 @@ db.debt.insert(
 		contacts: { // 联系人
 			spouse: { // 配偶
 				name: "",
-				phone: ""
+				phone: "",
+				id: "",
+				address: ""
 			},
 			guarantor: { // 担保人
 				name: "",
-				phone: ""
+				phone: "",
+				id: "",
+				address: ""
 			},
 			other: { // 其他联系人
 				name: ["", ""],

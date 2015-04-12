@@ -4,7 +4,7 @@ var pass = require('../pass');
 var MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
-var mongoUrl = 'mongodb://localhost:27017/account';
+var mongoUrl = 'mongodb://kivvitek.com:27017/account';
 
 /* GET home page. */
 router.get('/', function (req, res) {
