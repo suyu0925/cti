@@ -13,7 +13,7 @@ try {
 		// for (var j = 0; j < line.length; j++) {
 		// 	console.log(line[j] + ", ");
 		// }
-		console.log(JSON.stringify(line));
+		console.log(JSON.stringify(line, null, 4));
 	}
 
 	var i = parseFloat("2000.51");

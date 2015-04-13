@@ -79,6 +79,14 @@ router.post("/", function (req, res) {
     });
 });
 
+function numdate(n) {
+    if (typeof n === "number") {
+        var date = new Date(Date.UTC(1899, 11, 30) + n * 24 * 60 * 60 * 1000);
+        n = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    }
+    return n;
+}
+
 function parseFiles(files, next) {
     var err = 0;
     var docs = [];
@@ -106,12 +114,12 @@ function parseFiles(files, next) {
                     // order
                     doc.order = {};
                     doc.order.name = line[2];
-                    doc.order.datetime = line[3];
+                    doc.order.datetime = numdate(line[3]);
                     doc.order.amount = line[4];
                     // loan
                     doc.loan = {};
                     doc.loan.contract = line[1];
-                    doc.loan.datetime = line[5];
+                    doc.loan.datetime = numdate(line[5]);
                     doc.loan.amount = line[6];
                     doc.loan.terms = line[7];
                     doc.loan.principal = "";
@@ -130,7 +138,7 @@ function parseFiles(files, next) {
                     doc.overdue.interest = line[13];
                     doc.overdue.default = line[14];
                     doc.overdue.expenses = line[15];
-                    doc.overdue.datetime = line[8];
+                    doc.overdue.datetime = numdate(line[8]);
                     // borrower
                     doc.borrower = {};
                     doc.borrower.name = {};
