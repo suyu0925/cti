@@ -6,10 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var multer = require('multer');
 
 var routes = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
+var upload = require('./routes/upload');
 
 var hash = require('./pass').hash;
 var setting = require('./setting');
@@ -32,6 +34,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(multer({dest: './uploads/'}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -55,6 +58,7 @@ app.use(session({
 app.use('/', routes);
 app.use('/login', login);
 app.use('/signup', signup);
+app.use('/upload', upload);
 
 app.get('/logout', function (req, res) {
     req.session.destroy(function () {

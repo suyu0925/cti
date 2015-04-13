@@ -15,8 +15,8 @@ db.debt.insert(
 			date: "", // 贷款日期
 			amount: "", // 贷款金额
 			terms: "", // 还款期数
-			principal: "", // 未出剩余本金
-			interest: "", // 未出剩余利息
+			principal: "", // 未出剩余本金(暂不加测试值与字段）
+			interest: "", // 未出剩余利息(暂不加测试值与字段）
 			monthly: "", // 每期还款金额
 			account: { // 还款账户
 				name: "", // 还款帐户名称
@@ -32,6 +32,7 @@ db.debt.insert(
 			interest: "", // 逾期利息
 			default: "", // 逾期罚息
 			expenses: "", // 逾期管理费
+			datetime: "" // 逾期日期
 		},
 		borrower: { // 借款人
 			name: { // 名字
@@ -40,37 +41,55 @@ db.debt.insert(
 			},
 			gender: "", // 性别
 			phone: {
-				mobile: ["", ""], // 手机
-				home: ["", ""], // 家庭电话
-				office: ["", ""] // 单位电话
+				mobile: "", // 手机
+				home: "", // 家庭电话
+				office: "" // 单位电话
 			},
 			address: {
 				home: "", // 家庭住址
-				office: "" // 单位地址
+				office: "", // 单位地址
+				huji: "" // 户籍地址
 			},
 			id: {
-				personal: "", // 身份证
+				personal: "", // 证件号
 				company: "" // 营业执照编号
 			}
 		},
 		contacts: { // 联系人
 			spouse: { // 配偶
-				name: "",
-				phone: "",
-				id: "",
-				address: ""
+				name: {
+					personal: "",
+					office: ""
+				},
+				phone: {
+					home: "",
+					mobile: ""
+				},
+				id: {
+					personal: "",
+					company: ""
+				},
+				address: {
+					home: "",
+					company: ""
+				}
 			},
 			guarantor: { // 担保人
 				name: "",
-				phone: "",
+				phone: {
+					home: "",
+					mobile: ""
+				},
 				id: "",
 				address: ""
 			},
-			other: { // 其他联系人
-				name: ["", ""],
-				phone: ["", ""],
-				relationship: ["", ""] // 与借款人关系
-			}
+			other: [ // 其他联系人
+				{
+					name: "", // 名字
+					phone: "", // 手机
+					relationship: "" // 与借款人关系
+				}
+			]
 		}
 	}
 )
