@@ -8,11 +8,11 @@ db.debt.insert(
 		order: { // 委案
 			name: "", // 委案方
 			amount: "", // 委案金额
-			date: "", // 委案日期
+			datetime: "", // 委案日期
 		},
 		loan: { // 贷款
 			contract: "", // 合同编号
-			date: "", // 贷款日期
+			datetime: "", // 贷款日期
 			amount: "", // 贷款金额
 			terms: "", // 还款期数
 			principal: "", // 未出剩余本金(暂不加测试值与字段）

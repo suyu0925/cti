@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var upload = require('./routes/upload');
+var ergodic = require('./routes/ergodic');
 
 var hash = require('./pass').hash;
 var setting = require('./setting');
@@ -59,6 +60,7 @@ app.use('/', routes);
 app.use('/login', login);
 app.use('/signup', signup);
 app.use('/upload', upload);
+app.use('/ergodic', ergodic);
 
 app.get('/logout', function (req, res) {
     req.session.destroy(function () {
