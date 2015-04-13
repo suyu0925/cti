@@ -28,6 +28,27 @@ var errors = [
     {code: error_empty_file, content: "导入数据为空"}
 ];
 
+var profile = {
+    start: 0,
+    end: 0,
+    tag: null,
+    rbi: function (tag) {
+        var now = (new Date()).getTime();
+        if (this.tag != null) {
+            var dt = now - this.start;
+            console.log(this.tag + " spend " + dt + " ms.");
+            this.start = now;
+            if (this.tag != tag) {
+                this.tag = null;
+                this.end = 0;
+            }
+        } else {
+            this.tag = tag;
+            this.start = now;
+        }
+    }
+};
+
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('upload');
@@ -67,6 +88,7 @@ function parseFiles(files, next) {
         err = error_single_file;
     }
 
+    profile.rbi("xlsx");
     if (!err) {
         for (var fileIndex = 0; fileIndex < files.length; fileIndex++) {
             try {
@@ -166,6 +188,7 @@ function parseFiles(files, next) {
             }
         }
     }
+    profile.rbi();
 
     if (!err) {
         check(docs, next);
@@ -181,6 +204,7 @@ function check(docs, next) {
         err = error_empty_file;
     }
 
+    profile.rbi("check");
     var hash = {};
     for (var i = 0; i < docs.length; i++) {
         // 个案序列号非空检查
@@ -206,6 +230,7 @@ function check(docs, next) {
         }
         hash[id] = true;
     }
+    profile.rbi();
 
     if (!err) {
         add(docs, next);
@@ -222,7 +247,9 @@ function add(docs, next) {
         for (var i = 0; i < docs.length; i++) {
             case_ids.push(docs[i].id);
         }
+        profile.rbi("find");
         collection.find({id: {"$in": case_ids}}).toArray(function (err, result) {
+            profile.rbi();
             if (err) {
                 db.close();
                 next(error_db_find);
@@ -231,23 +258,40 @@ function add(docs, next) {
                     db.close();
                     next(error_reduplicated_case_id);
                 } else {
-                    _add(db, docs, next);
+                    _add(db, 0, docs, next);
                 }
             }
         });
     });
 }
 
-function _add(db, docs, next) {
-    var collection = db.collection('debt');
-    collection.insertMany(docs, function (err, result) {
+function _add(db, start, docs, next) {
+    if (start == docs.length) {
         db.close();
-        var error_code = 0;
+        next();
+        return;
+    }
+
+    profile.rbi("add");
+    var insert_docs;
+    if (docs.length - start > 1000) {
+        insert_docs = docs.slice(start, start + 1000);
+        start += 1000;
+    } else {
+        insert_docs = docs.slice(start, docs.length);
+        start = docs.length;
+    }
+
+    var collection = db.collection('debt');
+    collection.insertMany(insert_docs, function (err, result) {
+        profile.rbi();
         if (err) {
             console.log(err);
-            error_code = error_db_insert;
+            db.close();
+            next(error_db_insert);
+        } else {
+            _add(db, start, docs, next);
         }
-        next(error_code);
     });
 }
 
