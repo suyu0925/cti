@@ -167,6 +167,26 @@
                 <file name="cocos2d/parallax/CCParallaxNode.js"/>
                 <file name="cocos2d/parallax/CCParallaxNodeRenderCmd.js"/>
                 <file name="cocos2d/audio/CCAudio.js"/>
+                <file name="extensions/gui/control-extension/CCControl.js"/>
+                <file name="extensions/gui/control-extension/CCControlButton.js"/>
+                <file name="extensions/gui/control-extension/CCControlUtils.js"/>
+                <file name="extensions/gui/control-extension/CCInvocation.js"/>
+                <file name="extensions/gui/control-extension/CCScale9Sprite.js"/>
+                <file name="extensions/gui/control-extension/CCScale9SpriteCanvasRenderCmd.js"/>
+                <file name="extensions/gui/control-extension/CCScale9SpriteWebGLRenderCmd.js"/>
+                <file name="extensions/gui/control-extension/CCMenuPassive.js"/>
+                <file name="extensions/gui/control-extension/CCControlSaturationBrightnessPicker.js"/>
+                <file name="extensions/gui/control-extension/CCControlHuePicker.js"/>
+                <file name="extensions/gui/control-extension/CCControlColourPicker.js"/>
+                <file name="extensions/gui/control-extension/CCControlSlider.js"/>
+                <file name="extensions/gui/control-extension/CCControlSwitch.js"/>
+                <file name="extensions/gui/control-extension/CCControlStepper.js"/>
+                <file name="extensions/gui/control-extension/CCControlPotentiometer.js"/>
+                <file name="extensions/gui/scrollview/CCScrollView.js"/>
+                <file name="extensions/gui/scrollview/CCScrollViewCanvasRenderCmd.js"/>
+                <file name="extensions/gui/scrollview/CCScrollViewWebGLRenderCmd.js"/>
+                <file name="extensions/gui/scrollview/CCSorting.js"/>
+                <file name="extensions/gui/scrollview/CCTableView.js"/>
 
             </sources>
             <sources dir="${basedir}">
