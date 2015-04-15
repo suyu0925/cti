@@ -17,6 +17,7 @@
     "connect-mongo": "*",
     "mongodb": "*",
     "node-xlsx": "*",
-    "multer": "*"
+    "multer": "*",
+    "socket.io": "*"
   }
 }

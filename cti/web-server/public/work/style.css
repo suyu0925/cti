@@ -1,0 +1,12 @@
+
+ul {
+    list-style: none;
+    word-wrap: break-word;
+}
+
+.log {
+    color: black;
+    font-size: 100%;
+    margin: 5px;
+    text-align: left;
+}

@@ -149,3 +149,9 @@ function onError(error) {
 function onListening() {
     debug('Listening on port ' + server.address().port);
 }
+
+// require('./chat')(server);
+var bridge = new require('./bridge')(server);
+
+var work = new require('./work')();
+work.setBridge(bridge);
