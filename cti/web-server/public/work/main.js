@@ -97,4 +97,11 @@ $(function () {
             log("未连接服务器");
         }
     };
+
+    $('#start-button')[0].onclick = function () {
+        if (connect) {
+            log("外呼后台开始拨号");
+            socket.emit("start");
+        }
+    };
 });

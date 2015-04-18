@@ -65,6 +65,8 @@ Work.prototype.emit = function (message, data) {
         this.client.write("notify " + data.userid + " ready");
     } else if (message === "not-ready") {
         this.client.write("notify " + data.userid + " not-ready");
+    } else if (message === "start") {
+        this.client.write("notify job start");
     }
 };
 

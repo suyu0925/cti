@@ -63,6 +63,12 @@ function Bridge(srv) {
             var server = this.server;
             server.work.emit("not-ready", {userid: socket.userid});
         });
+
+        // for debug
+        socket.on("start", function(){
+            var server = this.server;
+            server.work.emit("start", {userid: socket.userid});
+        });
     });
 }
 
