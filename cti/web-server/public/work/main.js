@@ -78,6 +78,29 @@ $(function () {
         log("您已摘机");
     });
 
+    socket.on("call", function (data) {
+        log("您有一个来电：" + JSON.stringify(data, null, 4));
+        ready = false;
+        $('.ready-button').text('就绪');
+        $('.ready').text('当前状态：通话中');
+    });
+
+    socket.on("talk", function (data) {
+        log("您与客户正在通话中...");
+    });
+
+    socket.on("end", function (data) {
+        if (data.error_code == 0) {
+            log('通话结束');
+        } else if (data.error_code == -1) {
+            log('您离开位置了，没有接到');
+        } else if (data.error_code == 5) {
+            log('对方已经挂机了');
+        } else {
+            log('通话异常结束，错误代码：' + data.error_code);
+        }
+    });
+
     $('#ready-button')[0].onclick = function () {
         if (connect) {
             if (ready) {
@@ -104,4 +127,5 @@ $(function () {
             socket.emit("start");
         }
     };
-});
+})
+;

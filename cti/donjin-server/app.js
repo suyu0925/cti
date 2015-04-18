@@ -78,7 +78,11 @@ setInterval(function () {
                 call.state = "hang up";
                 call.duration = (Math.random() * 13 + 2) * 1000;
             } else if (call.state == "hang up") {
-                event.emit("write", "call " + call.call_handle + " end 5");
+                if (call.user && call.user.state == "talking") {
+                    event.emit("write", "call " + call.call_handle + " end 0");
+                } else {
+                    event.emit("write", "call " + call.call_handle + " end 5");
+                }
                 call.state = "end";
                 line++;
             } else if (call.state == "talking") {
@@ -127,11 +131,14 @@ setInterval(function () {
                 // 恢复待机状态
                 user.state = "idle";
             }
+        } else {
+            user.duration -= 100;
         }
     }
 }, 100);
 
 event.on("write", function (data) {
+    console.log("send: " + data);
     server.socket.write(data + "\n");
 });
 
@@ -180,19 +187,20 @@ event.on("join", function (data) {
         event.emit("write", "join " + data.join_handle + " -3");
         return;
     }
-    if (call.state != "connect") {
-        if (call.state == "end") {
-            // 对方已挂机
-            event.emit("write", "notify " + user.user_id + " ring");
-            user.state = "ring";
-            user.join_handle = data.join_handle;
-            user.call = call;
-            return;
-        } else {
-            // 通话状态异常
-            event.emit("write", "join " + data.join_handle + " -5");
-            return;
-        }
+    if (call.state == "connect" || call.state == "hang up") {
+        event.emit("write", "notify " + user.user_id + " ring");
+        user.state = "ring";
+        user.join_handle = data.join_handle;
+        user.call = call;
+        call.user = user;
+        return;
+    } else if (call.state == "end") {
+        // 对方已挂机
+        event.emit("write", "join " + data.join_handle + " -1");
+    } else {
+        // 通话状态异常
+        event.emit("write", "join " + data.join_handle + " -5");
+        return;
     }
 });
 
@@ -211,6 +219,7 @@ var server = net.createServer(function (socket) {
     socket.on("data", function (data) {
         // convert buffer to string
         data = data + "";
+        data = data.trim();
         console.log("rec: " + data);
         datas = data.split("\n");
 

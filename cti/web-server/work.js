@@ -19,7 +19,8 @@ function Work(srv) {
     // 从外呼后台收到的消息，通过bridge转给网页前端
     this.client.on('data', function (data) {
         data = data + "";
-        console.log('data: ' + data);
+        data = data.trim();
+        console.log('rec from work: ' + data);
 
         var result = data.match(/notify ([0-9]+) on-hook/);
         if (result) {
@@ -35,11 +36,35 @@ function Work(srv) {
             return;
         }
 
-        var result = data.match(/notify ([0-9]+) ring/);
+        var result = data.match(/call ([0-9]+) ([0-9]+) ([A-Za-z0-9]+)/);
         if (result) {
             var userid = parseInt(result[1]);
-            this.work.bridge.emit("ring", {
+            var phone_number = result[2];
+            var case_id = result[3];
+            this.work.bridge.emit("call", {
+                userid: userid,
+                case_id: case_id,
+                phone_number: phone_number
+            });
+            return;
+        }
+
+        var result = data.match(/call ([0-9]+) connect/);
+        if (result) {
+            var userid = parseInt(result[1]);
+            this.work.bridge.emit("talk", {
                 userid: userid
+            });
+            return;
+        }
+
+        var result = data.match(/call ([0-9]+) end (\-*[0-9]+)/);
+        if (result) {
+            var userid = parseInt(result[1]);
+            var error_code = parseInt(result[2]);
+            this.work.bridge.emit("end", {
+                userid: userid,
+                error_code: error_code
             });
             return;
         }
@@ -60,13 +85,21 @@ Work.prototype.setBridge = function (bridge) {
     bridge.setWork(this);
 };
 
+Work.prototype.sendToWorkServer = function (data) {
+    console.log("send to work: " + data);
+    data = data + '\n';
+    this.client.write(data);
+}
+
 Work.prototype.emit = function (message, data) {
     if (message === "ready") {
-        this.client.write("notify " + data.userid + " ready");
+        this.sendToWorkServer("notify " + data.userid + " ready");
     } else if (message === "not-ready") {
-        this.client.write("notify " + data.userid + " not-ready");
+        this.sendToWorkServer("notify " + data.userid + " not-ready");
     } else if (message === "start") {
-        this.client.write("notify job start");
+        this.sendToWorkServer("notify job start");
+    } else if (message === "stop") {
+        this.sendToWorkServer("notify job stop");
     }
 };
 

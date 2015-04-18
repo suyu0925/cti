@@ -35,11 +35,20 @@ error_code
 /*************************************/
 通话
 /*************************************/
-<- call user_id case_id phone_number
+<- call user_id phone_number case_id
 
 <- call user_id connect
 
 <- call user_id end error_code
+
+    error_code定义：
+        0：成功
+        1：对方已挂机
+        -1: 座席无人接听
+        -2：座席已摘机
+        -3: 无此通话
+        -4: 无此座席
+        -5: 通话不在接通状态
 
 /*************************************/
 作业
