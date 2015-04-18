@@ -13,7 +13,7 @@ function Bridge(srv) {
 
     this.io.on('connection', function (socket) {
         var server = this.server;
-        // 一个用户连接上来，给他分配一个id
+        // TODO: 一个用户连接上来，给他分配一个id
         if (server.userIds.length == server.maxUsers) {
             // 满了
             socket.emit("oops", {message: "用户已满"});
@@ -70,6 +70,7 @@ Bridge.prototype.setWork = function (work) {
     this.io.work = work;
 };
 
+// 从网页后端发送到网页前端
 Bridge.prototype.emit = function (message, data) {
     if (!data.userid) {
         this.io.emit(message, data);

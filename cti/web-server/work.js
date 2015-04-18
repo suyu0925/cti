@@ -9,14 +9,14 @@ function Work(srv) {
     var HOST = '127.0.0.1';
     var PORT = 8123;
 
+    // client是用来跟外呼后台通信的
     this.client = new net.Socket();
     this.client.connect(PORT, HOST, function () {
         console.log('connect to: ' + HOST + ':' + PORT);
     });
     this.client.work = this;
 
-    // 为客户端添加“data”事件处理函数
-    // data是服务器发回的数据
+    // 从外呼后台收到的消息，通过bridge转给网页前端
     this.client.on('data', function (data) {
         data = data + "";
         console.log('data: ' + data);
@@ -34,11 +34,24 @@ function Work(srv) {
             this.work.bridge.emit("off-hook", {userid: userid});
             return;
         }
+
+        var result = data.match(/notify ([0-9]+) ring/);
+        if (result) {
+            var userid = parseInt(result[1]);
+            this.work.bridge.emit("ring", {
+                userid: userid
+            });
+            return;
+        }
     });
 
-    // 为客户端添加“close”事件处理函数
     this.client.on('close', function () {
         console.log('connect closed');
+    });
+
+    this.client.on('error', function (data) {
+        console.log("work server is down, error: " + JSON.stringify(data) + ", please restart work server and restart web server then");
+        process.exit(-1);
     });
 }
 
@@ -47,7 +60,7 @@ Work.prototype.setBridge = function (bridge) {
     bridge.setWork(this);
 };
 
-Work.prototype.emit = function(message, data) {
+Work.prototype.emit = function (message, data) {
     if (message === "ready") {
         this.client.write("notify " + data.userid + " ready");
     } else if (message === "not-ready") {
