@@ -32,10 +32,6 @@ error_code
 
 <- notify user_id off-hook
 
-<- notify online user_id
-
-<- notify offline user_id
-
 /*************************************/
 Í¨»°
 /*************************************/
