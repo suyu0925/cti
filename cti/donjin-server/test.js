@@ -8,7 +8,7 @@ client.setNoDelay(true);
 client.connect(PORT, HOST, function () {
     console.log('connect to: ' + HOST + ':' + PORT);
 
-    // Ö±½Ó²¦´ò10¸öºÅÂë
+    // ç›´æ¥æ‹¨æ‰“10ä¸ªå·ç 
     for (var i = 0; i < 10; i++) {
         client.write("call " + i + " 138160" + i + " case_id_" + i + "\n");
     }

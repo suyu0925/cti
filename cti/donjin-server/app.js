@@ -9,7 +9,7 @@ var event = new events.EventEmitter();
 var calls = [];
 var users = [];
 
-// ³õÊ¼»¯×ùÏ¯
+// åˆå§‹åŒ–åº§å¸­
 var maxUsers = 3;
 for (var i = 0; i < maxUsers; i++) {
     users.push({
@@ -20,7 +20,7 @@ for (var i = 0; i < maxUsers; i++) {
     });
 }
 
-// Ä£ÄâÓ²¼şÓë¿Í»§·´Ó¦
+// æ¨¡æ‹Ÿç¡¬ä»¶ä¸å®¢æˆ·ååº”
 var maxLines = 5;
 var line = maxLines;
 setInterval(function () {
@@ -30,37 +30,37 @@ setInterval(function () {
             if (call.state == "start" && line > 0) {
                 event.emit("write", "call " + call.call_handle + " start");
                 line--;
-                // ÓĞÒ»³É¸ÅÂÊÊÇ¿ÕºÅ£¬Ò»³É¸ÅÂÊÊÇÃ¦Ïß£¬°Ë³É¸ÅÂÊÏìÁå
+                // æœ‰ä¸€æˆæ¦‚ç‡æ˜¯ç©ºå·ï¼Œä¸€æˆæ¦‚ç‡æ˜¯å¿™çº¿ï¼Œå…«æˆæ¦‚ç‡å“é“ƒ
                 var r = Math.random() * 10;
                 if (r < 1) {
-                    // ¿ÕºÅ
+                    // ç©ºå·
                     event.emit("write", "call " + call.call_handle + " end 4");
                     call.state = "end";
                     line++;
                 } else if (r < 2) {
-                    // Ã¦Ïß
+                    // å¿™çº¿
                     event.emit("write", "call " + call.call_handle + " end 2");
                     call.state = "end";
                     line++;
                 } else {
-                    // 300ºÁÃëºóÏìÁå
+                    // 300æ¯«ç§’åå“é“ƒ
                     call.state = "ring";
                     call.duration = 300;
                 }
             } else if (call.state == "ring") {
                 event.emit("write", "call " + call.call_handle + " ring");
-                // ÓĞÁ½³É¸ÅÂÊÓÃ»§¿´µ½À´µçºÅÂë¾Í¾Ü½Ó£¬Ò»³É¸ÅÂÊÎŞÈË½ÓÌı£¬Æß³É¸ÅÂÊ½ÓÆğ
+                // æœ‰ä¸¤æˆæ¦‚ç‡ç”¨æˆ·çœ‹åˆ°æ¥ç”µå·ç å°±æ‹’æ¥ï¼Œä¸€æˆæ¦‚ç‡æ— äººæ¥å¬ï¼Œä¸ƒæˆæ¦‚ç‡æ¥èµ·
                 var r = Math.random() * 10;
                 if (r < 2) {
-                    // ÓÌÔ¥1-10Ãëºó¾Ü½Ó
+                    // çŠ¹è±«1-10ç§’åæ‹’æ¥
                     call.state = "refuse";
                     call.duration = (Math.random() * 9 + 1) * 1000;
                 } else if (r < 3) {
-                    // µÈ´ı15Ãëºó£¬ÎŞÈË½ÓÌı
+                    // ç­‰å¾…15ç§’åï¼Œæ— äººæ¥å¬
                     call.state = "no answer";
                     call.duration = 15 * 1000;
                 } else {
-                    // ÓÌÔ¥1-15Ãëºó½ÓÍ¨
+                    // çŠ¹è±«1-15ç§’åæ¥é€š
                     call.state = "connect";
                     call.duration = (Math.random() * 14 + 1) * 1000;
                 }
@@ -73,14 +73,14 @@ setInterval(function () {
                 call.state = "end";
                 line++;
             } else if (call.state == "connect") {
-                // ÓÃ»§½ÓÍ¨ºó£¬2-15Ãëºó»á¹Ò¶Ï£¬Èç¹û×ùÏ¯²»½ÓµÄ»°
+                // ç”¨æˆ·æ¥é€šåï¼Œ2-15ç§’åä¼šæŒ‚æ–­ï¼Œå¦‚æœåº§å¸­ä¸æ¥çš„è¯
                 event.emit("write", "call " + call.call_handle + " connect");
                 call.state = "hang up";
                 call.duration = (Math.random() * 13 + 2) * 1000;
             } else if (call.state == "hang up") {
                 if (call.user && call.user.state == "talking") {
                     event.emit("write", "call " + call.call_handle + " end 0");
-                    // ×ùÏ¯ÔÚ¿Í»§¹Ò»úºóµÄ0-3ÃëÒ²»á¹Ò»ú
+                    // åº§å¸­åœ¨å®¢æˆ·æŒ‚æœºåçš„0-3ç§’ä¹Ÿä¼šæŒ‚æœº
                     call.user.duration = Math.min((Math.random() * 3) * 1000, call.user.duration);
                 } else {
                     event.emit("write", "call " + call.call_handle + " end 5");
@@ -88,7 +88,7 @@ setInterval(function () {
                 call.state = "end";
                 line++;
             } else if (call.state == "talking") {
-                // ½ÓÍ¨×ùÏ¯£¬15-30Ãëºó¹Ò»ú
+                // æ¥é€šåº§å¸­ï¼Œ15-30ç§’åæŒ‚æœº
                 call.state = "hang up";
                 call.duration = (Math.random() * 15 + 15) * 1000;
             }
@@ -97,40 +97,40 @@ setInterval(function () {
         }
     }
 
-    // TODO: ´ÓÊı×éÖĞÈ¥µôÍê³ÉµÄÍ¨»°
+    // TODO: ä»æ•°ç»„ä¸­å»æ‰å®Œæˆçš„é€šè¯
 }, 100);
 
-// Ä£Äâ×ùÏ¯·´Ó¦
+// æ¨¡æ‹Ÿåº§å¸­ååº”
 setInterval(function () {
     for (var i = 0; i < users.length; i++) {
         var user = users[i];
         if (user.duration <= 0 && user.state != "idle") {
             if (user.state == "ring") {
-                // Ìıµ½ÏìÁåºó£¬×ùÏ¯ÓĞÒ»³É»úÂÊ²»½Ó£¬¾Å³Ç»úÂÊÔÚ1-5ÃëÄÚ½ÓÍ¨
+                // å¬åˆ°å“é“ƒåï¼Œåº§å¸­æœ‰ä¸€æˆæœºç‡ä¸æ¥ï¼Œä¹åŸæœºç‡åœ¨1-5ç§’å†…æ¥é€š
                 var r = Math.random() * 10;
                 if (r < 1) {
                     user.state = "no answer";
                     user.duration = 5 * 1000;
                 } else {
-                    // ÔÚ1-5ÃëÄÚ½ÓÍ¨
+                    // åœ¨1-5ç§’å†…æ¥é€š
                     user.state = "talking";
                     user.duration = (Math.random() * 4 + 1) * 1000;
                 }
             } else if (user.state == "talking") {
-                // ×ùÏ¯Õª»ú
+                // åº§å¸­æ‘˜æœº
                 event.emit("write", "notify " + user.user_id + " off-hook");
-                // ½ÓÍ¨Íê³É
+                // æ¥é€šå®Œæˆ
                 event.emit("write", "join " + user.join_handle + " 0");
-                // ½ÓÉÏ»°ºó£¬×ùÏ¯´ó¸ÅÄÜ½²20-30Ãë
+                // æ¥ä¸Šè¯åï¼Œåº§å¸­å¤§æ¦‚èƒ½è®²20-30ç§’
                 user.state = "hang up";
                 user.duration = (Math.random() * 20 + 10) * 1000;
             } else if (user.state == "no answer") {
                 user.state = "idle";
                 event.emit("write", "join " + user.join_handle + " -1");
             } else if (user.state == "hang up") {
-                // ×ùÏ¯¹Ò»ú
+                // åº§å¸­æŒ‚æœº
                 event.emit("write", "notify " + user.user_id + " on-hook");
-                // »Ö¸´´ı»ú×´Ì¬
+                // æ¢å¤å¾…æœºçŠ¶æ€
                 user.state = "idle";
             }
         } else {
@@ -158,7 +158,7 @@ event.on("make call", function (data) {
 
 event.on("join", function (data) {
     var user = null;
-    // Ê×ÏÈ²é¿´×ùÏ¯×´Ì¬ÊÇ·ñÎª¹Ò»ú
+    // é¦–å…ˆæŸ¥çœ‹åº§å¸­çŠ¶æ€æ˜¯å¦ä¸ºæŒ‚æœº
     for (var i = 0; i < users.length; i++) {
         if (users[i].user_id == data.user_id) {
             user = users[i];
@@ -166,18 +166,18 @@ event.on("join", function (data) {
         }
     }
     if (user == null) {
-        // ÎŞ´Ë×ùÏ¯
+        // æ— æ­¤åº§å¸­
         event.emit("write", "join " + data.join_handle + " -4");
         return;
     }
     if (!user.on_hook) {
-        // ×ùÏ¯ÒÑÕª»ú
+        // åº§å¸­å·²æ‘˜æœº
         event.emit("write", "join " + data.join_handle + " -2");
         return;
     }
 
     var call = null;
-    // Ê×ÏÈ²éÕÒcall_handle
+    // é¦–å…ˆæŸ¥æ‰¾call_handle
     for (var i = 0; i < calls.length; i++) {
         if (calls[i].call_handle == data.call_handle) {
             call = calls[i];
@@ -185,7 +185,7 @@ event.on("join", function (data) {
         }
     }
     if (call == null) {
-        // ÎŞ´ËÍ¨»°
+        // æ— æ­¤é€šè¯
         event.emit("write", "join " + data.join_handle + " -3");
         return;
     }
@@ -197,20 +197,20 @@ event.on("join", function (data) {
         call.user = user;
         return;
     } else if (call.state == "end") {
-        // ¶Ô·½ÒÑ¹Ò»ú
+        // å¯¹æ–¹å·²æŒ‚æœº
         event.emit("write", "join " + data.join_handle + " -1");
     } else {
-        // Í¨»°×´Ì¬Òì³£
+        // é€šè¯çŠ¶æ€å¼‚å¸¸
         event.emit("write", "join " + data.join_handle + " -5");
         return;
     }
 });
 
 var server = net.createServer(function (socket) {
-    // ÎÒÃÇ»ñµÃÒ»¸öÁ¬½Ó - ¸ÃÁ¬½Ó×Ô¶¯¹ØÁªÒ»¸ösocket¶ÔÏó
+    // æˆ‘ä»¬è·å¾—ä¸€ä¸ªè¿æ¥ - è¯¥è¿æ¥è‡ªåŠ¨å…³è”ä¸€ä¸ªsocketå¯¹è±¡
     console.log('connected: ' + socket.remoteAddress + ':' + socket.remotePort);
 
-    // Ö»ÔÊĞíÓĞÒ»¸öÁ¬½Ó£¬ÍâºôºóÌ¨Ö»ÓĞÒ»¸ö
+    // åªå…è®¸æœ‰ä¸€ä¸ªè¿æ¥ï¼Œå¤–å‘¼åå°åªæœ‰ä¸€ä¸ª
     if (this.socket) {
         console.log("only support one single socket.");
         process.exit(-1);
