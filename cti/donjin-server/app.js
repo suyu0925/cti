@@ -80,6 +80,8 @@ setInterval(function () {
             } else if (call.state == "hang up") {
                 if (call.user && call.user.state == "talking") {
                     event.emit("write", "call " + call.call_handle + " end 0");
+                    // 座席在客户挂机后的0-3秒也会挂机
+                    call.user.duration = Math.min((Math.random() * 3) * 1000, call.user.duration);
                 } else {
                     event.emit("write", "call " + call.call_handle + " end 5");
                 }
@@ -238,7 +240,7 @@ var server = net.createServer(function (socket) {
             }
 
             // join join_handle call_handle user_id
-            matched = data.match(/join ([0-9]+) ([0-9])+ ([0-9]+)/);
+            matched = data.match(/join ([0-9]+) ([0-9]+) ([0-9]+)/);
             if (matched) {
                 var emitData = {
                     join_handle: matched[1],
