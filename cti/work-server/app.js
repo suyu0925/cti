@@ -7,7 +7,7 @@ var event = new events.EventEmitter();
 var HOST = '127.0.0.1';
 var PORT = 8123;
 // Connection URL
-var mongoUrl = 'mongodb://localhost:27017/account';
+var mongoUrl = 'mongodb://localhost:27017/work';
 // work state
 var running = false;
 

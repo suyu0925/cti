@@ -5,7 +5,7 @@ var HOST = '127.0.0.1';
 var PORT = 8123;
 
 // Connection URL
-var mongoUrl = 'mongodb://localhost:27017/account';
+var mongoUrl = 'mongodb://localhost:27017/work';
 
 function addPhone(docs, case_id, phone_number) {
     var doc = null;
@@ -29,7 +29,7 @@ function getARandomPhone() {
 MongoClient.connect(mongoUrl, function (err, db) {
     var collection = db.collection('debt');
     collection.find().toArray(function (err, result) {
-        if (!err || !result || result.length == 0) {
+        if (!err || !result || result.length > 0) {
             var insert_docs = [];
             for (var i = 0; i < result.length; i++) {
                 var doc = result[i];
@@ -37,15 +37,22 @@ MongoClient.connect(mongoUrl, function (err, db) {
                 addPhone(insert_docs, doc.id, doc.borrower.phone.home);
                 addPhone(insert_docs, doc.id, doc.borrower.phone.office);
                 addPhone(insert_docs, doc.id, doc.contacts.spouse.phone.home);
-                addPhone(insert_docs, doc.id, doc.contacts.spouse.phone.home);
-                addPhone(insert_docs, doc.id, doc.doc.contacts.spouse.phone.home);
+                addPhone(insert_docs, doc.id, doc.contacts.spouse.phone.mobile);
+                addPhone(insert_docs, doc.id, doc.contacts.guarantor.phone.home);
+                addPhone(insert_docs, doc.id, doc.contacts.guarantor.phone.mobile);
                 for (var indexOfContact = 0; indexOfContact < 5; indexOfContact++) {
                     addPhone(insert_docs, doc.id, doc.contacts.other[indexOfContact].phone);
                 }
             }
-            collection.insertMany(insert_docs, function (err, result) {
+            if (insert_docs.length > 0) {
+                var callCollection = db.collection('call');
+                callCollection.insertMany(insert_docs, function (err, result) {
+                    db.close();
+                    console.log("job done");
+                });
+            } else {
                 db.close();
-            });
+            }
         } else {
             db.close();
         }
