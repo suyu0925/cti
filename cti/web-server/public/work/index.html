@@ -6,13 +6,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<span>
-    <div class="ready">
-        未连接服务器
-    </div>
-    <button type="button" class="ready-button" id="ready-button">准备就绪</button>
-    <button type="button" class="start-button" id="start-button">服务器开始</button>
-</span>
+<div id="main">
+    <span>
+        <div class="ready">
+            未连接服务器
+        </div>
+        <button type="button" class="ready-button" id="ready-button">准备就绪</button>
+        <button type="button" class="start-button" id="start-button">服务器开始</button>
+    </span>
+</div>
+<div id="case-detail">
+    <table width="400px">
+        <tr>
+            <td id="case_id">
+                case_id
+            </td>
+        </tr>
+        <tr>
+            <td id="phone_number">
+                phone_number
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea rows="3" cols="30" id="log" autofocus="true" placeholder="请填写日志"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="log-button">提交日志</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
 <p></p>
 <span>下面是消息记录：</span>
 <ul class="messages">
