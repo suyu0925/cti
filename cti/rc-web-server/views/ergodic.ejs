@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>遍历</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="/ergodic/clear" method="post">
+    <button type="submit">清空</button>
+</form>
+<form action="/ergodic/start" method="post">
+    <button type="submit">开始任务</button>
+</form>
+<form action="/ergodic/stop" method="post">
+    <button type="submit">停止任务</button>
+</form>
+<table border=3 id="table">
+    <tr>
+        <th>&nbsp;</th>
+        <th>个案序列号</th>
+        <th>姓名</th>
+        <th>委案金额</th>
+        <th>委案日期</th>
+        <th>逾期期数</th>
+        <th>逾期金额</th>
+        <th>手机号码</th>
+        <th>家庭住址</th>
+    </tr>
+    <% for (var i = 0; i < data.length; i++) { %>
+    <tr>
+        <td><%= (i + 1) %></td>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].borrower.name.personal %></td>
+        <td><%= data[i].order.amount %></td>
+        <td><%= data[i].order.datetime %></td>
+        <td><%= data[i].overdue.terms %></td>
+        <td><%= data[i].overdue.amount %></td>
+        <td><%= data[i].borrower.phone.mobile %></td>
+        <td><%= data[i].borrower.address.home %></td>
+    </tr>
+    <% } %>
+</table>
+</body>
