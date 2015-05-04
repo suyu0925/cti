@@ -193,6 +193,7 @@
                 <file name="src/resource.js"/>
                 <file name="src/components/energy.js"/>
                 <file name="src/components/health.js"/>
+                <file name="src/components/hero.js"/>
                 <file name="src/popup/pausepopup.js"/>
                 <file name="src/popup/answerpopup.js"/>
                 <file name="src/popup/relivepopup.js"/>
