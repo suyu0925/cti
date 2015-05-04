@@ -1,5 +1,5 @@
 var ccConfig = {
-    "showFPS": true,
+    "showFPS": false,
     "frameRate": 60,
     "project_type": "javascript",
     "debugMode": 0,
