@@ -1,10 +1,92 @@
 <!DOCTYPE html>
+<style type="text/css">
+    body {
+        width: 1000px;
+    }
+
+    #table_main th {
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    #table_main td {
+        text-align: left;
+        padding-left: 5px;
+    }
+</style>
 <head>
-    <title>上传</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>数据管理</title>
+    <link href="css/style_pages.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
-<form action="/upload" method="post" enctype="multipart/form-data">
-    Select excel files: <input type="file" name="xlsxs" multiple="multiple"/>
-    <input type="submit"/>
-</form>
+<div class="div_panel">
+    <table id="table_main" width="100%" class="tableb2" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>数据管理&nbsp;>&nbsp;导航</th>
+        </tr>
+        <tr>
+            <td>
+                <div style="height:10px;"></div>
+                <div>
+                    <label class="notimportant">您要使用哪个功能?</label>
+                </div>
+                <div>
+                    <div style="width:46%;height:48px;float:left;" class="div_func">
+                        <img style="vertical-align:middle;cursor:pointer" src="images/upload.png"
+                             onclick="openFileDialog()"/>
+                        <a style="padding-left:10px;">案件导入</a>
+                        <input type="file" id="fileToUpload" style="display:none" mce_style="display:none"
+                               onChange="onFileChange()">
+                    </div>
+                    <div style="width:46%;height:48px;float:left;" class="div_func">（功能2）</div>
+                </div>
+                <div>
+                    <div style="width:46%;height:48px;float:left;" class="div_func">（功能3）</div>
+                    <div style="width:46%;height:48px;float:left;" class="div_func">（功能4）</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    function openFileDialog() {
+        var s = document.getElementById("fileToUpload");
+        s.click();
+        console.log(s.value);
+    }
+
+    function onFileChange() {
+        var s = document.getElementById("fileToUpload");
+        console.log(s.value);
+        if (s.value != "") {
+            uploadFile();
+            s.value = "";
+        }
+    }
+
+    function uploadFile() {
+        var fd = new FormData();
+        fd.append("xlsxs", document.getElementById('fileToUpload').files[0]);
+        var xhr = new XMLHttpRequest();
+//        xhr.upload.addEventListener("progress", uploadProgress, false);
+//        xhr.addEventListener("load", uploadComplete, false);
+//        xhr.addEventListener("error", uploadFailed, false);
+//        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.onreadystatechange = updatePage;
+        xhr.open("POST", "/upload");
+        xhr.send(fd);
+    }
+
+    function updatePage(value) {
+        if (value.currentTarget.readyState == 4) {
+            var result = JSON.parse(value.currentTarget.responseText);
+//            if (result.error != 0) {
+                alert(result.content);
+//            }
+        }
+    }
+</script>
 </body>
+</html>
