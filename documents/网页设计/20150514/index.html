@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<link href="style_pages.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+body {
+	
+}
+</style>
+
+<body class="body_nagi">
+<div id="nagivation" style="height:500px; width:110px; background: #38afe3;">
+  <div style="height:auto; width:110px; background-color: transparent; margin:auto;">
+    <div style="height:40px;"></div>
+    <h1>任务栏</h1>
+    <div class="div_line"></div>
+    <li id="nagi0" class="li_selected" onClick="switchpages(0);parent.document.all('iframe_content').src='xx13.html';">案件主页面</li>
+    <li id="nagi1" class="li_normal" onClick="switchpages(1);parent.document.all('iframe_content').src='组长案件池.html'">组长案件池</li>
+    <div style="height:40px;"></div>
+    <h1>管理任务栏</h1>
+    <div class="div_line"></div>
+    <li id="nagi2" class="li_normal" onClick="switchpages(2);parent.document.all('iframe_content').src='催员报表.html'">催收报表</li>
+    <li id="nagi3" class="li_normal" onClick="switchpages(3);parent.document.all('iframe_content').src='呼叫报表.html'">呼叫报表</li>
+    <li id="nagi4" class="li_normal" onClick="switchpages(4);parent.document.all('iframe_content').src='日志导出.html'">日志导出</li>
+    <li id="nagi5" class="li_normal" onClick="switchpages(5);parent.document.all('iframe_content').src='数据管理.html'">数据导入</li>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+<div style="width:110px; height:200px; background:url(images/nagi_vline.png) repeat-x; background-size: contain"></div>
+<div class="div_frame" style="left:111px; top:0px;">
+<iframe width="100%" id="iframe_content" src="" frameBorder="0" allowtransparency="true" onLoad="iFrameAutoHeight2('iframe_content')"></iframe></div>
+</body>
+</html>
+<script language="javascript">
+function switchpages(index){
+	var pagemax = 5;
+	
+	document.getElementById("nagi" + index).className="li_selected";
+	for (var i=0;i<=pagemax;i++){
+		if (i!=index) {
+			document.getElementById("nagi" + i).className="li_normal";
+		}
+	}
+	
+}
+
+function iFrameAutoHeight2(iframeId) { 
+	var pTar = null; 
+	if (document.getElementById){ 
+		pTar = document.getElementById(iframeId); 
+	} 
+	else{ 
+		eval('pTar = ' + iframeId + ';'); 
+	} 
+	if (pTar && !window.opera){ 
+		//begin resizing iframe 
+		pTar.style.display="block" 
+		if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){ 
+			//ns6 syntax 
+			pTar.height = pTar.contentDocument.body.offsetHeight + 20; 
+			pTar.width = pTar.contentDocument.body.scrollWidth; 
+		} 
+		else if (pTar.Document && pTar.Document.body.scrollHeight){ 
+			//ie5+ syntax 
+			pTar.height = pTar.Document.body.scrollHeight; 
+			pTar.width = pTar.Document.body.scrollWidth; 
+		} 
+	} 
+	//SetNagivationHeight(pTar.height);
+	//parent.iFrameAutoHeight2("iframe_content");//子窗口高度调整完后，父窗口高度需相应调
+}
+
+function SetNagivationHeight(lheight) {
+	var objNagi = null;
+	objNagi = document.getElementById("nagivation"); 
+	objNagi.style.height = lheight + "px";
+}
+
+window.onload = function() {
+	window.document.all("iframe_content").src="xx13.html";
+}
+</script>
