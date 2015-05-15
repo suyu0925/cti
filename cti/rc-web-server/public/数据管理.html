@@ -17,10 +17,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>数据管理</title>
-    <link href="css/style_pages.css" rel="stylesheet" type="text/css"/>
 </head>
+<link href="style_pages.css" rel="stylesheet" type="text/css"/>
 
 <body>
+<div class="div_lt"></div>
+<div style="height:1px; width:100%"></div>
 <div class="div_panel">
     <table id="table_main" width="100%" class="tableb2" border="0" cellpadding="0" cellspacing="0">
         <tr>
@@ -83,7 +85,7 @@
         if (value.currentTarget.readyState == 4) {
             var result = JSON.parse(value.currentTarget.responseText);
 //            if (result.error != 0) {
-                alert(result.content);
+            alert(result.content);
 //            }
         }
     }

@@ -45,6 +45,7 @@ function Bridge(srv) {
 
         // when the user disconnects.. perform this
         socket.on('disconnect', function () {
+            console.log("user " + socket.user_id + " disconnect");
             var server = this.server;
 
             // 从userIds里去掉当前用户

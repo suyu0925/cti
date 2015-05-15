@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -21,7 +20,7 @@
 
         <div class="div_line"></div>
         <li id="nagi0" class="li_selected"
-            onClick="switchpages(0);parent.document.all('iframe_content').src='xx13.html';">案件主页面
+            onClick="switchpages(0);parent.document.all('iframe_content').src='work.html';">案件主页面
         </li>
         <li id="nagi1" class="li_normal"
             onClick="switchpages(1);parent.document.all('iframe_content').src='组长案件池.html'">组长案件池
@@ -50,8 +49,6 @@
     <iframe width="100%" id="iframe_content" src="" frameBorder="0" allowtransparency="true"
             onLoad="iFrameAutoHeight2('iframe_content')"></iframe>
 </div>
-</body>
-</html>
 <script language="javascript">
     function switchpages(index) {
         var pagemax = 5;
@@ -75,7 +72,7 @@
         }
         if (pTar && !window.opera) {
             //begin resizing iframe
-            pTar.style.display = "block"
+            pTar.style.display = "block";
             if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight) {
                 //ns6 syntax
                 pTar.height = pTar.contentDocument.body.offsetHeight + 20;
@@ -98,6 +95,8 @@
     }
 
     window.onload = function () {
-        window.document.all("iframe_content").src = "xx13.html";
+        window.document.all("iframe_content").src = "work.html";
     }
 </script>
+</body>
+</html>

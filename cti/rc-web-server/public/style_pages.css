@@ -3,6 +3,7 @@
 
 /* 
 颜色层次：
+导航条	38afe3	导航、KivviCTI标题等
 背景色	f6fcff	div等
 区域色	f0faff	fieldset/table等
 线框色	58cbff	fieldset/table等
@@ -56,12 +57,51 @@ legend {
 div.div_panel {
 	background-color: #f6fcff;
 }
+div.div_title {
+	margin-top:1px;
+	margin-left:0px;
+	margin-right:0px;
+	border:1px solid #58cbff;
+	background:#c5edff;
+	font-size:14px;
+	font-weight:bold;
+	height:24px;
+	line-height:24px;
+	padding-left:10px;
+}
+div.div_textbox {
+	margin-top:1px;
+	font-size:14px;
+	height:24px;
+	line-height:24px;
+	padding-left:10px;
+}
+div.div_textbox span.span_textbox {
+	float:left; 
+	height:100%; 
+	line-height:20px ;
+	font-size:14px;
+}
 div.div_func {
 	text-align: left;
 	border: 0px #000000 solid;
 	padding-left: 2%;
 	padding-top: 20px;
 	padding-bottom: 10px;
+}
+div.div_frame {
+	position: absolute;
+	width: auto;
+	height: auto;
+	min-width: 400px;
+	min-height: 800px;
+}
+div.div_ddown {
+	cursor: pointer;
+	float:left;
+	width:25px;
+	height:20px;
+	background:url(images/ddown.png) no-repeat center;	
 }
 
 /************* 文字设置 *************/
@@ -119,6 +159,19 @@ div.div_box {
 	width: 10px;
 	height: 22px;
 	background-color: #fff;
+}
+/*为顶部div_lt设置的按钮*/
+div.div_button {
+	cursor: pointer;
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	border: #fff 1px solid;
+	color: #000;
+	text-align:center;
+	vertical-align:middle;
+	background-color: #c5edff;
+	padding: 1px;
 }
 /************* tableb1 暂未使用 *************/
 .tableb1 {
@@ -310,7 +363,58 @@ div.div_switch_state0 {
 	
 }
 
+/********** body_nagi **********/
 
+.body_nagi li {
+	cursor: pointer;
+	list-style: none;
+	height: 28px;
+	width: 100%;
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 28px;
+	text-align: center;
+}
+.body_nagi li.li_normal {
+	background-color: transparent;
+}
+.body_nagi li.li_normal:hover {
+	background:url(images/nagi_sel.png) repeat-y center transparent;
+	background-size: contain;
+}
+.body_nagi li.li_selected {
+	background-color: #ff9916;
+}
+.body_nagi li.li_selected:hover {
+	background:url(images/nagi_sel.png) repeat-y center #ff9916;
+	background-size: contain;
+}
+
+.body_nagi h1 {
+	list-style: none;
+	height: 28px;
+	width: 100%;
+	font-size: 15px;
+	color: #d1ffcc;
+	line-height: 28px;
+	text-align: center;
+	background-color: #38afe3;
+	margin: 0px;
+	font-weight: bold;
+	
+}
+
+.body_nagi div.div_line {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	height: 1px;
+	width: 100%;
+	background: url(images/nagi_line.png) no-repeat center #38afe3;
+	background-size: cover;
+}
+
+
+/*******************************/
 
 
 
