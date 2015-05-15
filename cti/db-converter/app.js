@@ -1,9 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
 
-// Host
-var HOST = '127.0.0.1';
-var PORT = 8123;
-
 // Connection URL
 var mongoUrl = 'mongodb://localhost:27017/work';
 

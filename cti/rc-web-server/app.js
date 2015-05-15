@@ -13,6 +13,8 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var upload = require('./routes/upload');
 var ergodic = require('./routes/ergodic');
+var agent_report = require('./routes/agent_report');
+var call_report = require('./routes/call_report');
 
 var hash = require('./pass').hash;
 var setting = require('./setting');
@@ -61,6 +63,8 @@ app.use('/login', login);
 app.use('/signup', signup);
 app.use('/upload', upload);
 app.use('/ergodic', ergodic);
+app.use('/agent_report', agent_report);
+app.use('/call_report', call_report);
 
 app.get('/logout', function (req, res) {
     req.session.destroy(function () {

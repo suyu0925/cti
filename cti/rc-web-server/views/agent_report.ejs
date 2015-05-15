@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <style type="text/css">
     body {
         width: 1000px;
@@ -31,7 +30,7 @@
     }
 </style>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8"/>
     <title>催员报表</title>
 </head>
 <link href="style_pages.css" rel="stylesheet" type="text/css"/>
@@ -41,23 +40,27 @@
     <div class="div_lt"></div>
     <fieldset>
         <legend>催员报表</legend>
-        <table id="reportform" width="60%" class="tableb2" border="1">
+        <table id="reportform" width="80%" class="tableb2" border="1">
             <tr>
                 <th width="14%">姓名</th>
-                <th width="24%">坐席号</th>
-                <th width="16%">在线时长</th>
+                <th width="14%">坐席号</th>
+                <th width="14%">分机号</th>
+                <th width="14%">在线时长</th>
                 <th width="14%">接通数</th>
-                <th width="16%">通话时长</th>
-                <th width="16%">平均通话时长</th>
+                <th width="14%">通话时长（分钟）</th>
+                <th width="20%">平均通话时长（分钟）</th>
             </tr>
+            <% for (var i = 0; i < data.length; i++) { %>
             <tr>
-                <td>涨涨</td>
-                <td>56456123156</td>
-                <td>165</td>
-                <td>5</td>
-                <td>523</td>
-                <td>342</td>
+                <td><%= data[i].user_name %></td>
+                <td><%= data[i].user_id %></td>
+                <td><%= data[i].user_ext_number %></td>
+                <td><%= data[i].login_duration %></td>
+                <td><%= data[i].phone_count %></td>
+                <td><%= data[i].phone_duration %></td>
+                <td><%= data[i].phone_count == 0 ? 0 : (data[i].phone_duration / data[i].phone_count).toFixed(2) %></td>
             </tr>
+            <% } %>
         </table>
     </fieldset>
 </body>

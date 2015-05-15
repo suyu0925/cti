@@ -39,18 +39,22 @@
                     <table id="reportform" width="100%" class="tableb2" border="1">
                         <tr>
                             <th width="20px"><input name="" type="checkbox" value=""/></th>
+                            <th width="25%">日期</th>
                             <th width="25%">呼损数</th>
                             <th width="25%">接通数</th>
                             <th width="25%">呼叫总电话数</th>
                             <th width="25%">呼叫总案件数</th>
                         </tr>
+                        <% for (var i = 0; i < data.length; i++) { %>
                         <tr>
                             <td><input name="" type="checkbox" value=""/></td>
-                            <td>25</td>
-                            <td>65</td>
-                            <td>952</td>
-                            <td>523</td>
+                            <td><%= data[i].date %></td>
+                            <td><%= data[i].loss_count %></td>
+                            <td><%= data[i].connect_count %></td>
+                            <td><%= data[i].call_count %></td>
+                            <td><%= data[i].case_count %></td>
                         </tr>
+                        <% } %>
                     </table>
                 </td>
             </tr>
