@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
-var mongoUrl = 'mongodb://localhost:27017/report';
+var mongoUrl = 'mongodb://kivvitek.com:27017/report';
 
 var insert_docs = [
 	{
