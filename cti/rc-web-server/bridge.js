@@ -68,8 +68,25 @@ function Bridge(srv) {
             server.work.emit("not-ready", {user_id: socket.user_id});
         });
 
-        socket.on("log", function(data){
+        socket.on("log", function (data) {
             console.log("rec from bridge: " + "log " + JSON.stringify(data, null, 4));
+
+            var case_done = false;
+            var match = data.action.match(/([0-9]+)/);
+            // action 1为承诺还款
+            if (match && match[0] == "1") {
+                console.log("客户承诺还款，修改数据库并通知外呼后台");
+                case_done = true;
+            }
+
+            if (case_done) {
+                var server = this.server;
+                server.work.emit("done", {
+                    user_id: socket.user_id,
+                    case_id: data.case_id
+                });
+            }
+
             // 上传log到数据库
             MongoClient.connect(mongoUrl, function (err, db) {
                 if (err) {
@@ -78,17 +95,25 @@ function Bridge(srv) {
                     var log = {
                         user_id: socket.user_id,
                         text: data.text,
+                        action: data.action,
                         datetime: new Date().getTime()
                     };
-                    db.collection("debt").updateOne({id: data.case_id}, {$push: {"logs": log}}, function(err, results){
-                       db.close();
+                    db.collection("debt").updateOne({id: data.case_id}, {$push: {"logs": log}}, function (err, results) {
+                        if (case_done) {
+                            // update call collection
+                            db.collection("call").updateOne({case_id: data.case_id}, {$set: {"flag": 1}}, function (err, result) {
+                                db.close();
+                            });
+                        } else {
+                            db.close();
+                        }
                     });
                 }
             });
         });
 
         // for debug
-        socket.on("start", function(){
+        socket.on("start", function () {
             var server = this.server;
             server.work.emit("start", {user_id: socket.user_id});
         });

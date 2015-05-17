@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+    body {
+        width: 1000px;
+    }
+
+    #importantinfo tr td:nth-child(1) {
+        text-align: right;
+    }
+
+    #importantinfo tr td:nth-child(3) {
+        text-align: right;
+    }
+
+    #importantinfo tr td:nth-child(5) {
+        text-align: right;
+    }
+
+    #importantinfo tr td:nth-child(7) {
+        text-align: right;
+    }
+</style>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>查看案例</title>
+    <link href="style_pages.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<form id="log_form" method="post" action="#" onsubmit="return log_form_check();">
+    <div class="div_panel">
+        <div class="div_lt">
+            <div id="KivviCTIReady">
+                <div style="padding-top:5px;">
+                    <div class="div_button" style="float:right; margin-right:10px; width:50px;"
+                         onClick="history.back();">
+                        返回
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table width="100%" border="0">
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>重要信息</legend>
+                        <table id="importantinfo" width="100%" class="table_panel" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tr>
+                                <th width="120px"></th>
+                                <th width="200px"></th>
+                                <th width="120px"></th>
+                                <th width="200px"></th>
+                                <th width="120px"></th>
+                                <th width="127px"></th>
+                                <th width="130px"></th>
+                                <th width="127px"></th>
+                            </tr>
+                            <tr>
+                                <td><label>个案序列号：</label></td>
+                                <td><label class="debtProperties" id="id"></label></td>
+                                <td><label>合同编号：</label></td>
+                                <td><label class="debtProperties" id="loan-contract"></label></td>
+                                <td><label>逾期日期：</label></td>
+                                <td><label class="debtProperties" id="overdue-datetime"></label></td>
+                                <td><label>还款银行：</label></td>
+                                <td><label class="debtProperties" id="loan-account-bank"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>委案方：</label></td>
+                                <td><label class="debtProperties" id="order-name"></label></td>
+                                <td><label>贷款日期：</label></td>
+                                <td><label class="debtProperties" id="loan-datetime"></label></td>
+                                <td><label>逾期本金：</label></td>
+                                <td><label class="debtProperties" id="overdue-principal"></label></td>
+                                <td><label>还款帐户名称：</label></td>
+                                <td><label class="debtProperties" id="loan-account-name"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>客户姓名：</label></td>
+                                <td><label class="debtProperties" id="borrower-name-personal"></label></td>
+                                <td><label>贷款金额：</label></td>
+                                <td><label class="debtProperties" id="loan-amount"></label></td>
+                                <td><label>逾期利息：</label></td>
+                                <td><label class="debtProperties" id="overdue-interest"></label></td>
+                                <td><label>还款帐号：</label></td>
+                                <td><label class="debtProperties" id="loan-account-id"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>性别：</label></td>
+                                <td><label class="debtProperties" id="borrower-gender"></label></td>
+                                <td><label>期数（总）：</label></td>
+                                <td><label class="debtProperties" id="loan-terms"></label></td>
+                                <td><label>逾期罚息：</label></td>
+                                <td><label class="debtProperties" id="overdue-default"></label></td>
+                                <td><label>担保人姓名：</label></td>
+                                <td><label class="debtProperties" id="contacts-guarantor-name"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>证件号：</label></td>
+                                <td><label class="debtProperties" id="borrower-id-personal"></label></td>
+                                <td><label>逾期天数：</label></td>
+                                <td><label class="debtProperties" id="overdue-days"></label></td>
+                                <td><label>逾期管理费：</label></td>
+                                <td><label class="debtProperties" id="overdue-expenses"></label></td>
+                                <td><label>担保人证件号：</label></td>
+                                <td><label class="debtProperties" id="contacts-guarantor-id"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>工商登记号：</label></td>
+                                <td><label class="debtProperties" id="borrower-id-company"></label></td>
+                                <td><label>逾期期数：</label></td>
+                                <td><label class="debtProperties" id="overdue-terms"></label></td>
+                                <td><label>逾期总金额：</label></td>
+                                <td><label class="debtProperties" id="overdue-amount"></label></td>
+                                <td><label>担保人地址：</label></td>
+                                <td><label class="debtProperties" id="contacts-guarantor-address"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>委案日期：</label></td>
+                                <td><label class="debtProperties" id="order-datetime"></label></td>
+                                <td><label>每期还款额：</label></td>
+                                <td><label class="debtProperties" id="loan-monthly"></label></td>
+                                <td><label>户籍地址：</label></td>
+                                <td><label class="debtProperties" id="borrower-address-huji"></label></td>
+                                <td><label>特殊案件类型：</label></td>
+                                <td><label></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>委案金额：</label></td>
+                                <td><label class="debtProperties" id="order-amount"></label></td>
+                                <td><label>单位名称：</label></td>
+                                <td><label class="debtProperties" id="borrower-name-office"></label></td>
+                                <td><label>配偶证件号：</label></td>
+                                <td><label class="debtProperties" id="contacts-spouse-id-personal"></label></td>
+                                <td>&nbsp;</td>
+                                <td><label></label></td>
+                            </tr>
+                            <tr>
+                                <td><label>家庭地址：</label></td>
+                                <td><label class="debtProperties" id="borrower-address-home"></label></td>
+                                <td><label>单位地址：</label></td>
+                                <td><label class="debtProperties" id="borrower-address-office"></label></td>
+                                <td><label>配偶公司名称：</label></td>
+                                <td><label class="debtProperties" id="contacts-spouse-name-office"></label></td>
+                                <td>&nbsp;</td>
+                                <td><label></label></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" height="200px" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="50%" height="100%" valign="top">
+                                <fieldset style="height:100%">
+                                    <legend>电话信息</legend>
+                                    <div style="overflow: auto; height:180px; width: 100%;">
+                                        <table id="call-table" width="100%" class="tableb2" border="1">
+                                            <tbody id="call-table-tbody">
+                                            <tr>
+                                                <th width="25%">电话</th>
+                                                <th width="25%">类型</th>
+                                                <th width="15%">关系</th>
+                                                <th width="25%">姓名</th>
+                                                <th width="10%">Call</th>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </td>
+                            <td valign="top" height="100%">
+                                <fieldset style="height:100%">
+                                    <legend>催收备注</legend>
+                                    <div align="right">动作代码：
+                                        <select form="log_form" name="log_action" id="log-action">
+                                            <option value="1.客户承诺还款">1.客户承诺还款</option>
+                                            <option value="2.电话无人接听">2.电话无人接听</option>
+                                            <option value="3.客户拒绝还款">3.客户拒绝还款</option>
+                                            <option value="4.申请上门外访">4.申请上门外访</option>
+                                            <option value="5.号码错误">5.号码错误</option>
+                                        </select>
+                                    </div>
+                                <textarea form="log_form" id="log-textarea" name="log_textarea" cols="" rows=""
+                                          style="width:99%;height:130px; margin-top:2px;resize:none"></textarea>
+                                    <br/>
+
+                                    <div align="right">
+                                        <input type="submit" id="log-button" value="提交"/>
+                                    </div>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" valign="top">
+                    <fieldset style="height:100%">
+                        <legend>日志备忘</legend>
+                        <div align="center">
+                            <select name="select">
+                            </select>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="tdlink" onclick="">显示全部</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                    class="tdlink" onclick="">显示前10条</a></div>
+                        <table id="log-table" width="100%" class="tableb2" border="1">
+                            <tr>
+                                <th width="16%">备注时间</th>
+                                <th width="21%">动作代码</th>
+                                <th width="49%">备注</th>
+                                <th width="14%">创建人</th>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<script>
+    var data = '<%=JSON.stringify(data)%>';
+</script>
+<script src="/jquery-1.11.2.js"></script>
+<script src="/edit_case.js"></script>
+</body>
+</html>

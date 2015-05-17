@@ -115,7 +115,7 @@ $(function () {
         } else {
             for (var i = 0; i < data.debt.logs.length; i++) {
                 var datetime = getDateString(new Date(parseInt(data.debt.logs[i].datetime)));
-                var action = "";
+                var action = data.debt.logs[i].action;
                 var text = data.debt.logs[i].text;
                 var user_id = data.debt.logs[i].user_id;
                 var trHTML = "<tr><td>" + datetime + "</td><td>" + action + "</td><td>" + text + "</td><td>" + user_id + "</td></tr>";
@@ -167,6 +167,8 @@ $(function () {
         } else {
             $('#id').text(data.case_id);
         }
+
+        parent.iFrameAutoHeight2("iframe_content");//调整父窗口高度
     }
 
     function clearData() {
@@ -210,7 +212,7 @@ $(function () {
     //};
 
     function switchToReady() {
-        if (!ready) {
+        if (!ready && !calling) {
             if (!connect) {
                 alert("服务器未连接");
             } else {
@@ -252,10 +254,13 @@ $(function () {
             return;
         }
 
+        var action = $('#log-action').find("option:selected").text();
+
         log("写入日志: " + text);
         socket.emit('log', {
             case_id: case_id,
-            text: text
+            text: text,
+            action: action
         });
         case_id = null;
 
@@ -264,7 +269,6 @@ $(function () {
         // 删除标题
         $("#log-table tr").eq(0).remove();
         var datetime = getDateString(new Date());
-        var action = "";
         var trHTML = "<tr><td>" + datetime + "</td><td>" + action + "</td><td>" + text + "</td><td>" + user_id + "</td></tr>";
         table.prepend(trHTML);
         var titleHTML = "<tr><th width='16%'>备注时间</th><th width='21%'>动作代码</th><th width='49%'>备注</th><th width='14%'>创建人</th></tr>";
@@ -279,6 +283,8 @@ $(function () {
         // clearData();
         // 不能按提交按钮了
         setLogButtonEnable(false);
+
+        parent.iFrameAutoHeight2("iframe_content");//调整父窗口高度
     });
 
     // 初始化时，提交日志按钮就为灰的
