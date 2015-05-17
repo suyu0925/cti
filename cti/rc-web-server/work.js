@@ -6,8 +6,8 @@ function Work(srv) {
     if (!(this instanceof Work)) return new Work(srv);
 
     var net = require('net');
-    var HOST = '193.168.0.88';
-    //var HOST = 'localhost';
+    //var HOST = '193.168.0.88';
+    var HOST = 'localhost';
     var PORT = 8123;
 
     var MongoClient = require('mongodb').MongoClient;
