@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style type="text/css">
+body {
+	width: 1000px;
+}
+
+/* tableb2 advance */
+#tablefs1 tr td {
+	text-align: center;
+}
+#tablefs2 tr td {
+	text-align: center;
+}
+</style>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动作代码配置页面</title>
+</head>
+<link href="style_pages.css" rel="stylesheet" type="text/css" />
+
+<body>
+<div class="div_panel">
+  <div class="div_lt"> </div>
+  <div class="div_title">组长案件池</div>
+  <div style="height:10px;"></div>
+  <div id="div_table1_a" class="div_textbox" style="height:20px;"><span class="span_textbox">外访案件</span><div class="div_ddown" onClick="SwitchDiv('div_table1_');"></div></div>
+  <div id="div_table1_b" class="div_panel" style="display:none;">
+    <fieldset>
+      <legend>外访案件</legend>
+        <table id="tablefs1" width="100%" class="tableb2">
+            <tr>
+              <th width="20%">案件编号</th>
+              <th width="20%">案件金额</th>
+              <th width="20%">委案方</th>
+              <th width="20%">提交人</th>
+              <th width="20%">提交时间</th>
+            </tr>
+            <tr>
+              <td><a href="xx13_teammaster.html">跳转测试</a></td>
+              <td>¥3580.00</td>
+              <td>XXXXXX</td>
+              <td>XXXXX</td>
+              <td>2015-03-20</td>
+            </tr>
+          </table>
+    </fieldset>
+  </div>
+  <div style="height:20px;"></div>
+  <div id="div_table2_a" class="div_textbox" style="height:20px;"><span class="span_textbox">其他类别案件</span><div class="div_ddown" onClick="SwitchDiv('div_table2_');"></div></div>
+  <div id="div_table2_b" class="div_panel" style="display:none;">
+    <fieldset>
+      <legend>其他类别案件</legend>
+        <table id="tablefs1" width="100%" class="tableb2">
+            <tr>
+              <th width="20%">案件编号</th>
+              <th width="20%">案件金额</th>
+              <th width="20%">委案方</th>
+              <th width="20%">提交人</th>
+              <th width="20%">提交时间</th>
+            </tr>
+            <tr>
+              <td>XXXXXX</td>
+              <td>¥3580.00</td>
+              <td>XXXXXX</td>
+              <td>XXXXX</td>
+              <td>2015-03-20</td>
+            </tr>
+          </table>
+    </fieldset>
+  </div>
+  <div style="height:20px;"></div>
+</div>
+</body>
+</html>
+
+<script language="javascript">
+function SwitchDiv(sid){
+	document.getElementById(sid + "a").style.display="none";
+	document.getElementById(sid + "b").style.display="";
+	parent.iFrameAutoHeight2("iframe_content");//调整父窗口高度
+}
+</script>

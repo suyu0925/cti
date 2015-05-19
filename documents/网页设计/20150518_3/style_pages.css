@@ -187,7 +187,11 @@ div.div_button {
     text-align: center;
     vertical-align: middle;
     background-color: #c5edff;
-    padding: 1px;
+    margin: auto;
+}
+
+div.div_button:hover {
+    background-color: #dbf3fe;
 }
 
 /************* tableb1 暂未使用 *************/
@@ -233,6 +237,7 @@ div.div_button {
     border-right: 1px solid #c5edff;
     border-bottom: 1px solid #c5edff;
     border-left: 1px solid #58cbff;
+    text-align: center;
     word-break: keep-all; /* 不换行 */
     white-space: nowrap; /* 不换行 */
     overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
@@ -446,6 +451,18 @@ div.div_switch_state0 {
     width: 100%;
     background: url(images/nagi_line.png) no-repeat center #38afe3;
     background-size: cover;
+}
+
+.body_nagi p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    list-style: none;
+    height: 15px;
+    width: 100%;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 20px;
+    font-weight: bold;
 }
 
 /*******************************/
