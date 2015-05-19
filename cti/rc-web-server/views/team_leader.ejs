@@ -41,13 +41,15 @@
                     <th width="20%">提交人</th>
                     <th width="20%">提交时间</th>
                 </tr>
+                <% for (var i = 0; i < data.length; i++) { %>
                 <tr>
-                    <td><a href="/edit_case?case_id=B_101-KJ-20141009-003">跳转测试</a></td>
-                    <td>¥3580.00</td>
-                    <td>XXXXXX</td>
-                    <td>XXXXX</td>
-                    <td>2015-03-20</td>
+                    <td class="myhref"><%= data[i].href %></td>
+                    <td><%= data[i].order.amount %></td>
+                    <td><%= data[i].order.name %></td>
+                    <td><%= data[i].user_id %></td>
+                    <td><%= data[i].datetime %></td>
                 </tr>
+                <% } %>
             </table>
         </fieldset>
     </div>
@@ -80,12 +82,27 @@
     <div style="height:20px;"></div>
 </div>
 </body>
-</html>
-
+<script src="./jquery-1.11.2.js"></script>
 <script language="javascript">
     function SwitchDiv(sid) {
         document.getElementById(sid + "a").style.display = "none";
         document.getElementById(sid + "b").style.display = "";
         parent.iFrameAutoHeight2("iframe_content");//调整父窗口高度
     }
+
+    window.onload = function () {
+        var hrefs = $(".myhref");
+        if (hrefs) {
+            for (var i = 0; i < hrefs.length; i++) {
+                var html = hrefs[i].innerHTML;
+                console.log(i + ": 1 - " + html);
+                html = html.replace(/&lt;/g, "<");
+                console.log(i + ": 2 - " + html);
+                html = html.replace(/&gt;/g, ">");
+                console.log(i + ": 3 - " + html);
+                hrefs[i].innerHTML = html;
+            }
+        }
+    }
 </script>
+</html>

@@ -15,7 +15,20 @@
 <body class="body_nagi">
 <div id="nagivation" style="height:500px; width:110px; background: #38afe3;">
     <div style="height:auto; width:110px; background-color: transparent; margin:auto;">
-        <div style="height:40px;"></div>
+        <div style="height:10px;"></div>
+        <div style="width:48px; height:48px; margin:auto; border:1px #FFF solid; background-color:#666; padding:1px;">
+            <img style="width:48px; height:48px;" src="images/user_no48x.png"/></div>
+        <div style="width:70px; margin:0px 20px 20px 20px;">
+            <p style="text-align:left;">欢迎，</p>
+
+            <p style="text-align:right;"><a id="username">Candy</a></p>
+        </div>
+        <div class="div_button" style="width:50px;" onClick="">
+            <div class="div_button_content">登出</div>
+        </div>
+        <div style="height:15px;"></div>
+        <div style="height:1px; background-color:#fff;"></div>
+        <div style="height:15px;"></div>
         <h1>任务栏</h1>
 
         <div class="div_line"></div>
@@ -23,7 +36,7 @@
             onClick="switchpages(0);parent.document.all('iframe_content').src='work.html';">案件主页面
         </li>
         <li id="nagi1" class="li_normal"
-            onClick="switchpages(1);parent.document.all('iframe_content').src='组长案件池.html'">组长案件池
+            onClick="switchpages(1);parent.document.all('iframe_content').src='team_leader'">组长案件池
         </li>
         <div style="height:40px;"></div>
         <h1>管理任务栏</h1>
@@ -35,7 +48,7 @@
         <li id="nagi3" class="li_normal" onClick="switchpages(3);parent.document.all('iframe_content').src='call_report'">
             呼叫报表
         </li>
-        <li id="nagi4" class="li_normal" onClick="switchpages(4);parent.document.all('iframe_content').src='日志导出.html'">
+        <li id="nagi4" class="li_normal" onClick="switchpages(4);parent.document.all('iframe_content').src='log_report'">
             日志导出
         </li>
         <li id="nagi5" class="li_normal" onClick="switchpages(5);parent.document.all('iframe_content').src='数据管理.html'">

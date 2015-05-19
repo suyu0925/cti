@@ -12,408 +12,459 @@
 */
 
 body {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 body, td, th, p, li, input {
-	font-family: Arial, "Times New Roman", "Microsoft YaHei", "黑体", "宋体";
-	font-size: 12px;
+    font-family: Arial, "Times New Roman", "Microsoft YaHei", "黑体", "宋体";
+    font-size: 12px;
 }
 
 table, tr, td, th {
-	border-collapse: collapse;
-	border: 0px;
-	padding: 0px;
-	vertical-align: middle;
+    border-collapse: collapse;
+    border: 0px;
+    padding: 0px;
+    vertical-align: middle;
 }
 
 body, td, th {
-	background-color: transparent;
-	color: #000000;
-	font-style: normal;
-	line-height: normal;
+    background-color: transparent;
+    color: #000000;
+    font-style: normal;
+    line-height: normal;
 }
 
 input {
-	color: #000000;
-	font-style: normal;
-	line-height: normal;
+    color: #000000;
+    font-style: normal;
+    line-height: normal;
 }
+
 fieldset {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #58cbff;
-	background-color: #f0faff;
-	text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #58cbff;
+    background-color: #f0faff;
+    text-align: left;
 }
+
 legend {
-	font-weight: bold;
-	font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /************* ====分割线==== *************/
 
 div.div_panel {
-	background-color: #f6fcff;
+    background-color: #f6fcff;
 }
+
 div.div_title {
-	margin-top:1px;
-	margin-left:0px;
-	margin-right:0px;
-	border:1px solid #58cbff;
-	background:#c5edff;
-	font-size:14px;
-	font-weight:bold;
-	height:24px;
-	line-height:24px;
-	padding-left:10px;
+    margin-top: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid #58cbff;
+    background: #c5edff;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
 }
+
 div.div_textbox {
-	margin-top:1px;
-	font-size:14px;
-	height:24px;
-	line-height:24px;
-	padding-left:10px;
+    margin-top: 1px;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
 }
+
 div.div_textbox span.span_textbox {
-	float:left; 
-	height:100%; 
-	line-height:20px ;
-	font-size:14px;
+    float: left;
+    height: 100%;
+    line-height: 20px;
+    font-size: 14px;
 }
+
 div.div_func {
-	text-align: left;
-	border: 0px #000000 solid;
-	padding-left: 2%;
-	padding-top: 20px;
-	padding-bottom: 10px;
+    text-align: left;
+    border: 0px #000000 solid;
+    padding-left: 2%;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
+
 div.div_frame {
-	position: absolute;
-	width: auto;
-	height: auto;
-	min-width: 400px;
-	min-height: 800px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 400px;
+    min-height: 800px;
 }
+
 div.div_ddown {
-	cursor: pointer;
-	float:left;
-	width:25px;
-	height:20px;
-	background:url(images/ddown.png) no-repeat center;	
+    cursor: pointer;
+    float: left;
+    width: 25px;
+    height: 20px;
+    background: url(images/ddown.png) no-repeat center;
 }
 
 /************* 文字设置 *************/
 .text_rightalign {
-	text-align: right;
-	padding: 2px
+    text-align: right;
+    padding: 2px
 }
+
 .text_leftalign {
-	text-align: left;
-	padding: 2px
+    text-align: left;
+    padding: 2px
 }
+
 .notimportant {
-	color: #999
+    color: #999
 }
+
 /************* 文字设置 END *************/
 
 .fieldset_nopad {
-	border-collapse: collapse;
-	border-width: 0px;
-	padding: 0px;
-	background-color: transparent;
+    border-collapse: collapse;
+    border-width: 0px;
+    padding: 0px;
+    background-color: transparent;
 }
 
 /************* KivviCTI set *************/
 div.div_lt {
-	background: #38afe3;
-	color: #fff;
-	height: 36px;
-	line-height: 26px;
+    background: #38afe3;
+    color: #fff;
+    height: 36px;
+    line-height: 26px;
 }
+
 div.div_lt a.lt_word {
-	font-size: 18px;
+    font-size: 18px;
 }
+
 div.div_switchbtn_0 {
-	cursor: pointer;
-	width: 100px;
-	height: 22px;
-	font-size: 16px;
-	border: #fff 1px solid;
-	color: #fff;
-	background-color: #C03;
-	padding: 1px;
+    cursor: pointer;
+    width: 100px;
+    height: 22px;
+    font-size: 16px;
+    border: #fff 1px solid;
+    color: #fff;
+    background-color: #C03;
+    padding: 1px;
 }
+
 div.div_switchbtn_1 {
-	cursor: pointer;
-	width: 100px;
-	height: 22px;
-	font-size: 16px;
-	border: #fff 1px solid;
-	color: #fff;
-	background-color: #390;
-	padding: 1px;
+    cursor: pointer;
+    width: 100px;
+    height: 22px;
+    font-size: 16px;
+    border: #fff 1px solid;
+    color: #fff;
+    background-color: #390;
+    padding: 1px;
 }
+
 div.div_box {
-	width: 10px;
-	height: 22px;
-	background-color: #fff;
+    width: 10px;
+    height: 22px;
+    background-color: #fff;
 }
+
 /*为顶部div_lt设置的按钮*/
 div.div_button {
-	cursor: pointer;
-	height: 22px;
-	line-height: 22px;
-	font-size: 14px;
-	border: #fff 1px solid;
-	color: #000;
-	text-align:center;
-	vertical-align:middle;
-	background-color: #c5edff;
-	padding: 1px;
+    cursor: pointer;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    border: #fff 1px solid;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #c5edff;
+    margin: auto;
 }
+
+div.div_button:hover {
+    background-color: #dbf3fe;
+}
+
 /************* tableb1 暂未使用 *************/
 .tableb1 {
-	border-collapse: collapse;
-	border-width: 1px;
-	border-style: solid;
-	padding: 1px;
-	border-color: #000000;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: solid;
+    padding: 1px;
+    border-color: #000000;
 }
+
 .tableb1 th {
-	border-color: #000000;
-	background-color: #dddddd;
+    border-color: #000000;
+    background-color: #dddddd;
 }
+
 .tableb1 td {
-	border-color: #000000;
-	background-color: #FFFFFF;
+    border-color: #000000;
+    background-color: #FFFFFF;
 }
 
 /************* tableb2 普通表格风格 *************/
 .tableb2 {
-	border-collapse: collapse;
-	border: 0px solid #67af77;
-	padding: 1px;
-	table-layout: fixed;
-	margin:0px auto;
+    border-collapse: collapse;
+    border: 0px solid #67af77;
+    padding: 1px;
+    table-layout: fixed;
+    margin: 0px auto;
 }
+
 .tableb2 tr {
-	background-color: #f0faff;
+    background-color: #f0faff;
 }
+
 .tableb2 th, .tableb2 tr, .tableb2 td {
-	padding: 1px;
+    padding: 1px;
 }
+
 .tableb2 th {
-	background-color: #c5edff;
-	height: 22px;
-	border-top: 1px solid #58cbff;
-	border-right: 1px solid #c5edff;
-	border-bottom: 1px solid #c5edff;
-	border-left: 1px solid #58cbff;
-	word-break: keep-all;/* 不换行 */
-	white-space: nowrap;/* 不换行 */
-	overflow: hidden;/* 内容超出宽度时隐藏超出部分的内容 */
-	text-overflow: ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    background-color: #c5edff;
+    height: 22px;
+    border-top: 1px solid #58cbff;
+    border-right: 1px solid #c5edff;
+    border-bottom: 1px solid #c5edff;
+    border-left: 1px solid #58cbff;
+    text-align: center;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
+
 .tableb2 td {
-	background-color: transparent;
-	height: 20px;
-	border-top: 1px solid #58cbff;
-	border-right: 1px solid #c5edff;
-	border-bottom: 1px solid #c5edff;
-	border-left: 1px solid #58cbff;
-	word-break: keep-all;/* 不换行 */
-	white-space: nowrap;/* 不换行 */
-	overflow: hidden;/* 内容超出宽度时隐藏超出部分的内容 */
-	text-overflow: ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
-	text-align: right;
+    background-color: transparent;
+    height: 20px;
+    border-top: 1px solid #58cbff;
+    border-right: 1px solid #c5edff;
+    border-bottom: 1px solid #c5edff;
+    border-left: 1px solid #58cbff;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    text-align: right;
 }
+
 .tableb2 tr:nth-child(odd) {
-	background: #e5f6ff;
+    background: #e5f6ff;
 }
+
 .tableb2 tr:last-child td {
-	border-bottom: 1px solid #58cbff;
+    border-bottom: 1px solid #58cbff;
 }
+
 .tableb2 tr td:last-child {
-	border-right: 1px solid #58cbff;
+    border-right: 1px solid #58cbff;
 }
+
 .tableb2 tr th:last-child {
-	border-right: 1px solid #58cbff;
+    border-right: 1px solid #58cbff;
 }
 
 /* table_tph : tabpage style */
 .table_tph {
-	border-collapse: collapse;
-	border-width: 1px;
-	border-style: none;
-	padding: 0px;
-	border-color: #000000;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: none;
+    padding: 0px;
+    border-color: #000000;
 }
+
 .table_tph th, .table_tph td {
-	border-color: #000000;
-	background-color: #b3e8ff;
-	text-align: center;
-	padding: 0px;
-	vertical-align: middle;
+    border-color: #000000;
+    background-color: #b3e8ff;
+    text-align: center;
+    padding: 0px;
+    vertical-align: middle;
 }
 
 /* table_panel : panel */
 .table_panel {
-	border-collapse: collapse;
-	border-width: 1px;
-	border-style: none;
-	padding: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	margin:0px auto;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: none;
+    padding: 1px;
+    border-color: #000000;
+    background-color: transparent;
+    margin: 0px auto;
 }
+
 .table_panel td {
-	height: 20px;
-	background-color: transparent;
+    height: 20px;
+    background-color: transparent;
 }
 
 /***************************/
 
-
-
 .grad_tabpage_n {
-	/* 如果浏览器不支持渐变，使用图像作为背景 */
-	background: url(gradient.jpg);
-	/* Webkit: Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8f9ff), to(#87daff));
-	/* Webkit: Safari 5.1+, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #e8f9ff, #87daff);
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #e8f9ff, #87daff);
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #e8f9ff, #87daff);
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #e8f9ff, #87daff);
-	/* IE < 10 */
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#e8f9ff, endColorStr=#87daff);
+    /* 如果浏览器不支持渐变，使用图像作为背景 */
+    background: url(gradient.jpg);
+    /* Webkit: Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8f9ff), to(#87daff));
+    /* Webkit: Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #e8f9ff, #87daff);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #e8f9ff, #87daff);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #e8f9ff, #87daff);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #e8f9ff, #87daff);
+    /* IE < 10 */
+    FILTER: progid: DXImageTransform . Microsoft . Gradient(startColorStr = #e8f9ff, endColorStr = #87daff);
 }
+
 .grad_tabpage_n:hover {
-	cursor: default;
-	/* 如果浏览器不支持渐变，使用图像作为背景 */
-	background: url(gradient.jpg);
-	/* Webkit: Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eff9fd), to(#9ee2ff));
-	/* Webkit: Safari 5.1+, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #eff9fd, #9ee2ff);
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #eff9fd, #9ee2ff);
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #eff9fd, #9ee2ff);
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #eff9fd, #9ee2ff);
-	/* IE < 10 */
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#eff9fd, endColorStr=#9ee2ff);
+    cursor: default;
+    /* 如果浏览器不支持渐变，使用图像作为背景 */
+    background: url(gradient.jpg);
+    /* Webkit: Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eff9fd), to(#9ee2ff));
+    /* Webkit: Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #eff9fd, #9ee2ff);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #eff9fd, #9ee2ff);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #eff9fd, #9ee2ff);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #eff9fd, #9ee2ff);
+    /* IE < 10 */
+    FILTER: progid: DXImageTransform . Microsoft . Gradient(startColorStr = #eff9fd, endColorStr = #9ee2ff);
 }
+
 .grad_tabpage_select {
-	/* 如果浏览器不支持渐变，使用图像作为背景 */
-	background: url(gradient.jpg);
-	/* Webkit: Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f6fcff), to(#baeaff));
-	/* Webkit: Safari 5.1+, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #f6fcff, #baeaff);
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #f6fcff, #baeaff);
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #f6fcff, #baeaff);
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #f6fcff, #baeaff);
-	/* IE < 10 */
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#f6fcff, endColorStr=#baeaff);
+    /* 如果浏览器不支持渐变，使用图像作为背景 */
+    background: url(gradient.jpg);
+    /* Webkit: Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f6fcff), to(#baeaff));
+    /* Webkit: Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #f6fcff, #baeaff);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #f6fcff, #baeaff);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #f6fcff, #baeaff);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #f6fcff, #baeaff);
+    /* IE < 10 */
+    FILTER: progid: DXImageTransform . Microsoft . Gradient(startColorStr = #f6fcff, endColorStr = #baeaff);
 }
+
 .grad_tabpage_select:hover {
-	cursor: default;
-	/* 如果浏览器不支持渐变，使用图像作为背景 */
-	background: url(gradient.jpg);
-	/* Webkit: Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d1f1ff));
-	/* Webkit: Safari 5.1+, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #ffffff, #d1f1ff);
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #ffffff, #d1f1ff);
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #ffffff, #d1f1ff);
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #ffffff, #d1f1ff);
-	/* IE < 10 */
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff, endColorStr=#d1f1ff);
+    cursor: default;
+    /* 如果浏览器不支持渐变，使用图像作为背景 */
+    background: url(gradient.jpg);
+    /* Webkit: Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d1f1ff));
+    /* Webkit: Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #ffffff, #d1f1ff);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #ffffff, #d1f1ff);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #ffffff, #d1f1ff);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #ffffff, #d1f1ff);
+    /* IE < 10 */
+    FILTER: progid: DXImageTransform . Microsoft . Gradient(startColorStr = #ffffff, endColorStr = #d1f1ff);
 }
-
-
 
 .tdlink {
-	color: #00F;
-	text-align: center
+    color: #00F;
+    text-align: center
 }
+
 .tdlink:hover {
-	color: #09F;
-	text-decoration: underline;
-	cursor: pointer
-}/*鼠标经过*/
+    color: #09F;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+/*鼠标经过*/
 
 /*********** switch button 切换控制 ***********/
 
 div.div_switch_state0 {
-	/* no */
-	background-color: #903
-	
+    /* no */
+    background-color: #903
+
 }
 
 /********** body_nagi **********/
 
 .body_nagi li {
-	cursor: pointer;
-	list-style: none;
-	height: 28px;
-	width: 100%;
-	font-size: 14px;
-	color: #FFFFFF;
-	line-height: 28px;
-	text-align: center;
+    cursor: pointer;
+    list-style: none;
+    height: 28px;
+    width: 100%;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 28px;
+    text-align: center;
 }
+
 .body_nagi li.li_normal {
-	background-color: transparent;
+    background-color: transparent;
 }
+
 .body_nagi li.li_normal:hover {
-	background:url(images/nagi_sel.png) repeat-y center transparent;
-	background-size: contain;
+    background: url(images/nagi_sel.png) repeat-y center transparent;
+    background-size: contain;
 }
+
 .body_nagi li.li_selected {
-	background-color: #ff9916;
+    background-color: #ff9916;
 }
+
 .body_nagi li.li_selected:hover {
-	background:url(images/nagi_sel.png) repeat-y center #ff9916;
-	background-size: contain;
+    background: url(images/nagi_sel.png) repeat-y center #ff9916;
+    background-size: contain;
 }
 
 .body_nagi h1 {
-	list-style: none;
-	height: 28px;
-	width: 100%;
-	font-size: 15px;
-	color: #d1ffcc;
-	line-height: 28px;
-	text-align: center;
-	background-color: #38afe3;
-	margin: 0px;
-	font-weight: bold;
-	
+    list-style: none;
+    height: 28px;
+    width: 100%;
+    font-size: 15px;
+    color: #d1ffcc;
+    line-height: 28px;
+    text-align: center;
+    background-color: #38afe3;
+    margin: 0px;
+    font-weight: bold;
+
 }
 
 .body_nagi div.div_line {
-	margin-top: 8px;
-	margin-bottom: 8px;
-	height: 1px;
-	width: 100%;
-	background: url(images/nagi_line.png) no-repeat center #38afe3;
-	background-size: cover;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 1px;
+    width: 100%;
+    background: url(images/nagi_line.png) no-repeat center #38afe3;
+    background-size: cover;
 }
 
+.body_nagi p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    list-style: none;
+    height: 15px;
+    width: 100%;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 20px;
+    font-weight: bold;
+}
 
 /*******************************/
 

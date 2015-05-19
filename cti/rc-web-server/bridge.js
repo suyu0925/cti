@@ -98,7 +98,18 @@ function Bridge(srv) {
                         action: data.action,
                         datetime: new Date().getTime()
                     };
-                    db.collection("debt").updateOne({id: data.case_id}, {$push: {"logs": log}}, function (err, results) {
+                    var action4 = {enable: false};
+                    if (log.action.match(/4./)) {
+                        action4 = {
+                            enable: true,
+                            user_id: log.user_id,
+                            datetime: log.datetime
+                        };
+                    }
+                    db.collection("debt").updateOne({id: data.case_id}, {
+                        $push: {"logs": log},
+                        $set: {action4: action4}
+                    }, function (err, results) {
                         if (case_done) {
                             // update call collection
                             db.collection("call").updateOne({case_id: data.case_id}, {$set: {"flag": 1}}, function (err, result) {

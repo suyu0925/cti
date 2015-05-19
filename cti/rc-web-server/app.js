@@ -66,6 +66,8 @@ app.use('/ergodic', ergodic);
 app.use('/agent_report', agent_report);
 app.use('/call_report', call_report);
 app.use('/edit_case', require('./routes/edit_case'));
+app.use('/log_report', require('./routes/log_report'));
+app.use('/team_leader', require('./routes/team_leader'));
 
 app.get('/logout', function (req, res) {
     req.session.destroy(function () {

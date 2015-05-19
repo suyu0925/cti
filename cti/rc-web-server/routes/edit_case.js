@@ -33,7 +33,18 @@ router.post('/', function (req, res) {
     };
 
     MongoClient.connect(mongoUrl, function (err, db) {
-        db.collection("debt").updateOne({"id": case_id}, {$push: {"logs": log}}, function (err, results) {
+        var action4 = false;
+        if (log.action.match(/4./)) {
+            action4 = {
+                enable: true,
+                user_id: log.user_id,
+                datetime: log.datetime
+            };
+        }
+        db.collection("debt").updateOne({"id": case_id}, {
+            $push: {"logs": log},
+            $set: {action4: action4}
+        }, function (err, results) {
             db.collection("debt").find({"id": case_id}).toArray(function (err, docs) {
                 if (err || !docs || docs.length == 0) {
                     res.status(404).send("not found");
