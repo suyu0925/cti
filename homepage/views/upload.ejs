@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>导入excel文件</title>
+</head>
+<body>
+<img style="vertical-align:middle;cursor:pointer" src="images/upload.png"
+     onclick="openFileDialog()"/>
+<a style="padding-left:10px;">案件导入</a>
+<input type="file" id="fileToUpload" style="display:none" mce_style="display:none"
+       onChange="onFileChange()">
+
+<div id="xls"></div>
+<p></p>
+
+<script src="./jquery-1.11.2.js"></script>
+<script>
+    function openFileDialog() {
+        var s = document.getElementById("fileToUpload");
+        s.click();
+        console.log(s.value);
+    }
+
+    function onFileChange() {
+        var s = document.getElementById("fileToUpload");
+        console.log(s.value);
+        if (s.value != "") {
+            uploadFile();
+            s.value = "";
+        }
+    }
+
+    function uploadFile() {
+        var fd = new FormData();
+        fd.append("xlsxs", document.getElementById('fileToUpload').files[0]);
+        var xhr = new XMLHttpRequest();
+//        xhr.upload.addEventListener("progress", uploadProgress, false);
+//        xhr.addEventListener("load", uploadComplete, false);
+//        xhr.addEventListener("error", uploadFailed, false);
+//        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.onreadystatechange = updatePage;
+        xhr.open("POST", "/upload");
+        xhr.send(fd);
+    }
+
+    function updatePage(value) {
+        console.log("" + value.currentTarget.readyState);
+        if (value.currentTarget.readyState == 1) {
+            $('#xls').html("上传中...");
+        }
+        if (value.currentTarget.readyState == 4) {
+            var result = JSON.parse(value.currentTarget.responseText);
+            if (result.err) {
+                $('#xls').html(result.data);
+            } else {
+                var data = result.data;
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    var sheet = data[i];
+                    html += "<p>" + sheet.name + "</p>";
+                    html += "<table border='1'>";
+                    for (var j = 0; j < sheet.data.length; j++) {
+                        var row = sheet.data[j];
+                        html += "<tr>";
+                        for (var k = 0; k < row.length; k++) {
+                            if (row[k] == null) {
+                                html += "<td></td>";
+                            } else {
+                                html += "<td>" + row[k] + "</td>";
+                            }
+                        }
+                        html += "</tr>";
+                    }
+                    html += "</table>";
+                }
+                $('#xls').html(html);
+            }
+        }
+    }
+
+    $(function () {
+    });
+</script>
+</body>
+</html>
