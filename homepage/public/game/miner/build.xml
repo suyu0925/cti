@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<project name="Javascript compress project" basedir="D:\repos\game\miner" default="compile">
+<project name="Javascript compress project" basedir="c:\repos\game\miner" default="compile">
 
     <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
-             classpath="D:\cocos2d\cocos2d-js-v3.6.1\tools\cocos2d-console\plugins\project_compile\build_web/bin/compiler-1.7.jar"/>
+             classpath="c:\cocos2d\cocos2d-js-v3.6.1\tools\cocos2d-console\plugins\project_compile\build_web/bin/compiler-1.7.jar"/>
 
     <target name="compile">
         <jscomp compilationLevel="advanced" 
                 warning="quiet"
                 debug="false" 
-                output="D:\repos\game\miner\publish\html5/game.min.js"
+                output="c:\repos\game\miner\publish\html5/game.min.js"
                 languagein="ECMASCRIPT5"
                 
                 >
-            <sources dir="D:\repos\game\miner\frameworks\cocos2d-html5">
+            <sources dir="c:\repos\game\miner\frameworks\cocos2d-html5">
                 <file name="CCBoot.js"/>
                 <file name="CCDebugger.js"/>
                 <file name="cocos2d/core/utils/BinaryLoader.js"/>
@@ -184,6 +184,9 @@
                 <file name="src/scenes/gamescene.js"/>
                 <file name="src/components/pausepopup.js"/>
                 <file name="src/components/man.js"/>
+                <file name="src/components/items.js"/>
+                <file name="src/components/item.js"/>
+                <file name="src/components/hangerset.js"/>
                 <file name="main.js"/>
 
             </sources>
