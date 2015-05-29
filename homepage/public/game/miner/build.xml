@@ -170,11 +170,13 @@
 
             </sources>
             <sources dir="${basedir}">
-                <file name="src/config.js"/>
                 <file name="src/resource.js"/>
+                <file name="src/config.js"/>
                 <file name="src/application.js"/>
                 <file name="src/storage.js"/>
                 <file name="src/user.js"/>
+                <file name="src/levels.js"/>
+                <file name="src/utility.js"/>
                 <file name="src/scenes/firstscene.js"/>
                 <file name="src/scenes/loadingscene.js"/>
                 <file name="src/scenes/mainscene.js"/>
@@ -182,10 +184,12 @@
                 <file name="src/scenes/readmescene.js"/>
                 <file name="src/scenes/stagescene.js"/>
                 <file name="src/scenes/gamescene.js"/>
+                <file name="src/scenes/overscene.js"/>
+                <file name="src/scenes/winscene.js"/>
+                <file name="src/scenes/studyscene.js"/>
                 <file name="src/components/pausepopup.js"/>
                 <file name="src/components/man.js"/>
                 <file name="src/components/items.js"/>
-                <file name="src/components/item.js"/>
                 <file name="src/components/hangerset.js"/>
                 <file name="main.js"/>
 
