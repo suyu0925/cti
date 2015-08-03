@@ -165,10 +165,14 @@
     <Compile Include="App_Start\webstack\WebApiDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcMenuFilter.cs" />
+    <Compile Include="Areas\Cti\Controllers\CaseController.cs" />
+    <Compile Include="Areas\Cti\CtiAreaRegistration.cs" />
+    <Compile Include="Areas\Cti\Models\cti_case.cs" />
     <Compile Include="Areas\Mms\Common\MmsHelper.cs" />
     <Compile Include="Areas\Mms\Common\MmsService.cs" />
     <Compile Include="Areas\Mms\Common\MmsBaseApi.cs" />
     <Compile Include="Areas\Mms\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Mms\Controllers\KivviController.cs" />
     <Compile Include="Areas\Mms\Controllers\LiyController.cs" />
     <Compile Include="Areas\Mms\Controllers\ProductController.cs" />
     <Compile Include="Areas\Mms\Controllers\ProductTestController.cs" />
@@ -180,6 +184,7 @@
     <Compile Include="Areas\Mms\Controllers\CheckController.cs" />
     <Compile Include="Areas\Mms\Controllers\RepairController.cs" />
     <Compile Include="Areas\Mms\Controllers\StaffController.cs" />
+    <Compile Include="Areas\Mms\Controllers\SuyuController.cs" />
     <Compile Include="Areas\Mms\Controllers\TestABCController.cs" />
     <Compile Include="Areas\Mms\Controllers\TestController.cs" />
     <Compile Include="Areas\Mms\Controllers\TransferController.cs" />
@@ -307,6 +312,11 @@
     <Content Include="Areas\Mms\Views\Liy\Index.cshtml" />
     <Content Include="Areas\Mms\Views\Staff\Index.cshtml" />
     <Content Include="Areas\Mms\Views\Staff\Edit.cshtml" />
+    <Content Include="Areas\Cti\Views\Case\Index.cshtml" />
+    <Content Include="Areas\Cti\Views\Case\Add.cshtml" />
+    <Content Include="Areas\Cti\Views\Web.config" />
+    <Content Include="Areas\Mms\Views\Suyu\Index.cshtml" />
+    <Content Include="Areas\Mms\Views\Kivvi\Index.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Model.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Controller.cshtml" />
     <None Include="Areas\Sys\Template\search\Controller.cshtml" />

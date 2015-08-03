@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Zephyr.Data
+﻿namespace Zephyr.Data
 {
-	public class SelectBuilderData : BuilderData
+    public class SelectBuilderData : BuilderData
 	{
 		public int PagingCurrentPage { get; set; }
 		public int PagingItemsPerPage { get; set; }
@@ -14,7 +9,6 @@ namespace Zephyr.Data
 		public string OrderBy { get; set; }
 		public string From { get; set; }
 		public string Select { get; set; }
-		public string WhereSql { get; set; }
 
 		public SelectBuilderData(IDbCommand command, string objectName) : base(command, objectName)
 		{
